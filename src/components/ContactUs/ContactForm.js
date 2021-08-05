@@ -43,18 +43,9 @@ const ContactForm = () => {
         setTimeout(async () => {
             try {
                 await sendEmail(values)
-                console.log(JSON.stringify(values));
-                // formikActions.resetForm({ values: '' });
                 formikActions.resetForm({})
                 formikActions.setStatus({ success: true })
                 formikActions.setSubmitting(false);
-
-                // formikActions.setValues({
-                //     fullName: '',
-                //     phone: '',
-                //     email: '',
-                // });
-                // formikActions.setErrors({});
             } catch (error) {
                 console.log(error);
             }
@@ -68,9 +59,7 @@ const ContactForm = () => {
             validateOnChange={false}
             onSubmit={onSubmit}>
             {(props) => {
-                console.log(props)
                 const { handleChange, values, errors, touched, handleSubmit, isSubmitting } = props;
-
                 return <>
                     {inputs.map(({ name, ...other }, i) => {
                         return <TextInput

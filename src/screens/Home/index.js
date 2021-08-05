@@ -1,40 +1,23 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ImageBackground } from "react-native";
 import { Button, FAB } from "react-native-elements";
 import { white } from "../../constants";
+import useViewSize from "../../hooks/useViewSize";
 import ScreenContainer from "../ScreenContainer";
+const image = { uri: require("../../assets/background.jpg") };
 
 const Home = () => {
   const navigation = useNavigation();
+  const [, heightSize] = useViewSize()
   return (
     <ScreenContainer>
-      <Text>Home Screen</Text>
-      <Button title="about" onPress={() => navigation.navigate("about")} />
-      <Text>Home Screen</Text>
-      <Button title="about" onPress={() => navigation.navigate("about")} />
-      <Text>Home Screen</Text>
-      <Button title="about" onPress={() => navigation.navigate("about")} />
-      <Text>Home Screen</Text>
-      <Button title="about" onPress={() => navigation.navigate("about")} />
-      <Text>Home Screen</Text>
-      <Button title="about" onPress={() => navigation.navigate("about")} />
-      <Text>Home Screen</Text>
-      <Button title="about" onPress={() => navigation.navigate("about")} />
-      <Text>Home Screen</Text>
-      <Button title="about" onPress={() => navigation.navigate("about")} />
-      <Text>Home Screen</Text>
-      <Button title="about" onPress={() => navigation.navigate("about")} />
-      <Text>Home Screen</Text>
-      <Button title="about" onPress={() => navigation.navigate("about")} />
-      <Text>Home Screen</Text>
-      <Button title="about" onPress={() => navigation.navigate("about")} />
-      <Text>Home Screen</Text>
-      <Button title="about" onPress={() => navigation.navigate("about")} />
-      <Text>Home Screen</Text>
-      <Button title="about" onPress={() => navigation.navigate("about")} />
-      <Text>Home Screen</Text>
-      <Button title="about" onPress={() => navigation.navigate("about")} />
+      <ImageBackground style={{ height: 500 }} source={image} resizeMode="cover">
+      </ImageBackground>
+
+      <View style={{ height: 500 }}>
+
+      </View>
     </ScreenContainer>
   );
 };

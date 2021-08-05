@@ -46,31 +46,31 @@ const mapList = [{
     items: [
         {
             type: 'link',
-            title: `מעצרים ושחרור ממעצרים`,
+            title: `כותרת ראשית של כתבה`,
             name: "interests",
             icon: { name: "chevron-left" }
         },
         {
             type: 'link',
-            title: `עורך דין פלילי`,
+            title: `כותרת ראשית של כתבה`,
             name: "interests",
             icon: { name: "chevron-left" }
         },
         {
             type: 'link',
-            title: `עורך דין הגירה`,
+            title: `כותרת ראשית של כתבה`,
             name: "interests",
             icon: { name: "chevron-left" }
         },
         {
             type: 'link',
-            title: `עורך דין עבירות מין`,
+            title: `כותרת ראשית של כתבה`,
             name: "interests",
             icon: { name: "chevron-left" }
         },
         {
             type: 'link',
-            title: `דין צבאי`,
+            title: `כותרת ראשית של כתבה`,
             name: "interests",
             icon: { name: "chevron-left" }
         },

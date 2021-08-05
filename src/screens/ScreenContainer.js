@@ -7,20 +7,17 @@ import useViewSize from "../hooks/useViewSize";
 import { Footer } from "../navigation";
 const image = { uri: require("../assets/background.jpg") };
 
-const ScreenContainer = ({ children, containerStyle }) => {
+const ScreenContainer = ({ children, containerStyle, ...viewProps }) => {
   const [, , widthSize] = useViewSize()
   const isMobile = (range) => widthSize < range;
 
   return (
     <>
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ ...containerStyle, ...styles.container }}>
-        <ImageBackground blurRadius={2} source={image} resizeMode="cover">
+      <ScrollView {...viewProps} showsVerticalScrollIndicator={false} contentContainerStyle={{ ...containerStyle, ...styles.container }}>
+        <View>
           {children}
-        </ImageBackground>
-        <View style={{ height: 300 }}></View>
-        {/* <View> */}
+        </View>
         <ContactUs direction={isMobile(1100) ? 'column' : 'row-reverse'} />
-        {/* </View> */}
         <MapSite direction={isMobile(900) ? 'column' : 'row-reverse'} />
 
       </ScrollView>
