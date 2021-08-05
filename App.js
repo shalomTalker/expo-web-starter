@@ -1,21 +1,45 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Button } from "react-native-elements";
+import AboutScreen from "./src/screens/About";
+import HomeScreen from "./src/screens/Home";
+import InterestsScreen from "./src/screens/Interests";
+import OfficeScreen from "./src/screens/Office";
+import ContactScreen from "./src/screens/Contact";
+import { Header, NavBar } from "./src/navigation";
+import { black, white } from "./src/constants";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import useViewSize from "./src/hooks/useViewSize";
+const Drawer = createDrawerNavigator();
+const App = () => {
+  const [, , widthSize] = useViewSize();
+  const header = (props) => <Header />;
+  const drawerContent = (props) => {
+    return (
+      <View style={{ flex: 1 }}>
+        <NavBar type="column" />
+      </View>
+    );
+  };
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Drawer.Navigator
+        drawerContent={drawerContent}
+        initialRouteName="home" screenOptions={{ headerTransparent: true, header, drawerStyle: { width: widthSize / 2 }, sceneContainerStyle: { backgroundColor: "black" } }}>
+        <Drawer.Screen name="home" component={HomeScreen} />
+        <Drawer.Screen name="about" component={AboutScreen} />
+        <Drawer.Screen name="interests" component={InterestsScreen} />
+        <Drawer.Screen name="office" component={OfficeScreen} />
+        <Drawer.Screen name="contact" component={ContactScreen} />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
-}
+};
+
+export default App;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  image: { flex: 1, justifyContent: "center" },
 });

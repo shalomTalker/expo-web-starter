@@ -4,21 +4,34 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "web": "expo start --web",
-    "start": "react-native start"
+    "start": "react-native start",
+    "web:dev": "SET ENV_NAME=dev&&expo start --web",
+    "web:prod": "SET ENV_NAME=prod&&expo start --web"
   },
   "dependencies": {
+    "@expo/vector-icons": "^12.0.0",
+    "@react-navigation/drawer": "^6.0.1",
+    "@react-navigation/native": "^6.0.0",
+    "@react-navigation/native-stack": "^6.0.0",
+    "emailjs-com": "^3.2.0",
     "expo": "~42.0.1",
+    "expo-linking": "~2.3.1",
     "expo-splash-screen": "~0.11.2",
     "expo-status-bar": "~1.0.4",
     "expo-updates": "~0.8.1",
+    "formik": "^2.2.9",
+    "libphonenumber-js": "^1.9.23",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "~0.63.4",
+    "react-native-elements": "^3.4.2",
     "react-native-gesture-handler": "~1.10.2",
     "react-native-reanimated": "~2.2.0",
+    "react-native-safe-area-context": "3.2.0",
     "react-native-screens": "~3.4.0",
     "react-native-unimodules": "~0.14.5",
-    "react-native-web": "~0.13.12"
+    "react-native-web": "~0.13.12",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"
