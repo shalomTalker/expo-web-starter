@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ImageBackground } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Button } from "react-native-elements";
@@ -9,17 +9,18 @@ import InterestsScreen from "./src/screens/Interests";
 import OfficeScreen from "./src/screens/Office";
 import ContactScreen from "./src/screens/Contact";
 import { Header, NavBar } from "./src/navigation";
-import { black, white } from "./src/constants";
+import { black, red, white } from "./src/constants";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import useViewSize from "./src/hooks/useViewSize";
+
 const Drawer = createDrawerNavigator();
 const App = () => {
   const [, , widthSize] = useViewSize();
-  const header = (props) => <Header />;
+  const header = (props) => <Header {...props} />;
   const drawerContent = (props) => {
     return (
       <View style={{ flex: 1 }}>
-        <NavBar type="column" />
+        <NavBar type="column" defaultColor={black} />
       </View>
     );
   };
@@ -27,7 +28,13 @@ const App = () => {
     <NavigationContainer>
       <Drawer.Navigator
         drawerContent={drawerContent}
-        initialRouteName="home" screenOptions={{ headerTransparent: true, header, drawerStyle: { width: widthSize / 2 }, sceneContainerStyle: { backgroundColor: "black" } }}>
+        initialRouteName="home"
+        screenOptions={{
+          // header,
+          headerShown: false,
+          drawerStyle: { width: widthSize / 2 },
+          sceneContainerStyle: { backgroundColor: "transparent" }
+        }}>
         <Drawer.Screen name="home" component={HomeScreen} />
         <Drawer.Screen name="about" component={AboutScreen} />
         <Drawer.Screen name="interests" component={InterestsScreen} />

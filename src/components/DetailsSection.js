@@ -1,13 +1,13 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { white } from "../constants";
+import { black, white } from "../constants";
 import Icon from "./Icon";
 
-const DetailsSection = ({ ...props }) => {
+const DetailsSection = ({ textColor = "white", ...props }) => {
   return (
     <View {...props}>
-      <Text style={{ color: white, fontSize: 30 }}>
-        052-2210099 <Icon name="phone" color={white} size={30}></Icon>
+      <Text style={{ color: textColor, fontSize: 30 }}>
+        052-2210099 <Icon name="phone" color={textColor} size={30} />
       </Text>
     </View>
   );

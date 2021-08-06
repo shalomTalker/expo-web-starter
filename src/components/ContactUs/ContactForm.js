@@ -68,7 +68,6 @@ const ContactForm = () => {
             validateOnChange={false}
             onSubmit={onSubmit}>
             {(props) => {
-                console.log(props)
                 const { handleChange, values, errors, touched, handleSubmit, isSubmitting } = props;
 
                 return <>
