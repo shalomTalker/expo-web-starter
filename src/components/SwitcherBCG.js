@@ -7,12 +7,12 @@ import { LinearGradient } from 'expo-linear-gradient';
 import Btn from './Btn';
 
 const images = [
-  require("../assets/background1.jpg"),
-  require("../assets/background2.jpg"),
-  require("../assets/background3.jpg"),
-  require("../assets/background4.jpg"),
-  require("../assets/background5.jpg"),
-  require("../assets/background6.jpg")
+  { uri: 'https://picsum.photos/800/1400?random=14' },
+  { uri: 'https://picsum.photos/800/1400?random=13' },
+  { uri: 'https://picsum.photos/800/1400?random=151' },
+  { uri: 'https://picsum.photos/800/1400?random=152' },
+  { uri: 'https://picsum.photos/800/1400?random=153' },
+  { uri: 'https://picsum.photos/800/1400?random=88' }
 ];
 
 const SwitcherBCG = ({ children }) => {
