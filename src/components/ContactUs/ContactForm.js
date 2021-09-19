@@ -43,18 +43,10 @@ const ContactForm = () => {
         setTimeout(async () => {
             try {
                 await sendEmail(values)
-                console.log(JSON.stringify(values));
-                // formikActions.resetForm({ values: '' });
                 formikActions.resetForm({})
                 formikActions.setStatus({ success: true })
                 formikActions.setSubmitting(false);
 
-                // formikActions.setValues({
-                //     fullName: '',
-                //     phone: '',
-                //     email: '',
-                // });
-                // formikActions.setErrors({});
             } catch (error) {
                 console.log(error);
             }
@@ -111,7 +103,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: 'black',
         backgroundColor: white,
-        textAlign: 'end'
+        textAlign: 'right'
     },
     inputContainer: {
         padding: 50,

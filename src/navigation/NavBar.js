@@ -21,13 +21,7 @@ const NavBar = ({
   insideScreen = false,
   selectedColor = gray }) => {
   const navigation = useNavigation();
-  let route;
-  if (insideScreen) {
-    route = useRoute();
-
-  } else {
-    route = {}
-  }
+  let route = insideScreen ? useRoute() : {};
 
   // const isSelected = 
   const renderButtons = () => {
@@ -43,7 +37,7 @@ const NavBar = ({
         onPress={() => navigation.navigate(name)} />;
     });
   };
-  return <View style={{ ...style, justifyContent: "space-around", flexDirection: type === "top" ? "row-reverse" : "column" }}>{renderButtons()}</View>;
+  return <View style={{ ...style, flexDirection: type === "top" ? "row-reverse" : "column" }}>{renderButtons()}</View>;
 };
 
 export default NavBar;

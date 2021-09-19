@@ -6,8 +6,8 @@ import Icon from "./Icon";
 const DetailsSection = ({ textColor = "white", ...props }) => {
   return (
     <View {...props}>
-      <Text style={{ color: textColor, fontSize: 30 }}>
-        052-2210099 <Icon name="phone" color={textColor} size={30} />
+      <Text style={{ color: textColor, fontSize: 30, padding: 8 }}>
+        052-221-0099 <Icon name="phone" color={textColor} size={30} />
       </Text>
     </View>
   );

@@ -1,13 +1,20 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Button } from "react-native-elements";
+import useViewSize from "../../hooks/useViewSize";
 import ScreenContainer from "../ScreenContainer";
 
 const About = ({ navigation }) => {
+  const [, heightSize, widthSize] = useViewSize()
+
   return (
     <ScreenContainer>
-      <Text>About Screen</Text>
-      <Button title="home" onPress={() => navigation.navigate("home")} />
+      <View
+        style={{ height: heightSize, width: widthSize }}
+      >
+        <Text>About Screen</Text>
+
+      </View>
     </ScreenContainer>
   );
 };

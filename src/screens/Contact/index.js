@@ -2,12 +2,20 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Button } from "react-native-elements";
 import ScreenContainer from "../ScreenContainer";
+import useViewSize from "../../hooks/useViewSize";
 
 const Contact = ({ navigation }) => {
+
+  const [, heightSize, widthSize] = useViewSize()
+
   return (
     <ScreenContainer>
-      <Text>Contact Screen</Text>
-      <Button title="about" onPress={() => navigation.navigate("about")} />
+      <View
+        style={{ height: heightSize, width: widthSize }}
+      >
+
+        <Text>Contact Screen</Text>
+      </View>
     </ScreenContainer>
   );
 };

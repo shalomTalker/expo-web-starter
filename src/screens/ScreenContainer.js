@@ -4,17 +4,17 @@ import ArticlesSwipper from "../components/ArticlesSwipper";
 import ContactUs from "../components/ContactUs/index";
 import FloatingSocial from "../components/FloatingSocial";
 import MapSite from "../components/MapSite";
-import { white } from "../constants";
+import { white, header_H } from "../constants";
 import useViewSize from "../hooks/useViewSize";
 import { Footer, Header } from "../navigation";
-const image = { uri: require("../assets/background.jpg") };
+
 const RANGE_SCROLL = 200;
 const START_POS = -120;
-const HEADER_HEIGHT = 100;
+// const HEADER_HEIGHT = 100;
 
 const ScreenContainer = ({ children, containerStyle }) => {
   const [headerShown, setHeaderShown] = useState(true);
-  const translation = useRef(new Animated.Value(START_POS)).current;
+  const translation = useRef(new Animated.Value(0)).current;
   const [, heightSize, widthSize] = useViewSize()
   const isViewSmallerThan = (range) => widthSize < range;
 
@@ -38,15 +38,11 @@ const ScreenContainer = ({ children, containerStyle }) => {
 
   return (
     <>
-      <ImageBackground source={image} style={{ height: heightSize, width: widthSize }} resizeMode="cover">
+      <View style={{ height: heightSize, width: widthSize }} >
         <Header
           style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            height: HEADER_HEIGHT,
-            backgroundColor: 'tomato',
+            height: header_H,
+            backgroundColor: '#004552e3',
             transform: [
               { translateY: translation },
             ],
@@ -55,7 +51,7 @@ const ScreenContainer = ({ children, containerStyle }) => {
         <ScrollView
           onScroll={onScroll}
           scrollEventThrottle={16}
-          style={{ flex: 1 }}
+          // style={{ flex: 1 }}
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{ ...containerStyle, ...styles.container }}
         >
@@ -67,7 +63,7 @@ const ScreenContainer = ({ children, containerStyle }) => {
 
           </View>
         </ScrollView>
-      </ImageBackground>
+      </View>
 
       <FloatingSocial />
     </>

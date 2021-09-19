@@ -7,7 +7,7 @@ const ContactUs = ({ backgroundColor = gray, direction = 'row-reverse' }) => {
 
     return (
         <View style={[styles.container, { backgroundColor }]}>
-            <Text style={[styles.title, { fontSize: 22 }]}>{`זקוקים לייעוץ משפטי?`}</Text>
+            <Text style={[styles.title, { fontSize: 22 }]}>{`כותרת ליצירת קשר?`}</Text>
             <Text style={[styles.title, { fontSize: 18 }]}>{`השאירו פרטים ונחזור אליכם בהקדם`}</Text>
             <View style={[styles.formContainer, { flexDirection: direction }]}>
                 <ContactForm />

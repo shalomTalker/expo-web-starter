@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {Dimensions, Platform} from 'react-native';
+import { Dimensions, Platform } from 'react-native';
 import parsePhoneNumber from 'libphonenumber-js';
 
 export const KLMN = Platform.OS === 'ios' ? 'KLMN-Flash-Pix' : 'KLMN_Flash_Pix';
@@ -11,7 +11,7 @@ export const Narrow = '3270Narrow';
 export const win = Dimensions.get('window');
 export const W = win.width;
 export const H = win.height;
-export const header_H = 60;
+export const header_H = 50;
 export const screen_H = H - header_H;
 export const getPrecentOfWidth = num => (num / 100) * W;
 export const getPrecentOfHeight = num => (num / 100) * H;
@@ -47,9 +47,9 @@ export const goBack = navigation => () => navigation.goBack();
 
 export const onScreen =
   (screen, navigation, obj = {}) =>
-  () => {
-    navigation.navigate(screen, {screenProps: obj});
-  };
+    () => {
+      navigation.navigate(screen, { screenProps: obj });
+    };
 
 export const goHome = navigation => () => navigation.popToTop()();
 
@@ -102,10 +102,9 @@ export const formatFromILDate = dateString => {
   if (typeof dateString == 'string') {
     return dateString.search(/[/|.]+/) != -1 && !dateString.endsWith('0Z')
       ? new Date(
-          `${dateString.split(/[\s./]+/)[1]}/${
-            dateString.split(/[\s./]+/)[0]
-          }/${dateString.split(/[\s./]+/)[2]}`,
-        )
+        `${dateString.split(/[\s./]+/)[1]}/${dateString.split(/[\s./]+/)[0]
+        }/${dateString.split(/[\s./]+/)[2]}`,
+      )
       : new Date(dateString);
   } else {
     return new Date(dateString);

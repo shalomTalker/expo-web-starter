@@ -2,7 +2,6 @@ import React from 'react'
 import { FlatList, StyleSheet, Text, View } from 'react-native'
 import { gray, keyExtractor, white } from '../../constants'
 import { Space } from '../Spacing';
-import LinkItem from './LinkItem';
 import ListItem from './ListItem';
 
 const mapList = [{
@@ -46,31 +45,31 @@ const mapList = [{
     items: [
         {
             type: 'link',
-            title: `מעצרים ושחרור ממעצרים`,
+            title: `כותרת של הכתבה/מאמר`,
             name: "interests",
             icon: { name: "chevron-left" }
         },
         {
             type: 'link',
-            title: `עורך דין פלילי`,
+            title: `כותרת של הכתבה/מאמר`,
             name: "interests",
             icon: { name: "chevron-left" }
         },
         {
             type: 'link',
-            title: `עורך דין הגירה`,
+            title: `כותרת של הכתבה/מאמר`,
             name: "interests",
             icon: { name: "chevron-left" }
         },
         {
             type: 'link',
-            title: `עורך דין עבירות מין`,
+            title: `כותרת של הכתבה/מאמר`,
             name: "interests",
             icon: { name: "chevron-left" }
         },
         {
             type: 'link',
-            title: `דין צבאי`,
+            title: `כותרת של הכתבה/מאמר`,
             name: "interests",
             icon: { name: "chevron-left" }
         },

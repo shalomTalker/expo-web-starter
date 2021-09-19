@@ -3,15 +3,15 @@ import { View, Text, StyleSheet, ImageBackground } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Button } from "react-native-elements";
-import AboutScreen from "./src/screens/About";
-import HomeScreen from "./src/screens/Home";
-import InterestsScreen from "./src/screens/Interests";
-import OfficeScreen from "./src/screens/Office";
-import ContactScreen from "./src/screens/Contact";
-import { Header, NavBar } from "./src/navigation";
-import { black, red, white } from "./src/constants";
+import AboutScreen from "./screens/About";
+import HomeScreen from "./screens/Home";
+import InterestsScreen from "./screens/Interests";
+import OfficeScreen from "./screens/Office";
+import ContactScreen from "./screens/Contact";
+import { Header, NavBar } from "./navigation";
+import { black, red, white } from "./constants";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import useViewSize from "./src/hooks/useViewSize";
+import useViewSize from "./hooks/useViewSize";
 
 const Drawer = createDrawerNavigator();
 const App = () => {

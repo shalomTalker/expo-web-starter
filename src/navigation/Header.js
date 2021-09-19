@@ -8,7 +8,7 @@ import useViewSize from "../hooks/useViewSize";
 import NavBar from "./NavBar";
 
 const Header = (props) => {
-  const [widthTag] = useViewSize();
+  const [widthTag, , widthSize] = useViewSize();
 
   const isMobile = ["sm", "xs"].includes(widthTag);
   const navigation = useNavigation();
@@ -16,23 +16,27 @@ const Header = (props) => {
     <Animated.View style={[props.style, styles.container]}>
 
       <BaseHeader
-        backgroundColor="transparent"
-        containerStyle={[props.style, styles.container]}
+        containerStyle={{
+          flex: 1,
+          borderBottomWidth: 0,
+          backgroundColor: 'transparent',
+          alignItems: 'center',
+          flexDirection: 'row',
+        }}
         placement="left"
-        leftComponent={() => (
-          <View style={{ justifyContent: "center", alignItems: "center" }}>
-            <Text style={{ fontSize: 30, color: white }}>logo</Text>
-          </View>
-        )}
-        centerComponent={<DetailsSection />}
+        leftComponent={<DetailsSection />}
         rightComponent={isMobile ? {
           icon: "menu",
-          color: black, onPress: navigation.toggleDrawer
+          color: white,
+          onPress: navigation.toggleDrawer
         } : <NavBar
           type="top"
-          titleColor={black}
           insideScreen
           selectedColor={'lightgreen'}
+          style={{
+            flex: 1,
+            alignItems: 'center'
+          }}
 
         />}
       />
@@ -44,8 +48,11 @@ export default Header;
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: "center",
-    alignItems: "center",
-    borderBottomWidth: 0,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 100,
+
   }
 });
