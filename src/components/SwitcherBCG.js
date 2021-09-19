@@ -12,6 +12,7 @@ const images = [
   { uri: 'https://picsum.photos/800/1400?random=151' },
   { uri: 'https://picsum.photos/800/1400?random=152' },
   { uri: 'https://picsum.photos/800/1400?random=153' },
+
   { uri: 'https://picsum.photos/800/1400?random=88' }
 ];
 
