@@ -1,13 +1,14 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { black, white } from "../constants";
+import { useTheme } from "../context/StyleContext";
 import Icon from "./Icon";
 
-const DetailsSection = ({ textColor = "white", ...props }) => {
+const DetailsSection = ({ textColor, ...props }) => {
+  const { primary } = useTheme()
   return (
     <View {...props}>
-      <Text style={{ color: textColor, fontSize: 30, padding: 8 }}>
-        052-221-0099 <Icon name="phone" color={textColor} size={30} />
+      <Text style={{ color: textColor || primary, fontSize: 30, padding: 8 }}>
+        052-8347079 <Icon name="phone" color={textColor || primary} size={30} />
       </Text>
     </View>
   );

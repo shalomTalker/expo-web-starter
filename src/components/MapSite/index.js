@@ -1,6 +1,7 @@
 import React from 'react'
 import { FlatList, StyleSheet, Text, View } from 'react-native'
-import { gray, keyExtractor, white } from '../../constants'
+import { keyExtractor } from '../../constants'
+import { useTheme } from '../../context/StyleContext';
 import { Space } from '../Spacing';
 import ListItem from './ListItem';
 
@@ -21,12 +22,6 @@ const mapList = [{
         },
         {
             type: 'link',
-            title: `תחומי עיסוק`,
-            name: "interests",
-            icon: { name: "chevron-left" }
-        },
-        {
-            type: 'link',
             title: `שירותי המשרד`,
             name: "office",
             icon: { name: "chevron-left" }
@@ -41,36 +36,41 @@ const mapList = [{
 },
 
 {
-    title: `מאמרים אחרונים`,
+    title: `תחומי עיסוק`,
     items: [
         {
-            type: 'link',
-            title: `כותרת של הכתבה/מאמר`,
-            name: "interests",
+            type: 'deep-link',
+            title: `משפט פלילי`,
+            name: "office",
+            value: "criminal",
             icon: { name: "chevron-left" }
         },
         {
-            type: 'link',
-            title: `כותרת של הכתבה/מאמר`,
-            name: "interests",
+            type: 'deep-link',
+            title: `משפט צבאי`,
+            name: "office",
+            value: "military",
             icon: { name: "chevron-left" }
         },
         {
-            type: 'link',
-            title: `כותרת של הכתבה/מאמר`,
-            name: "interests",
+            type: 'deep-link',
+            title: `תעבורה`,
+            name: "office",
+            value: "traffic",
             icon: { name: "chevron-left" }
         },
         {
-            type: 'link',
-            title: `כותרת של הכתבה/מאמר`,
-            name: "interests",
+            type: 'deep-link',
+            title: `ליטיגציה אזרחית`,
+            name: "office",
+            value: "civilLitigation",
             icon: { name: "chevron-left" }
         },
         {
-            type: 'link',
-            title: `כותרת של הכתבה/מאמר`,
-            name: "interests",
+            type: 'deep-link',
+            title: `דיני מקרקעין`,
+            name: "office",
+            value: "realEstate",
             icon: { name: "chevron-left" }
         },
     ]
@@ -80,27 +80,27 @@ const mapList = [{
     items: [
         {
             type: 'list',
-            title: `052-2210099`,
+            title: `050-8347079`,
             name: "phone",
-            icon: { name: "cellphone" }
+            icon: { name: "phone" }
         },
         {
             type: 'list',
-            title: `רחוב המכבים 66, בני ברק`,
-            name: "address_1",
-            icon: { name: "map-marker-radius" }
-        },
-        {
-            type: 'list',
-            title: `רחוב סוקולוב 150, רמת גן`,
-            name: "address_2",
-            icon: { name: "map-marker-radius" }
-        },
-        {
-            type: 'list',
-            title: `shalom604@gmail.com`,
+            title: `or@firmlaw.com`,
             name: "email",
-            icon: { name: "at" }
+            icon: { name: "email" }
+        },
+        {
+            type: 'list',
+            title: `שדרות הפלי"ם 2 בניין ברוש, חיפה`,
+            name: "address",
+            icon: { name: "map-marker-radius" }
+        },
+        {
+            type: 'list',
+            title: `153-50-8347079`,
+            name: "fax",
+            icon: { name: "fax" }
         },
     ]
 },
@@ -109,20 +109,22 @@ const mapList = [{
 
 
 const MapSite = ({ direction }) => {
+    const { gray, primary, c1 } = useTheme()
     return (
-        <View style={[styles.container, { flexDirection: direction }]}>
+        <View style={[styles.container, {
+            flexDirection: direction, backgroundColor: c1,
+        }]}>
             {
                 mapList.map(({ title, items }, i) =>
                     <View key={i.toString()} style={styles.sectionConatiner}>
-                        <Text style={{ fontSize: 25, color: white }}>{title}</Text>
-                        <Space height={1} backgroundColor={white} />
+                        <Text style={{ fontSize: 25, color: primary }}>{title}</Text>
+                        <Space height={1} backgroundColor={primary} />
                         <FlatList
                             contentContainerStyle={styles.flatlistContainer}
                             scrollEnabled={false}
                             showsVerticalScrollIndicator={false}
                             data={items}
                             keyExtractor={keyExtractor}
-                            // renderItem={({ item }) => <ListItem {...item} />}
                             renderItem={({ item }) => <ListItem {...item} />}
                         />
                     </View>
@@ -137,12 +139,11 @@ export default MapSite
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        // flex: 0.8,
         paddingHorizontal: 50,
         justifyContent: 'space-between',
         textAlign: 'right',
         margin: 25,
-        backgroundColor: gray,
         borderRadius: 8
     },
     sectionConatiner: {

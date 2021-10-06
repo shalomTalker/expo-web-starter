@@ -128,6 +128,7 @@ export const red = '#ED1C24';
 export const lightRed = '#FF8B9E';
 export const green = '#31B44B';
 
+
 /* Font/text values */
 const fontFamilyArimo = 'Arimo';
 const fontStyleNormal = 'normal';

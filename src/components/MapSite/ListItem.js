@@ -1,11 +1,13 @@
-import { useNavigation } from '@react-navigation/native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 import { StyleSheet, Text, View } from 'react-native'
-import { white } from '../../constants'
+import { useTheme } from '../../context/StyleContext'
 import Btn from '../Btn'
 import Icon from '../Icon'
+import { NavPicker } from '../../navigation/NavBar'
 
-const ListItem = ({ name, title, icon, type }) => {
+const ListItem = ({ name, title, icon, type, value }) => {
+    const { primary, secondary, c5 } = useTheme()
     const navigation = useNavigation();
     switch (type) {
         case 'link':
@@ -13,17 +15,30 @@ const ListItem = ({ name, title, icon, type }) => {
                 <Btn
                     onPress={() => navigation.navigate(name)}
                     iconPosition="right"
-                    iconProps={{ ...icon, size: 20, color: white }}
+                    iconProps={{ ...icon, size: 18, color: primary, style: { marginLeft: 20 } }}
+
                     title={title}
-                    titleStyle={{ color: white, fontSize: 15 }}
+                    titleStyle={{ color: primary, fontSize: 15 }}
+                    type="clear"
+                />
+            )
+        case 'deep-link':
+            return (
+                <Btn
+                    onPress={() => navigation.navigate(name, { value })}
+                    iconPosition="right"
+                    iconProps={{ ...icon, size: 18, color: primary, style: { marginLeft: 20 } }}
+
+                    title={title}
+                    titleStyle={{ color: primary, fontSize: 15 }}
                     type="clear"
                 />
             )
         case 'list':
             return (
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={{ color: white, padding: 10 }}>{title}</Text>
-                    <Icon name={icon.name} size={20} color={white} />
+                    <Text style={{ color: primary, padding: 10 }}>{title}</Text>
+                    <Icon {...icon} size={20} color={primary} style={[styles.icon, { borderColor: primary }]} />
                 </View>
             )
         default:
@@ -34,4 +49,4 @@ const ListItem = ({ name, title, icon, type }) => {
 
 export default ListItem
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({ icon: { borderWidth: 1, borderRadius: '50%', padding: 3 } })

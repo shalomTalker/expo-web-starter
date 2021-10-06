@@ -5,6 +5,7 @@ import useViewSize from "../hooks/useViewSize";
 import { LinearGradient } from 'expo-linear-gradient';
 
 import Btn from './Btn';
+import { useTheme } from '../context/StyleContext';
 
 const images = [
   { uri: 'https://picsum.photos/800/1400?random=14' },
@@ -12,11 +13,11 @@ const images = [
   { uri: 'https://picsum.photos/800/1400?random=151' },
   { uri: 'https://picsum.photos/800/1400?random=152' },
   { uri: 'https://picsum.photos/800/1400?random=153' },
-
   { uri: 'https://picsum.photos/800/1400?random=88' }
 ];
 
 const SwitcherBCG = ({ children }) => {
+  const { c1 } = useTheme()
   const [, heightSize, widthSize] = useViewSize()
   const opacity = useRef(new Animated.Value(0)).current;
   const [position, setPosition] = useState(0);
@@ -39,7 +40,7 @@ const SwitcherBCG = ({ children }) => {
     Animated.timing(opacity, {
       delay: 0,
       toValue: 0.5,
-      duration: 2500,
+      duration: 15000,
       useNativeDriver: true,
     }).start(resetAnim);
   }
@@ -47,7 +48,7 @@ const SwitcherBCG = ({ children }) => {
     Animated.timing(opacity, {
       delay: 0,
       toValue: 0,
-      duration: 2500,
+      duration: 15000,
       useNativeDriver: true,
     }).start(setNewPosition);
   }
@@ -58,7 +59,7 @@ const SwitcherBCG = ({ children }) => {
     <LinearGradient
       // Button Linear Gradient
       locations={[0, 0.5]}
-      colors={['#03b6baa8', '#0045529c', '#03b6baa8']}
+      colors={['#156265', c1, '#156265']}
       style={{
         opacity: .4, zIndex: 1,
       }}>

@@ -4,15 +4,16 @@ import ArticlesSwipper from "../components/ArticlesSwipper";
 import ContactUs from "../components/ContactUs/index";
 import FloatingSocial from "../components/FloatingSocial";
 import MapSite from "../components/MapSite";
-import { white, header_H } from "../constants";
+import { header_H } from "../constants";
+import { useTheme } from "../context/StyleContext";
 import useViewSize from "../hooks/useViewSize";
 import { Footer, Header } from "../navigation";
 
 const RANGE_SCROLL = 200;
 const START_POS = -120;
-// const HEADER_HEIGHT = 100;
 
 const ScreenContainer = ({ children, containerStyle }) => {
+  const { primary, c1, c3 } = useTheme()
   const [headerShown, setHeaderShown] = useState(true);
   const translation = useRef(new Animated.Value(0)).current;
   const [, heightSize, widthSize] = useViewSize()
@@ -42,7 +43,7 @@ const ScreenContainer = ({ children, containerStyle }) => {
         <Header
           style={{
             height: header_H,
-            backgroundColor: '#004552e3',
+            backgroundColor: c1,
             transform: [
               { translateY: translation },
             ],
@@ -56,8 +57,9 @@ const ScreenContainer = ({ children, containerStyle }) => {
           contentContainerStyle={{ ...containerStyle, ...styles.container }}
         >
           {children}
-          <View style={{ backgroundColor: white }}>
-            <ArticlesSwipper direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'} />
+          <View style={{ backgroundColor: primary }}>
+            <Text style={{ fontSize: 25, color: c3, textAlign: 'center', textDecorationLine: 'underline', marginTop: 16 }}>{`מאמרים נוספים`}</Text>
+            <ArticlesSwipper direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'} numArticles={3} />
             <ContactUs direction={isViewSmallerThan(1100) ? 'column' : 'row-reverse'} />
             <MapSite direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'} />
 

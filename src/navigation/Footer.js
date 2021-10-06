@@ -2,9 +2,10 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import NavBar from "./NavBar";
-import { white } from "../constants";
+import { useTheme } from "../context/StyleContext";
 
 const Footer = () => {
+  const { white } = useTheme()
   const navigation = useNavigation();
   return (
     <View>

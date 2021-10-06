@@ -1,19 +1,26 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { Button } from "react-native-elements";
 import ScreenContainer from "../ScreenContainer";
 import useViewSize from "../../hooks/useViewSize";
+import { header_H } from "../../constants";
+import { useTheme } from "../../context/StyleContext";
+import ContactUs from "../../components/ContactUs";
+import { interests } from "../../content";
+import Content from "../../components/Article/Content";
+import Article from "../../components/Article";
 
-const Interests = ({ navigation }) => {
 
-  const [, heightSize, widthSize] = useViewSize()
+const Interests = ({ navigation, route }) => {
+  const { params } = route;
+  const [, , widthSize] = useViewSize()
 
   return (
     <ScreenContainer>
       <View
-        style={{ height: heightSize, width: widthSize }}
+        style={{ width: widthSize, marginTop: header_H }}
       >
-        <Text>Interests Screen</Text>
+        <Article article={interests[params.value]} />
 
       </View>
     </ScreenContainer>
@@ -22,4 +29,6 @@ const Interests = ({ navigation }) => {
 
 export default Interests;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+
+});

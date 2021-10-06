@@ -1,13 +1,15 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { StyleSheet, Text, View, useWindowDimensions, Animated } from "react-native";
+import { StyleSheet, Text, View, useWindowDimensions, Animated, Pressable, TouchableOpacity } from "react-native";
 import { Header as BaseHeader } from "react-native-elements";
 import DetailsSection from "../components/DetailsSection";
-import { black, green, white } from "../constants";
+import Icon from "../components/Icon";
+import { useTheme } from "../context/StyleContext";
 import useViewSize from "../hooks/useViewSize";
 import NavBar from "./NavBar";
 
 const Header = (props) => {
+  const { green, white, primary } = useTheme()
   const [widthTag, , widthSize] = useViewSize();
 
   const isMobile = ["sm", "xs"].includes(widthTag);
@@ -25,20 +27,17 @@ const Header = (props) => {
         }}
         placement="left"
         leftComponent={<DetailsSection />}
-        rightComponent={isMobile ? {
-          icon: "menu",
-          color: white,
-          onPress: navigation.toggleDrawer
-        } : <NavBar
-          type="top"
-          insideScreen
-          selectedColor={'lightgreen'}
-          style={{
-            flex: 1,
-            alignItems: 'center'
-          }}
-
-        />}
+        rightContainerStyle={{ justifyContent: 'center' }}
+        rightComponent={isMobile ?
+          <TouchableOpacity onPress={navigation.toggleDrawer} >
+            <Icon name="menu" size={35} color={'black'} />
+          </TouchableOpacity>
+          : <NavBar
+            type="top"
+            insideScreen
+            selectedColor={green}
+            defaultColor={primary}
+          />}
       />
     </Animated.View>
   );

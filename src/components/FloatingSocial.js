@@ -1,8 +1,8 @@
 import React from "react";
 import { View } from "react-native";
 import { FAB, SocialIcon } from "react-native-elements";
+import { useTheme } from "../context/StyleContext";
 
-import { black, green, H, lightGray, red, screen_H, white } from "../constants";
 import Anchor from "../hoc/Anchor";
 import FloatingView from "../hoc/FloatingView";
 import Icon from "./Icon";
@@ -36,6 +36,8 @@ const socialButtons = [
 ];
 
 const FloatingSocial = () => {
+
+  const { primary } = useTheme()
   return (
     <FloatingView dividePosition={12} style={{ left: 20 }}>
       {socialButtons.map(({ href, backgroundColor, ...iconProps }, i) => {
@@ -51,7 +53,7 @@ const FloatingSocial = () => {
                 borderRadius: "50%",
                 marginVertical: 4,
               }}>
-              <Icon {...iconProps} color={white} size={30} />
+              <Icon {...iconProps} color={primary} size={30} />
             </View>
           </Anchor>
         );

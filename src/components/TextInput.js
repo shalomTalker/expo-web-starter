@@ -1,20 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, Platform, View } from 'react-native';
 import { Input } from 'react-native-elements';
+import { useTheme } from '../context/StyleContext';
 import DismissKeyboardView from '../hoc/DismissKeyboardView';
 
-import {
-  W,
-  primary,
-  secondary,
-  dimGray,
-  KLMN,
-  gray,
-  black,
-  yellow,
-  G_Styles,
-  white,
-} from '../constants';
 
 const TextInput = ({
   containerStyle,
@@ -24,9 +13,13 @@ const TextInput = ({
   renderErrorMessage = false,
   ...props
 }) => {
+  const { gray,
+    secondary } = useTheme()
+
+
   const textInputStyle = {
     ...styles.inputStyle,
-    color: black,
+    color: secondary,
   };
 
   const placeholderStyle = {

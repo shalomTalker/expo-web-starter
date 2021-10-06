@@ -3,10 +3,10 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { StyleSheet, Text, View, Alert } from 'react-native'
 
-import { gray, lightGray, white } from '../../constants'
 import TextInput from '../TextInput';
 import Btn from '../Btn';
 import { sendEmail } from "../../utils";
+import { useTheme } from '../../context/StyleContext';
 const validationSchema = Yup.object({
     fullName: Yup.string().min(2, `שם לא תקין`).required(`שם מלא חסר`),
     phone: Yup.string()
@@ -38,6 +38,7 @@ const inputs = [
     },
 ]
 const ContactForm = () => {
+    const { primary, secondary, c1 } = useTheme()
 
     const onSubmit = (values, formikActions) => {
         setTimeout(async () => {
@@ -71,7 +72,11 @@ const ContactForm = () => {
                             touched={touched}
                             value={values[name]}
                             onChangeText={handleChange(name)}
-                            style={styles.input}
+                            style={[styles.input, {
+                                backgroundColor: primary,
+                                borderColor: secondary,
+
+                            }]}
                             {...other}
                         />
                     })}
@@ -79,7 +84,7 @@ const ContactForm = () => {
                         disabled={isSubmitting}
                         title={`מעוניין בפרטים נוספים`}
                         onPress={handleSubmit}
-                        buttonStyle={{ width: 200 }}
+                        buttonStyle={{ width: 200, backgroundColor: c1 }}
                         loading={isSubmitting}
                     />
                 </>
@@ -101,8 +106,6 @@ const styles = StyleSheet.create({
         padding: 10,
         margin: 10,
         borderWidth: 1,
-        borderColor: 'black',
-        backgroundColor: white,
         textAlign: 'right'
     },
     inputContainer: {
