@@ -41,35 +41,35 @@ const mapList = [{
         {
             type: 'deep-link',
             title: `משפט פלילי`,
-            name: "office",
+            name: "interests",
             value: "criminal",
             icon: { name: "chevron-left" }
         },
         {
             type: 'deep-link',
             title: `משפט צבאי`,
-            name: "office",
+            name: "interests",
             value: "military",
             icon: { name: "chevron-left" }
         },
         {
             type: 'deep-link',
             title: `תעבורה`,
-            name: "office",
+            name: "interests",
             value: "traffic",
             icon: { name: "chevron-left" }
         },
         {
             type: 'deep-link',
             title: `ליטיגציה אזרחית`,
-            name: "office",
+            name: "interests",
             value: "civilLitigation",
             icon: { name: "chevron-left" }
         },
         {
             type: 'deep-link',
             title: `דיני מקרקעין`,
-            name: "office",
+            name: "interests",
             value: "realEstate",
             icon: { name: "chevron-left" }
         },
@@ -109,6 +109,7 @@ const mapList = [{
 
 
 const MapSite = ({ direction }) => {
+
     const { gray, primary, c1 } = useTheme()
     return (
         <View style={[styles.container, {
@@ -140,20 +141,21 @@ export default MapSite
 const styles = StyleSheet.create({
     container: {
         // flex: 0.8,
-        paddingHorizontal: 50,
         justifyContent: 'space-between',
         textAlign: 'right',
         margin: 25,
         borderRadius: 8
     },
     sectionConatiner: {
-        flex: 1,
+        // flex: 1,
         padding: 8,
         marginHorizontal: 16
     },
     flatlistContainer: {
-        flex: 1,
-        alignItems: 'flex-end'
+        // flex: 1,
+        flexDirection: 'column',
+        alignItems: 'flex-end',
+        justifyContent: 'flex-start'
     }
 
 })

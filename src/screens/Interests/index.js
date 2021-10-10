@@ -20,7 +20,10 @@ const Interests = ({ navigation, route }) => {
       <View
         style={{ width: widthSize, marginTop: header_H }}
       >
-        <Article article={interests[params.value]} />
+        {
+          params &&
+          <Article article={interests[params.value]} />
+        }
 
       </View>
     </ScreenContainer>

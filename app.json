@@ -1,11 +1,31 @@
 {
   "expo": {
-    "name": "law",
-    "slug": "law",
+    "name": "עורך דין אור פרים",
+    "icon": "./src/assets/favicon.png",
+    "slug": "עורך דין אור פרים",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": [
+        "expo.ts",
+        "expo.tsx",
+        "expo.js",
+        "expo.jsx",
+        "ts",
+        "tsx",
+        "js",
+        "jsx",
+        "json",
+        "wasm",
+        "svg"
+      ]
+    },
+    "web": {
+      "favicon": "./src/assets/favicon.png"
+    }
   },
-  "name": "law"
+  "name": "עורך דין אור פרים"
 }

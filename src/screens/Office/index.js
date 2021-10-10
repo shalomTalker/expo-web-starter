@@ -25,7 +25,7 @@ const Office = ({ navigation, route }) => {
 
         <>
           <Text style={[styles.mainTitle, { color: c2 }]}>{`שירותי המשרד`}</Text>
-          <View style={[styles.mainWrapper, { flexDirection: isMobile ? "column-reverse" : 'row' }]}>
+          <View style={[styles.mainWrapper, { flexDirection: isMobile ? "column" : 'row' }]}>
             {
               Object.entries(services).map(([key, object], i) => {
                 const { title, content, image, contactUsTitle } = object;
@@ -33,7 +33,7 @@ const Office = ({ navigation, route }) => {
                   <View style={{
                     width: isMobile ? '100%' : '33%',
                     backgroundColor: i % 2 === 0 ? c2 : c3,
-                    padding: 16
+                    padding: 8
                   }}>
                     <Text style={[styles.title, { color: primary }]}>{title}</Text>
                     <Text

@@ -33,8 +33,24 @@ const Index = () => {
             </View>
         );
     };
+
+
+
+
+    const config = {
+        screens: {
+            home: 'home', about: 'about', interests: 'interests/:value', office: 'office/:value?', contact: 'contact'
+            //   Chat: 'feed/:sort',
+            //     Profile: 'user',
+        },
+    };
+
+    const linking = {
+        prefixes: [],
+        config,
+    };
     return (
-        <NavigationContainer>
+        <NavigationContainer linking={linking} fallback={<Text>Loading...</Text>}>
             <Drawer.Navigator
                 drawerContent={drawerContent}
                 initialRouteName="home"
@@ -64,4 +80,3 @@ export {
 const styles = StyleSheet.create({
     image: { flex: 1, justifyContent: "center" },
 });
-

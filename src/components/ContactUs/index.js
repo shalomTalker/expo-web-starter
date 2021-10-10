@@ -31,5 +31,6 @@ const styles = StyleSheet.create({
     title: {
         flex: 1,
         margin: 16,
+        fontWeight: 500
     }
 })

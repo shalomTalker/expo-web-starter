@@ -11,7 +11,7 @@ export const Narrow = '3270Narrow';
 export const win = Dimensions.get('window');
 export const W = win.width;
 export const H = win.height;
-export const header_H = 50;
+export const header_H = 80;
 export const screen_H = H - header_H;
 export const getPrecentOfWidth = num => (num / 100) * W;
 export const getPrecentOfHeight = num => (num / 100) * H;

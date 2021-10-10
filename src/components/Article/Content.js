@@ -46,5 +46,5 @@ const Content = ({ content }) => {
 export default Content
 
 const styles = StyleSheet.create({
-    contentText: { fontSize: 20, paddingVertical: 16 },
+    contentText: { fontSize: 20, padding: 16, fontWeight: 500 },
 })

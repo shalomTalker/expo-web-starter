@@ -41,7 +41,7 @@ export default CenterSection
 const styles = StyleSheet.create({
     container: {
         justifyContent: "flex-end",
-        alignItems: 'center',
+        // alignItems: 'center',
         textAlign: 'center',
     }
 })

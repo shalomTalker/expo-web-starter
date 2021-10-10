@@ -51,14 +51,14 @@ const ScreenContainer = ({ children, containerStyle }) => {
         />
         <ScrollView
           onScroll={onScroll}
-          scrollEventThrottle={16}
+          scrollEventThrottle={1}
           // style={{ flex: 1 }}
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{ ...containerStyle, ...styles.container }}
         >
           {children}
           <View style={{ backgroundColor: primary }}>
-            <Text style={{ fontSize: 25, color: c3, textAlign: 'center', textDecorationLine: 'underline', marginTop: 16 }}>{`מאמרים נוספים`}</Text>
+            <Text style={[styles.title, { color: c3 }]}>{`מאמרים נוספים`}</Text>
             <ArticlesSwipper direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'} numArticles={3} />
             <ContactUs direction={isViewSmallerThan(1100) ? 'column' : 'row-reverse'} />
             <MapSite direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'} />
@@ -72,6 +72,14 @@ const ScreenContainer = ({ children, containerStyle }) => {
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  title: {
+    fontSize: 25,
+    textAlign: 'center',
+    textDecorationLine: 'underline',
+    marginTop: 16,
+    fontWeight: 500
+  }
+});
 
 export default ScreenContainer;

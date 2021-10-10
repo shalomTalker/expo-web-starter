@@ -18,7 +18,7 @@ const About = ({ navigation }) => {
         style={{ width: widthSize, marginTop: header_H }}
       >
         <Text style={[styles.mainTitle, { backgroundColor: c3 }]}>{`אודות`}</Text>
-        <View style={{ marginHorizontal: 32, flex: 1 }}>
+        <View style={{ flex: 1 }}>
 
           <Content content={about.about.content} />
 

@@ -1,11 +1,11 @@
 import { useNavigation } from '@react-navigation/core'
 import React, { useEffect, useRef, useState } from 'react'
-import { Animated, Image, Pressable, StyleSheet, Text, View } from 'react-native'
+import { Animated, Image, ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native'
 import { services, interests } from '../../content'
 import { useTheme } from '../../context/StyleContext'
 
 const ArticlesSwipper = ({ direction, numArticles = 2 }) => {
-    const { gray, primary, c2 } = useTheme()
+    const { gray, primary, c2, G_Styles } = useTheme()
     const [startPos, setStartPos] = useState(0);
     const opacity = new Animated.Value(0);
     const navigation = useNavigation()
@@ -35,16 +35,19 @@ const ArticlesSwipper = ({ direction, numArticles = 2 }) => {
                 [...Object.values(interests), ...Object.values(services)].slice(startPos, startPos + numArticles)
                     .map(({ image, content, title, navigation: { route, params } }, i) => {
                         return (
-                            <Pressable key={i.toString()} style={[styles.articleContainer, { borderColor: gray, backgroundColor: c2 }]} onPress={() => navigation.navigate(route, params)}>
-                                <Image style={styles.image} source={image.source} />
-                                <View style={[styles.description]}>
-                                    <Text style={{
-                                        fontSize: 24, color: primary,
-                                    }}>{title}</Text>
-                                    <Text numberOfLines={2} style={{
-                                        fontSize: 18, color: primary,
-                                    }}>{content[0].text}</Text>
-                                </View>
+                            <Pressable key={i.toString()} style={[
+                                styles.articleContainer,
+                                { backgroundColor: c2 }]} onPress={() => navigation.navigate(route, params)}>
+                                <ImageBackground style={styles.background} source={image.source} >
+                                    <View style={[styles.description]}>
+                                        <Text style={{
+                                            fontSize: 24, color: primary,
+                                        }}>{title}</Text>
+                                        <Text numberOfLines={2} style={{
+                                            fontSize: 18, color: primary,
+                                        }}>{content[0].text}</Text>
+                                    </View>
+                                </ImageBackground>
                             </Pressable>
                         );
                     })
@@ -58,31 +61,45 @@ export default ArticlesSwipper
 const styles = StyleSheet.create({
     container: {
         margin: 24,
-        marginHorizontal: 80,
+        marginHorizontal: 16,
         borderRadius: 16,
     },
     articleContainer: {
+
         flex: 1,
-        padding: 16,
+        padding: 8,
         marginHorizontal: 4,
         alignItems: "center",
         flexDirection: "column",
         minHeight: 300,
-        borderWidth: 1,
-        borderRadius: 16
+        borderRadius: 8,
+
+
+
     },
-    image: {
+    background: {
         flex: 1,
-        height: 100,
-        width: 200,
-        borderRadius: 16
+        height: '100%',
+        width: '100%',
+        borderRadius: 8
 
     },
     description: {
-        flex: 1,
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        bottom: 0,
+        justifyContent: 'center',
         padding: 8,
+        alignItems: 'center',
+        backgroundColor: 'gray',
+        opacity: 0.8
+
+    } /* {
+        
+        flex: 1,
         borderRadius: 16,
-    },
+    } */,
 
 
 })

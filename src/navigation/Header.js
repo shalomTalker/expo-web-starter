@@ -1,8 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { StyleSheet, Text, View, useWindowDimensions, Animated, Pressable, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, useWindowDimensions, Animated, Pressable, TouchableOpacity, Image } from "react-native";
 import { Header as BaseHeader } from "react-native-elements";
-import DetailsSection from "../components/DetailsSection";
 import Icon from "../components/Icon";
 import { useTheme } from "../context/StyleContext";
 import useViewSize from "../hooks/useViewSize";
@@ -26,11 +25,11 @@ const Header = (props) => {
           flexDirection: 'row',
         }}
         placement="left"
-        leftComponent={<DetailsSection />}
+        leftComponent={<Image source={require('../assets/logo-header.png')} style={{ width: 70, height: 70 }} />}
         rightContainerStyle={{ justifyContent: 'center' }}
         rightComponent={isMobile ?
           <TouchableOpacity onPress={navigation.toggleDrawer} >
-            <Icon name="menu" size={35} color={'black'} />
+            <Icon name="menu" size={35} color={primary} />
           </TouchableOpacity>
           : <NavBar
             type="top"

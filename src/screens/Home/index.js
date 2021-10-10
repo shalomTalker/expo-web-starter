@@ -18,8 +18,10 @@ import ArticlesSwipper from '../../components/ArticlesSwipper'
 const Home = () => {
   const { primary, c5 } = useTheme()
   const navigation = useNavigation();
-  const [, heightSize, widthSize] = useViewSize()
-  const textWidth = widthSize * 0.7;
+  const [widthTag, heightSize, widthSize] = useViewSize()
+  const isMobile = ["sm", "xs", "md"].includes(widthTag);
+
+  const textWidth = widthSize * 0.8;
   const textHeight = 200;
   return (
     <ScreenContainer>
@@ -30,7 +32,7 @@ const Home = () => {
         <View style={{
           position: "absolute",
           top: (heightSize / 2) - (textHeight / 2),
-          flexDirection: 'row',
+          flexDirection: isMobile ? 'column-reverse' : 'row',
           justifyContent: 'space-evenly',
           alignItems: 'center',
           width: '100%'
