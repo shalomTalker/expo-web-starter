@@ -8,7 +8,7 @@ import Anchor from "../../hoc/Anchor";
 const ICONS = [
   { label: `שד' פלי"ם 2, בניין ברוש (קומה c)`, icon: 'address', uri: ADDRESS_URI, href: 'https://www.waze.com/live-map/directions?to=ll.32.816827%2C35.000274' },
   { label: `טלפון: 050-8347079`, icon: 'telephone', uri: TELEPHONE_URI, href: "tel:0508347079" },
-  { label: `פקס': 153-50-8347079`, icon: 'fax', uri: FAX_URI, href: '' },
+  { label: `פקס': 153-50-8347079`, icon: 'fax', uri: FAX_URI, href: 'fax:+972-153-50-8347079' },
   { label: `דוא"ל: or@frimlaw.com`, icon: 'email', uri: EMAIL_URI, href: "mailto:or@firmlaw.com" }
 ]
 

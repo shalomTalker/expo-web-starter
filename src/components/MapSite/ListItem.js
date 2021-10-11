@@ -4,12 +4,15 @@ import { StyleSheet, Text, View } from 'react-native'
 import { useTheme } from '../../context/StyleContext'
 import Btn from '../Btn'
 import Icon from '../Icon'
+import Anchor from '../../hoc/Anchor'
 
-const ListItem = ({ name, title, icon, type, value }) => {
+const ListItem = ({ name, title, icon, type, value, href }) => {
     const { primary, secondary, c5 } = useTheme()
     const navigation = useNavigation();
     switch (type) {
-        case 'link':
+
+
+        case 'navigate':
             return (
                 <Btn
                     onPress={() => navigation.navigate(name)}
@@ -21,7 +24,7 @@ const ListItem = ({ name, title, icon, type, value }) => {
                     type="clear"
                 />
             )
-        case 'deep-link':
+        case 'deep-navigate':
             return (
                 <Btn
                     onPress={() => navigation.navigate(name, { value })}
@@ -33,12 +36,12 @@ const ListItem = ({ name, title, icon, type, value }) => {
                     type="clear"
                 />
             )
-        case 'list':
+        case 'link':
             return (
-                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <Anchor href={href} style={{ flexDirection: 'row', alignItems: 'center' }}>
                     <Text style={{ color: primary, padding: 10 }}>{title}</Text>
                     <Icon {...icon} size={20} color={primary} style={[styles.icon, { borderColor: primary }]} />
-                </View>
+                </Anchor>
             )
         default:
             return <View></View>

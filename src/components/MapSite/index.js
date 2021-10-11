@@ -9,25 +9,25 @@ const mapList = [{
     title: `תפריט ראשי`,
     items: [
         {
-            type: 'link',
+            type: 'navigate',
             title: `דף הבית`,
             name: "home",
             icon: { name: "chevron-left" }
         },
         {
-            type: 'link',
+            type: 'navigate',
             title: `אודות`,
             name: "about",
             icon: { name: "chevron-left" }
         },
         {
-            type: 'link',
+            type: 'navigate',
             title: `שירותי המשרד`,
             name: "office",
             icon: { name: "chevron-left" }
         },
         {
-            type: 'link',
+            type: 'navigate',
             title: `צור קשר`,
             name: "contact",
             icon: { name: "chevron-left" }
@@ -39,35 +39,35 @@ const mapList = [{
     title: `תחומי עיסוק`,
     items: [
         {
-            type: 'deep-link',
+            type: 'deep-navigate',
             title: `משפט פלילי`,
             name: "interests",
             value: "criminal",
             icon: { name: "chevron-left" }
         },
         {
-            type: 'deep-link',
+            type: 'deep-navigate',
             title: `משפט צבאי`,
             name: "interests",
             value: "military",
             icon: { name: "chevron-left" }
         },
         {
-            type: 'deep-link',
+            type: 'deep-navigate',
             title: `תעבורה`,
             name: "interests",
             value: "traffic",
             icon: { name: "chevron-left" }
         },
         {
-            type: 'deep-link',
+            type: 'deep-navigate',
             title: `ליטיגציה אזרחית`,
             name: "interests",
             value: "civilLitigation",
             icon: { name: "chevron-left" }
         },
         {
-            type: 'deep-link',
+            type: 'deep-navigate',
             title: `דיני מקרקעין`,
             name: "interests",
             value: "realEstate",
@@ -79,28 +79,32 @@ const mapList = [{
     title: `פרטי התקשרות`,
     items: [
         {
-            type: 'list',
+            type: 'link',
             title: `050-8347079`,
             name: "phone",
-            icon: { name: "phone" }
+            icon: { name: "phone" },
+            href: 'tel:0508347079'
         },
         {
-            type: 'list',
+            type: 'link',
             title: `or@firmlaw.com`,
             name: "email",
-            icon: { name: "email" }
+            icon: { name: "email" },
+            href: 'mailto:or@firmlaw.com'
         },
         {
-            type: 'list',
+            type: 'link',
             title: `שדרות הפלי"ם 2 בניין ברוש, חיפה`,
             name: "address",
-            icon: { name: "map-marker-radius" }
+            icon: { name: "map-marker-radius" },
+            href: 'https://www.waze.com/live-map/directions?to=ll.32.816827%2C35.000274'
         },
         {
-            type: 'list',
+            type: 'link',
             title: `153-50-8347079`,
             name: "fax",
-            icon: { name: "fax" }
+            icon: { name: "fax" },
+            href: 'fax:+972-153-50-8347079'
         },
     ]
 },

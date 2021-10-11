@@ -3,12 +3,16 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Animated, Image, ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native'
 import { services, interests } from '../../content'
 import { useTheme } from '../../context/StyleContext'
+import useViewSize from '../../hooks/useViewSize'
 
 const ArticlesSwipper = ({ direction, numArticles = 2 }) => {
     const { gray, primary, c2, G_Styles } = useTheme()
     const [startPos, setStartPos] = useState(0);
     const opacity = new Animated.Value(0);
     const navigation = useNavigation()
+
+    const [widthTag] = useViewSize()
+    const isMobile = ["sm", "xs"].includes(widthTag);
 
 
     useEffect(() => {
@@ -29,8 +33,9 @@ const ArticlesSwipper = ({ direction, numArticles = 2 }) => {
 
     return (
         <Animated.View style={[styles.container, {
-            flexDirection: direction, opacity,
-            marginHorizontal: numArticles === 1 ? 150 : 16
+            flexDirection: direction,
+            opacity,
+            marginHorizontal: numArticles === 1 && !isMobile ? 150 : 16
         }]}>
             {
                 [...Object.values(interests), ...Object.values(services)].slice(startPos, startPos + numArticles)
