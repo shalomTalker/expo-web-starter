@@ -10,7 +10,7 @@ import Icon from "./Icon";
 const socialButtons = [
   {
     name: "phone",
-    href: "tel:0522210099",
+    href: "tel:0508347079",
     backgroundColor: "#0F9D58",
   },
   {
@@ -25,7 +25,7 @@ const socialButtons = [
   },
   {
     name: "email",
-    href: "mailto:shalom604@gmail.com",
+    href: "mailto:or@firmlaw.com",
     backgroundColor: "#DB4437",
   },
   {

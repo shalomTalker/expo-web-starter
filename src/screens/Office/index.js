@@ -31,9 +31,11 @@ const Office = ({ navigation, route }) => {
                 const { title, content, image, contactUsTitle } = object;
                 return (
                   <View style={{
-                    width: isMobile ? '100%' : '33%',
+                    width: isMobile ? 'auto' : '33%',
                     backgroundColor: i % 2 === 0 ? c2 : c3,
-                    padding: 8
+                    padding: 8,
+                    marginHorizontal: isMobile ? 20 : 0,
+                    marginBottom: 8
                   }}>
                     <Text style={[styles.title, { color: primary }]}>{title}</Text>
                     <Text

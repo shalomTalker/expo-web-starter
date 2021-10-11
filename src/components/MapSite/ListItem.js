@@ -4,7 +4,6 @@ import { StyleSheet, Text, View } from 'react-native'
 import { useTheme } from '../../context/StyleContext'
 import Btn from '../Btn'
 import Icon from '../Icon'
-import { NavPicker } from '../../navigation/NavBar'
 
 const ListItem = ({ name, title, icon, type, value }) => {
     const { primary, secondary, c5 } = useTheme()

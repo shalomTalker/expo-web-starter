@@ -55,19 +55,19 @@ const SwitcherBCG = ({ children }) => {
 
 
   const currentImage = images[position];
+  const AnimatedImageBackground = Animated.createAnimatedComponent(ImageBackground);
   return (
     <LinearGradient
       // Button Linear Gradient
       locations={[0, 0.5]}
       colors={['#156265', c1, '#156265']}
       style={{
-        opacity: .4, zIndex: 1,
+        opacity: .4
       }}>
-      <Animated.Image
+      <AnimatedImageBackground
         onLoad={playAnim}
         source={currentImage}
         style={{
-          zIndex: -1,
           height: heightSize,
           width: widthSize,
           opacity: opacity,
@@ -79,7 +79,7 @@ const SwitcherBCG = ({ children }) => {
               })
             },
           ],
-        }} />
+        }} >{children}</AnimatedImageBackground>
 
     </LinearGradient>
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Platform } from "react-native";
+import { View, Text, Platform, Pressable } from "react-native";
 import * as Linking from "expo-linking";
 
 const Anchor = (props) => {
@@ -13,9 +13,9 @@ const Anchor = (props) => {
     onPress && onPress();
   };
   return (
-    <Text {...props} onPress={_handlePress}>
+    <Pressable {...props} onPress={_handlePress} style={[props.style, { cursor: 'pointer' }]} >
       {children}
-    </Text>
+    </Pressable>
   );
 };
 

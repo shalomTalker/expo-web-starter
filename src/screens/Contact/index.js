@@ -3,12 +3,13 @@ import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
 import ScreenContainer from "../ScreenContainer";
 import useViewSize from "../../hooks/useViewSize";
 import { ADDRESS_URI, EMAIL_URI, FAX_URI, header_H, MAP_URI, TELEPHONE_URI } from "../../constants";
+import Anchor from "../../hoc/Anchor";
 
 const ICONS = [
-  { label: `שד' פלי"ם 2, בניין ברוש (קומה c)`, icon: 'address', uri: ADDRESS_URI },
-  { label: `טלפון: 050-8347079`, icon: 'telephone', uri: TELEPHONE_URI },
-  { label: `פקס': 153-50-8347079`, icon: 'fax', uri: FAX_URI },
-  { label: `דוא"ל: or@frimlaw.com`, icon: 'email', uri: EMAIL_URI }
+  { label: `שד' פלי"ם 2, בניין ברוש (קומה c)`, icon: 'address', uri: ADDRESS_URI, href: 'https://www.waze.com/live-map/directions?to=ll.32.816827%2C35.000274' },
+  { label: `טלפון: 050-8347079`, icon: 'telephone', uri: TELEPHONE_URI, href: "tel:0508347079" },
+  { label: `פקס': 153-50-8347079`, icon: 'fax', uri: FAX_URI, href: '' },
+  { label: `דוא"ל: or@frimlaw.com`, icon: 'email', uri: EMAIL_URI, href: "mailto:or@firmlaw.com" }
 ]
 
 const Contact = ({ navigation }) => {
@@ -33,14 +34,14 @@ const Contact = ({ navigation }) => {
 
           <View>
             {
-              ICONS.map(({ icon, label, uri }, i) =>
-                <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
+              ICONS.map(({ icon, label, uri, href }, i) =>
+                <Anchor style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }} href={href}>
                   <Text style={{ fontSize: 25 }}>{label}</Text>
                   <Image
                     key={icon}
                     source={{ uri }}
                     style={{ width: 75, height: 75, margin: 16 }} />
-                </View>)
+                </Anchor>)
             }
           </View>
         </View>

@@ -1,9 +1,13 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native'
 import { useTheme } from '../../context/StyleContext'
+import useViewSize from '../../hooks/useViewSize'
 
 const Content = ({ content }) => {
-    const { primary } = useTheme()
+    const { primary, secondary } = useTheme()
+    const [widthTag] = useViewSize()
+    const isMobile = ["sm", "xs"].includes(widthTag);
+
     return content.map(({ text, type, items, image, content: cnt }, i) => {
         switch (type) {
             case 'underline':
@@ -24,18 +28,23 @@ const Content = ({ content }) => {
                     {items.map((t, f) => <Text key={f.toString()} style={[styles.contentText, { paddingVertical: 8, paddingRight: 8 }]}>{`- ${t}`}</Text>
                     )}
                 </>
-            case 'image':
-                return <Image resizeMode='cover' key={i.toString()} {...image} />
             case 'backgroundimage':
-                return <ImageBackground key={i.toString()} {...image} >
-                    {cnt.map((c, g) => <Text key={g.toString()} style={[styles.contentText, {
-                        color: primary,
-                        fontWeight: 'bold',
-                        textShadowColor: '#585858',
-                        textShadowOffset: { width: 5, height: 5 },
-                        textShadowRadius: 10,
-                    }]}>{c}</Text>)}
-                </ImageBackground>
+                const renderText = () => cnt.map((c, g) => <Text key={g.toString()} style={[styles.contentText, {
+                    color: isMobile ? secondary : primary,
+                    fontWeight: '600',
+                    textShadowColor: '#585858',
+                    textShadowOffset: { width: 5, height: 5 },
+                    textShadowRadius: 10,
+                }]}>{c}</Text>);
+                return isMobile ?
+                    <View key={i.toString()}>
+                        <Image source={image.source} style={[image.style], { height: '40%' }} />
+                        <View>{renderText()}</View>
+                    </View>
+                    :
+                    <ImageBackground key={i.toString()} {...image} >
+                        {renderText()}
+                    </ImageBackground>
             default:
                 return <Text key={i.toString()} style={styles.contentText}>{text}</Text>
         }

@@ -2,7 +2,6 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import { Button, FAB } from "react-native-elements";
-import CaptionSection from "../../components/CaptionSection";
 import CenterSection from "../../components/CenterSection";
 import { header_H, IMAGE_1_URI, LOGO_URI, } from "../../constants";
 import useViewSize from "../../hooks/useViewSize";
@@ -25,9 +24,7 @@ const Home = () => {
   const textHeight = 200;
   return (
     <ScreenContainer>
-      <View
-        style={{ height: heightSize, width: widthSize }}
-      >
+      <View style={{ height: heightSize, width: widthSize, }} >
         <SwitcherBCG />
         <View style={{
           position: "absolute",
@@ -35,7 +32,7 @@ const Home = () => {
           flexDirection: isMobile ? 'column-reverse' : 'row',
           justifyContent: 'space-evenly',
           alignItems: 'center',
-          width: '100%'
+          width: '100%',
         }}>
           <View style={{ alignItems: 'center' }}>
             <Text numberOfLines={2} style={{
@@ -51,7 +48,10 @@ const Home = () => {
             width: 200, height: 200
           }} source={{ uri: LOGO_URI }} />
         </View>
+
+
       </View>
+
       <CenterSection image={{ uri: IMAGE_1_URI }} >
         <ContactUs direction='column' titleStyle={{
           fontWeight: 'bold',

@@ -39,9 +39,7 @@ const Index = () => {
 
     const config = {
         screens: {
-            home: 'home', about: 'about', interests: 'interests/:value', office: 'office/:value?', contact: 'contact'
-            //   Chat: 'feed/:sort',
-            //     Profile: 'user',
+            home: 'home', about: 'about', interests: 'interests', office: 'office', contact: 'contact'
         },
     };
 
