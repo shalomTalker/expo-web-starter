@@ -2,13 +2,13 @@ import React from "react";
 import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
 import ScreenContainer from "../ScreenContainer";
 import useViewSize from "../../hooks/useViewSize";
-import { header_H } from "../../constants";
+import { ADDRESS_URI, EMAIL_URI, FAX_URI, header_H, MAP_URI, TELEPHONE_URI } from "../../constants";
 
 const ICONS = [
-  { label: `שד' פלי"ם 2, בניין ברוש (קומה c)`, icon: 'address' },
-  { label: `טלפון: 050-8347079`, icon: 'telephone' },
-  { label: `פקס': 153-50-8347079`, icon: 'fax' },
-  { label: `דוא"ל: or@frimlaw.com`, icon: 'email' }
+  { label: `שד' פלי"ם 2, בניין ברוש (קומה c)`, icon: 'address', uri: ADDRESS_URI },
+  { label: `טלפון: 050-8347079`, icon: 'telephone', uri: TELEPHONE_URI },
+  { label: `פקס': 153-50-8347079`, icon: 'fax', uri: FAX_URI },
+  { label: `דוא"ל: or@frimlaw.com`, icon: 'email', uri: EMAIL_URI }
 ]
 
 const Contact = ({ navigation }) => {
@@ -29,16 +29,16 @@ const Contact = ({ navigation }) => {
           justifyContent: 'center', alignItems: 'center'
         }}>
 
-          <Image source={require('../../assets/map.png')} style={{ width: 500, height: 500, margin: 16 }} />
+          <Image source={{ uri: MAP_URI }} style={{ width: 500, height: 500, margin: 16 }} />
 
           <View>
             {
-              ICONS.map(({ icon, label }, i) =>
+              ICONS.map(({ icon, label, uri }, i) =>
                 <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
                   <Text style={{ fontSize: 25 }}>{label}</Text>
                   <Image
                     key={icon}
-                    source={require(`../../assets/${icon}.png`)}
+                    source={{ uri }}
                     style={{ width: 75, height: 75, margin: 16 }} />
                 </View>)
             }

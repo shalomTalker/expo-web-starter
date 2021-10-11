@@ -1,3 +1,4 @@
+import { IMAGE_2_URI } from "./constants"
 
 const interests = {
     criminal: {
@@ -458,7 +459,7 @@ const about = {
             },
             {
                 type: 'backgroundimage',
-                image: { source: require('./assets/image_2.jpg'), style: { height: '100%', width: '100%', paddingHorizontal: 25, opacity: 0.8 } },
+                image: { source: { uri: IMAGE_2_URI }, style: { height: '100%', width: '100%', paddingHorizontal: 25, opacity: 0.8 } },
                 content: [
                     `עורך דין אור פרים בעל ניסיון של מעל עשור בניהול תיקים פליליים, מסחריים ואזרחיים סבוכים ומורכבים בפני ערכאות שיפוטיות מגוונות.`,
                     `לעורך דין פרים תואר ראשון ותואר שני במשפטים מאוניברסיטת חיפה, עם התמחות בתורת השפיטה וניהול ההליך הפלילי. בנוסף, השלים עו"ד פרים לימודי תואר שני נוסף במנהל עסקים בטכניון.`,
@@ -472,3 +473,6 @@ const about = {
 }
 
 export { interests, services, about }
+
+
+

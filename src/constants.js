@@ -290,3 +290,33 @@ export const G_Styles = {
     color: black,
   },
 };
+
+
+export const LOGO_URI = 'https://i.ibb.co/PYFmPMr/logo.png'
+
+export const IMAGE_2_URI = 'https://i.ibb.co/rdw5VTz/image-2.jpg'
+export const IMAGE_1_URI = 'https://i.ibb.co/GJds5YN/image-1.jpg'
+
+
+
+export const LOGO_HEADER_URI = 'https://i.ibb.co/vsJZ3Px/logo-header.png'
+
+
+export const MAP_URI = 'https://i.ibb.co/S7HTX1T/map.png'
+
+
+
+
+export const ADDRESS_URI = 'https://i.ibb.co/FX7JfCT/address.png'
+
+
+export const TELEPHONE_URI = 'https://i.ibb.co/9wJTqMM/telephone.png'
+
+
+export const FAX_URI = 'https://i.ibb.co/ynYK22q/fax.png'
+
+export const EMAIL_URI = 'https://i.ibb.co/2PLZvmZ/email.png'
+
+export const FAVICON_URI = 'https://i.ibb.co/6HjF65B/favicon.png'
+
+

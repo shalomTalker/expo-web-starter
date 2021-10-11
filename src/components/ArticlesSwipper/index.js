@@ -30,6 +30,7 @@ const ArticlesSwipper = ({ direction, numArticles = 2 }) => {
     return (
         <Animated.View style={[styles.container, {
             flexDirection: direction, opacity,
+            marginHorizontal: numArticles === 1 ? 150 : 16
         }]}>
             {
                 [...Object.values(interests), ...Object.values(services)].slice(startPos, startPos + numArticles)

@@ -3,6 +3,7 @@ import React from "react";
 import { StyleSheet, Text, View, useWindowDimensions, Animated, Pressable, TouchableOpacity, Image } from "react-native";
 import { Header as BaseHeader } from "react-native-elements";
 import Icon from "../components/Icon";
+import { LOGO_HEADER_URI } from "../constants";
 import { useTheme } from "../context/StyleContext";
 import useViewSize from "../hooks/useViewSize";
 import NavBar from "./NavBar";
@@ -25,7 +26,7 @@ const Header = (props) => {
           flexDirection: 'row',
         }}
         placement="left"
-        leftComponent={<Image source={require('../assets/logo-header.png')} style={{ width: 70, height: 70 }} />}
+        leftComponent={<Image source={{ uri: LOGO_HEADER_URI }} style={{ width: 70, height: 70 }} />}
         rightContainerStyle={{ justifyContent: 'center' }}
         rightComponent={isMobile ?
           <TouchableOpacity onPress={navigation.toggleDrawer} >

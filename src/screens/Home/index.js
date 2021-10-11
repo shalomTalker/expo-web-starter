@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import { Button, FAB } from "react-native-elements";
 import CaptionSection from "../../components/CaptionSection";
 import CenterSection from "../../components/CenterSection";
-import { header_H, } from "../../constants";
+import { header_H, IMAGE_1_URI, LOGO_URI, } from "../../constants";
 import useViewSize from "../../hooks/useViewSize";
 import ScreenContainer from "../ScreenContainer";
 import SwitcherBCG from "../../components/SwitcherBCG";
@@ -49,10 +49,10 @@ const Home = () => {
           </View>
           <Image style={{
             width: 200, height: 200
-          }} source={require('../../assets/logo.png')} />
+          }} source={{ uri: LOGO_URI }} />
         </View>
       </View>
-      <CenterSection image={require('../../assets/image_1.jpg')} >
+      <CenterSection image={{ uri: IMAGE_1_URI }} >
         <ContactUs direction='column' titleStyle={{
           fontWeight: 'bold',
           textShadowColor: '#585858',

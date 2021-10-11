@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "עורך דין אור פרים",
-    "icon": "./src/assets/favicon.png",
+    "icon": "https://i.ibb.co/6HjF65B/favicon.png",
     "slug": "עורך דין אור פרים",
     "version": "1.0.0",
     "assetBundlePatterns": [
@@ -24,7 +24,7 @@
       ]
     },
     "web": {
-      "favicon": "./src/assets/favicon.png"
+      "favicon": "https://i.ibb.co/6HjF65B/favicon.png"
     }
   },
   "name": "עורך דין אור פרים"
