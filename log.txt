@@ -1,0 +1,56 @@
+2021-10-11T00:29:52.074Z [INFO]: Git SSH Key acquired
+2021-10-11T00:29:52.150Z [INFO]: # Cloning repository: git@github.com:shalomTalker/expo-web-starter.git
+2021-10-11T00:29:52.185Z [INFO]: Agent pid 129
+2021-10-11T00:29:52.216Z [INFO]: Identity added: /root/.ssh/git_rsa (/root/.ssh/git_rsa)
+2021-10-11T00:29:52.418Z [INFO]: Cloning into 'expo-web-starter'...
+2021-10-11T00:29:52.963Z [INFO]: Warning: Permanently added the RSA host key for IP address '140.82.121.3' to the list of known hosts.
+2021-10-11T00:29:55.435Z [INFO]: # Checking for Git submodules at: /codebuild/output/src258338880/src/expo-web-starter/.gitmodules
+2021-10-11T00:29:55.522Z [INFO]: # Retrieving environment cache...
+2021-10-11T00:29:55.556Z [INFO]: # Retrieved environment cache
+2021-10-11T00:29:55.556Z [INFO]: ---- Setting Up SSM Secrets ----
+2021-10-11T00:29:55.556Z [INFO]: SSM params {"Path":"/amplify/d3edceaxmh1do7/lawyer/","WithDecryption":true}
+2021-10-11T00:29:55.591Z [WARNING]: !Failed to set up process.env.secrets
+2021-10-11T00:29:55.600Z [INFO]: # Retrieving cache...
+2021-10-11T00:29:55.640Z [INFO]: # Extracting cache...
+2021-10-11T00:29:55.648Z [INFO]: # Extraction completed
+2021-10-11T00:30:09.305Z [INFO]: ## Starting Backend Build
+                                 ## Checking for associated backend environment...
+                                 ## No backend environment association found, continuing...
+                                 ## Completed Backend Build
+                                 ## Starting Frontend Build
+                                 # Starting phase: preBuild
+                                 # Executing command: yarn install
+2021-10-11T00:30:09.910Z [INFO]: yarn install v1.22.0
+2021-10-11T00:30:09.974Z [INFO]: [1/4] Resolving packages...
+2021-10-11T00:30:10.307Z [INFO]: [2/4] Fetching packages...
+2021-10-11T00:30:23.527Z [INFO]: info fsevents@1.2.13: The platform "linux" is incompatible with this module.
+2021-10-11T00:30:23.528Z [INFO]: info "fsevents@1.2.13" is an optional dependency and failed compatibility check. Excluding it from installation.
+2021-10-11T00:30:23.532Z [INFO]: [3/4] Linking dependencies...
+2021-10-11T00:30:23.540Z [WARNING]: warning " > react-native-elements@3.4.2" has unmet peer dependency "react-native-vector-icons@>7.0.0".
+2021-10-11T00:30:34.624Z [INFO]: [4/4] Building fresh packages...
+2021-10-11T00:30:34.865Z [INFO]: Done in 24.96s.
+2021-10-11T00:30:34.887Z [INFO]: # Executing command: nvm use 10
+2021-10-11T00:30:39.431Z [INFO]: Now using node v10.16.0 (npm v6.9.0)
+2021-10-11T00:30:39.433Z [INFO]: # Executing command: npm install --silent --global expo-cli
+2021-10-11T00:31:52.360Z [INFO]: /root/.nvm/versions/node/v10.16.0/bin/expo -> /root/.nvm/versions/node/v10.16.0/lib/node_modules/expo-cli/bin/expo.js
+2021-10-11T00:31:52.364Z [INFO]: /root/.nvm/versions/node/v10.16.0/bin/expo-cli -> /root/.nvm/versions/node/v10.16.0/lib/node_modules/expo-cli/bin/expo.js
+2021-10-11T00:31:52.674Z [INFO]: + expo-cli@4.12.1
+                                 added 1650 packages from 752 contributors in 72.443s
+2021-10-11T00:31:52.698Z [INFO]: # Executing command: if [ -f yarn.lock ]; then
+                                 yarn
+                                 elif [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
+                                 npm ci
+                                 else
+                                 npm install
+                                 fi
+2021-10-11T00:31:53.129Z [INFO]: yarn install v1.22.0
+2021-10-11T00:31:53.216Z [INFO]: [1/4] Resolving packages...
+2021-10-11T00:31:53.554Z [INFO]: [2/4] Fetching packages...
+2021-10-11T00:31:54.028Z [WARNING]: error emailjs-com@3.2.0: The engine "node" is incompatible with this module. Expected version ">=12.0.0". Got "10.16.0"
+2021-10-11T00:31:54.039Z [WARNING]: error Found incompatible module.
+2021-10-11T00:31:54.040Z [INFO]: info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+2021-10-11T00:31:54.048Z [ERROR]: !!! Build failed
+2021-10-11T00:31:54.048Z [ERROR]: !!! Non-Zero Exit Code detected
+2021-10-11T00:31:54.048Z [INFO]: # Starting environment caching...
+2021-10-11T00:31:54.048Z [INFO]: # Environment caching completed
+Terminating logging...

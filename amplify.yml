@@ -4,7 +4,7 @@ frontend:
     preBuild:
       commands:
         - yarn install
-        - nvm use 10
+        # - nvm use 10
         - npm install --silent --global expo-cli
         - |-
           if [ -f yarn.lock ]; then
@@ -16,11 +16,11 @@ frontend:
           fi
     build:
       commands:
-        - 'expo build:web'
+        - "expo build:web"
   artifacts:
     baseDirectory: web-build
     files:
-      - '**/*'
+      - "**/*"
   cache:
     paths:
       - node_modules/**/*
