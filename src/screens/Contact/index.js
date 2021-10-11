@@ -6,7 +6,7 @@ import { ADDRESS_URI, EMAIL_URI, FAX_URI, header_H, MAP_URI, TELEPHONE_URI } fro
 import Anchor from "../../hoc/Anchor";
 
 const ICONS = [
-  { label: `שד' פלי"ם 2, בניין ברוש (קומה c)`, icon: 'address', uri: ADDRESS_URI, href: 'https://www.waze.com/live-map/directions?to=ll.32.816827%2C35.000274' },
+  { label: `שד' פלי"ם 2, בניין ברוש (קומה c)`, icon: 'address', uri: ADDRESS_URI, href: 'https://www.waze.com/ul?q=%D7%A9%D7%93%27+%D7%A4%D7%9C%D7%99%22%D7%9D+2' },
   { label: `טלפון: 050-8347079`, icon: 'telephone', uri: TELEPHONE_URI, href: "tel:0508347079" },
   { label: `פקס': 153-50-8347079`, icon: 'fax', uri: FAX_URI, href: 'fax:+972-153-50-8347079' },
   { label: `דוא"ל: or@frimlaw.com`, icon: 'email', uri: EMAIL_URI, href: "mailto:or@firmlaw.com" }

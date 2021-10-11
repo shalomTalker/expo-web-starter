@@ -97,7 +97,7 @@ const mapList = [{
             title: `שדרות הפלי"ם 2 בניין ברוש, חיפה`,
             name: "address",
             icon: { name: "map-marker-radius" },
-            href: 'https://www.waze.com/live-map/directions?to=ll.32.816827%2C35.000274'
+            href: 'https://www.waze.com/ul?q=%D7%A9%D7%93%27+%D7%A4%D7%9C%D7%99%22%D7%9D+2'
         },
         {
             type: 'link',
