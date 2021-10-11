@@ -24,11 +24,11 @@ import { useTheme } from "../context/StyleContext";
 
 const Drawer = createDrawerNavigator();
 const Index = () => {
-    const { secondary } = useTheme()
+    const { secondary, primary } = useTheme()
     const [, , widthSize] = useViewSize();
     const drawerContent = (props) => {
         return (
-            <View style={{ flex: 1 }}>
+            <View style={{ flex: 1, backgroundColor: primary }}>
                 <NavBar type="column" defaultColor={secondary} />
             </View>
         );
