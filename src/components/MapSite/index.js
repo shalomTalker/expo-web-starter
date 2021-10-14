@@ -22,8 +22,8 @@ const mapList = [{
         },
         {
             type: 'navigate',
-            title: `שירותי המשרד`,
-            name: "office",
+            title: `תחומי עיסוק`,
+            name: "interests",
             icon: { name: "chevron-left" }
         },
         {
@@ -36,40 +36,54 @@ const mapList = [{
 },
 
 {
-    title: `תחומי עיסוק`,
+    title: `שירותי המשרד`,
     items: [
         {
             type: 'deep-navigate',
-            title: `משפט פלילי`,
-            name: "interests",
+            title: `עורך דין פלילי`,
+            name: "office",
             value: "criminal",
             icon: { name: "chevron-left" }
         },
         {
             type: 'deep-navigate',
-            title: `משפט צבאי`,
-            name: "interests",
+            title: `עורך דין צבאי`,
+            name: "office",
             value: "military",
             icon: { name: "chevron-left" }
         },
         {
             type: 'deep-navigate',
-            title: `תעבורה`,
-            name: "interests",
+            title: `עורך דין תעבורה`,
+            name: "office",
             value: "traffic",
             icon: { name: "chevron-left" }
         },
         {
             type: 'deep-navigate',
-            title: `ליטיגציה אזרחית`,
-            name: "interests",
+            title: `עורך דין אזרחי`,
+            name: "office",
             value: "civilLitigation",
             icon: { name: "chevron-left" }
         },
         {
             type: 'deep-navigate',
-            title: `דיני מקרקעין`,
-            name: "interests",
+            title: `תביעות לשון הרע`,
+            name: "office",
+            value: "defamation",
+            icon: { name: "chevron-left" }
+        },
+        {
+            type: 'deep-navigate',
+            title: `ליווי וייצוג נפגעי עבירה`,
+            name: "office",
+            value: "victimsCrime",
+            icon: { name: "chevron-left" }
+        },
+        {
+            type: 'deep-navigate',
+            title: `יצוג ברכישת ומכירת דירה`,
+            name: "office",
             value: "realEstate",
             icon: { name: "chevron-left" }
         },

@@ -24,14 +24,23 @@ const CenterSection = ({ mainTitle, subTitle, spanTitle, image, children }) => {
             backgroundColor: primary, height: heightSize + 150,
             flexDirection: 'row'
         }]}>
-            <View style={{ flex: 0.6 }}>
+            <View style={{ flex: 0.6, justifyContent: 'center' }}>
 
                 {children}
             </View>
-            <Image source={image} style={{
-                height: '100%',
-                flex: 0.4
-            }} />
+            <View style={{
+                flex: 0.4,
+                padding: 100,
+
+            }}>
+                <Image source={image} style={{
+                    height: '100%',
+                    borderRadius: 16,
+                    borderColor: 'gray',
+                    borderWidth: 3,
+                    margin: -15
+                }} />
+            </View>
         </View>
     )
 }

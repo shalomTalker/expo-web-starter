@@ -35,7 +35,7 @@ const ArticlesSwipper = ({ direction, numArticles = 2 }) => {
         <Animated.View style={[styles.container, {
             flexDirection: direction,
             opacity,
-            marginHorizontal: numArticles === 1 && !isMobile ? 150 : 16
+            marginHorizontal: numArticles === 1 && !isMobile ? 50 : 16
         }]}>
             {
                 [...Object.values(interests), ...Object.values(services)].slice(startPos, startPos + numArticles)

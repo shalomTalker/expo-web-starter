@@ -5708,6 +5708,11 @@ react-native-gesture-handler@~1.10.2:
     invariant "^2.2.4"
     prop-types "^15.7.2"
 
+react-native-popup-menu@^0.15.11:
+  version "0.15.11"
+  resolved "https://registry.yarnpkg.com/react-native-popup-menu/-/react-native-popup-menu-0.15.11.tgz#df96b1a909ecbba84487821061ce6e29e7c7bb20"
+  integrity sha512-f5q2GoDN99bkA24wHiwasaErcdQEgyqYZ8IYuZPOrZNFr66E4rg6f4LElSVBA3EZJTSq5OddVeaOcU340bSTEg==
+
 react-native-ratings@8.0.4:
   version "8.0.4"
   resolved "https://registry.yarnpkg.com/react-native-ratings/-/react-native-ratings-8.0.4.tgz#efd5ebad8acc08bf98d34d39b18fb7a6813ef991"
@@ -6005,6 +6010,11 @@ rimraf@~2.2.6:
   version "2.2.8"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.2.8.tgz#e439be2aaee327321952730f99a8929e4fc50582"
   integrity sha1-5Dm+Kq7jJzIZUnMPmaiSnk/FBYI=
+
+rn-css@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/rn-css/-/rn-css-1.4.1.tgz#e3e31153adcdb6ae4cd10a4a5310b7dbf09978ce"
+  integrity sha512-8p8ntD0WkmC7rSCShGeFllSnD326bTzB+bGR4cSSTLZMB/shbdUh8p9iPNZPIAIASkBd8nNULfrH6kLAXLZPAA==
 
 rsvp@^4.8.4:
   version "4.8.5"

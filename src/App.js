@@ -8,7 +8,6 @@ const App = () => {
     <AppearanceProvider>
       <ThemeProvider>
         <Navigator />
-
       </ThemeProvider>
     </AppearanceProvider>
   )

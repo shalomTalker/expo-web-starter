@@ -1,9 +1,9 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, ImageBackground } from "react-native";
 import { Button, FAB } from "react-native-elements";
 import CenterSection from "../../components/CenterSection";
-import { header_H, IMAGE_1_URI, LOGO_URI, } from "../../constants";
+import { header_H, IMAGE_1_URI, LOGO_URI, HOME_BACKGROUND_URI } from "../../constants";
 import useViewSize from "../../hooks/useViewSize";
 import ScreenContainer from "../ScreenContainer";
 import SwitcherBCG from "../../components/SwitcherBCG";
@@ -24,41 +24,52 @@ const Home = () => {
   const textHeight = 200;
   return (
     <ScreenContainer>
-      <View style={{ height: heightSize, width: widthSize, }} >
-        <SwitcherBCG />
-        <View style={{
+      <View style={{ width: widthSize, height: heightSize }} >
+        <ImageBackground source={{ uri: HOME_BACKGROUND_URI }} style={{
           position: "absolute",
-          top: (heightSize / 2) - (textHeight / 2),
-          flexDirection: isMobile ? 'column-reverse' : 'row',
           justifyContent: 'space-evenly',
           alignItems: 'center',
           width: '100%',
+          height: '100%',
         }}>
-          <View style={{ alignItems: 'center' }}>
-            <Text numberOfLines={2} style={{
-              flex: 0.7,
-              fontSize: widthSize * 0.04,
-              fontWeight: 600,
-              textAlign: 'center',
-              color: c5,
-            }}>{`אור פרים , משרד עורך דין`}</Text>
-            <DetailsSection textColor={c5} />
-          </View>
-          <Image style={{
-            width: 200, height: 200
-          }} source={{ uri: LOGO_URI }} />
-        </View>
+          <Text style={{
+            fontStyle: 'italic',
+            opacity: 1,
+            paddingHorizontal: 90,
+            lineHeight: 50,
+            fontSize: 30,
+            fontWeight: 600,
+            textAlign: 'center',
+            color: 'white',
+            fontWeight: '500',
+            textShadowColor: 'black',
+            textShadowOffset: { width: 5, height: 5 },
+            textShadowRadius: 10,
+
+          }}>{`"משרדנו נותן ייעוץ משפטי וייצוג בכל סוגי העבירות הפליליות, החל משלב הייעוץ לפני חקירה, ייצוג בהליכי מעצר והשחרור וניהול התיק הפלילי. עו"ד אור פרים בעל ניסיון של מעל עשור בניהול הליכים פליליים ואזרחיים מורכבים, ומייצג את לקוחותיו במסירות ומקצועיות בלתי מתפשרת."`}</Text>
+
+          {/* <View style={{ alignItems: 'center' }}>
+          </View> */}
+        </ImageBackground>
 
 
       </View>
 
       <CenterSection image={{ uri: IMAGE_1_URI }} >
-        <ContactUs direction='column' titleStyle={{
-          fontWeight: 'bold',
-          textShadowColor: '#585858',
-          textShadowOffset: { width: 5, height: 5 },
-          textShadowRadius: 10,
-        }} />
+        <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+          <Image source={{ uri: LOGO_URI }} style={{ width: 150, height: 150 }} />
+          <Text style={{
+            opacity: 1,
+            paddingHorizontal: 90,
+            lineHeight: 50,
+            fontSize: 30,
+            fontWeight: 600,
+            textAlign: 'center',
+            color: 'black',
+            fontWeight: '500',
+          }}>{`אור פרים , משרד עורך דין`}</Text>
+        </View>
+
         <ArticlesSwipper direction="column" numArticles={1} />
       </CenterSection>
     </ScreenContainer>
