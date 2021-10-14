@@ -114,10 +114,10 @@ const mapList = [{
 
 const MapSite = ({ direction }) => {
 
-    const { gray, primary, c1 } = useTheme()
+    const { gray, primary, c2 } = useTheme()
     return (
         <View style={[styles.container, {
-            flexDirection: direction, backgroundColor: c1,
+            flexDirection: direction, backgroundColor: c2,
         }]}>
             {
                 mapList.map(({ title, items }, i) =>

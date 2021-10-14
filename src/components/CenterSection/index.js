@@ -5,7 +5,7 @@ import useViewSize from '../../hooks/useViewSize'
 import { Space } from '../Spacing'
 
 const CenterSection = ({ mainTitle, subTitle, spanTitle, image, children }) => {
-    const { c1, c4, primary } = useTheme()
+    const { c4, primary } = useTheme()
     const [widthTag, heightSize] = useViewSize()
     const isMobile = ["sm", "xs"].includes(widthTag);
     return isMobile ? (

@@ -38,7 +38,7 @@ const inputs = [
     },
 ]
 const ContactForm = () => {
-    const { primary, secondary, c1 } = useTheme()
+    const { primary, secondary, c2 } = useTheme()
 
     const onSubmit = (values, formikActions) => {
         setTimeout(async () => {
@@ -84,7 +84,7 @@ const ContactForm = () => {
                         disabled={isSubmitting}
                         title={`מעוניין בפרטים נוספים`}
                         onPress={handleSubmit}
-                        buttonStyle={{ width: 200, backgroundColor: c1 }}
+                        buttonStyle={{ width: 200, backgroundColor: c2 }}
                         loading={isSubmitting}
                     />
                 </>

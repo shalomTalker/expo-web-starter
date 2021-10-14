@@ -17,7 +17,7 @@ const images = [
 ];
 
 const SwitcherBCG = ({ children }) => {
-  const { c1 } = useTheme()
+  const { c2 } = useTheme()
   const [, heightSize, widthSize] = useViewSize()
   const opacity = useRef(new Animated.Value(0)).current;
   const [position, setPosition] = useState(0);
@@ -60,7 +60,7 @@ const SwitcherBCG = ({ children }) => {
     <LinearGradient
       // Button Linear Gradient
       locations={[0, 0.5]}
-      colors={['#156265', c1, '#156265']}
+      colors={['#156265', c2, '#156265']}
       style={{
         opacity: .4
       }}>

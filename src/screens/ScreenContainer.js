@@ -13,7 +13,7 @@ const RANGE_SCROLL = 200;
 const START_POS = -120;
 
 const ScreenContainer = ({ children, containerStyle }) => {
-  const { primary, c1, c3 } = useTheme()
+  const { primary, c2, c3 } = useTheme()
   const [headerShown, setHeaderShown] = useState(true);
   const translation = useRef(new Animated.Value(0)).current;
   const [, heightSize, widthSize] = useViewSize()
@@ -43,7 +43,7 @@ const ScreenContainer = ({ children, containerStyle }) => {
         <Header
           style={{
             height: header_H,
-            backgroundColor: c1,
+            backgroundColor: c2,
             transform: [
               { translateY: translation },
             ],
@@ -54,7 +54,7 @@ const ScreenContainer = ({ children, containerStyle }) => {
           scrollEventThrottle={1}
           // style={{ flex: 1 }}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ ...containerStyle, ...styles.container }}
+          contentContainerStyle={containerStyle}
         >
           {children}
           <View style={{ backgroundColor: primary }}>

@@ -27,7 +27,7 @@ const NavBar = ({
   insideScreen = false,
   selectedColor }) => {
 
-  const { gray, primary, c1, secondary } = useTheme()
+  const { gray, primary, secondary } = useTheme()
   const navigation = useNavigation();
   let route = insideScreen ? useRoute() : {};
 
