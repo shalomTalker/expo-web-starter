@@ -142,7 +142,9 @@ export const ThemeProvider = props => {
   React.useEffect(() => {
     setIsDark(colorScheme === 'dark');
   }, [colorScheme]);
+
   const colors = isDark ? darkColors : lightColors;
+
   const defaultTheme = {
     isDark,
     // Chaning color schemes according to theme

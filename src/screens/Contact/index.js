@@ -5,6 +5,7 @@ import useViewSize from "../../hooks/useViewSize";
 import { ADDRESS_URI, EMAIL_URI, FAX_URI, header_H, MAP_URI, TELEPHONE_URI } from "../../constants";
 import Anchor from "../../hoc/Anchor";
 import { useTheme } from "../../context/StyleContext";
+import ContactUs from "../../components/ContactUs";
 
 const ICONS = [
   { label: `כתובת: שד' פלי"ם 2, בניין ברוש`, icon: 'address', uri: ADDRESS_URI, href: 'https://www.waze.com/ul?q=%D7%A9%D7%93%27+%D7%A4%D7%9C%D7%99%22%D7%9D+2' },
@@ -16,8 +17,11 @@ const ICONS = [
 const Contact = ({ navigation }) => {
 
   const [widthTag, heightSize, widthSize] = useViewSize()
+
+  const isViewSmallerThan = (range) => widthSize < range;
+
   const isMobile = ["sm", "xs", "md"].includes(widthTag);
-  const { primary, secondary } = useTheme()
+  const { primary, secondary, c3 } = useTheme()
   return (
     <ScreenContainer>
       <View style={[styles.container, { flexDirection: isMobile ? 'column-reverse' : 'row' }]}>
@@ -37,6 +41,7 @@ const Contact = ({ navigation }) => {
           }
         </View>
       </View>
+      <ContactUs direction={isViewSmallerThan(1100) ? 'column' : 'row-reverse'} backgroundColor={c3} />
     </ScreenContainer>
   );
 };

@@ -263,7 +263,8 @@ const services = {
             },
             style: { width: 500, height: 400, }
         },
-        contactUsTitle: `לקביעת פגישה עם עורך דין פלילי אור פרים`
+        contactUsTitle: `לקביעת פגישה עם עורך דין פלילי אור פרים`,
+        icon: 'shield-star',
     },
     military: {
         navigation: { route: 'office', params: { value: 'military' } },
@@ -298,7 +299,8 @@ const services = {
             },
             style: { width: 500, height: 400, }
         },
-        contactUsTitle: `לקביעת פגישה עם עורך דין צבאי אור פרים`
+        contactUsTitle: `לקביעת פגישה עם עורך דין צבאי אור פרים`,
+        icon: 'parachute',
     },
     traffic: {
         navigation: { route: 'office', params: { value: 'traffic' } },
@@ -317,7 +319,9 @@ const services = {
             source: { uri: 'https://rkellerlaw.com/wp-content/uploads/2020/01/traffic-ticket-lawyer-traffic-accident.jpg' },
             style: { width: 500, height: 400, }
         },
-        contactUsTitle: `לקביעת פגישה עם עורך דין פלילי אור פרים`
+        contactUsTitle: `לקביעת פגישה עם עורך דין פלילי אור פרים`,
+        icon: 'steering',
+
 
     },
     civilLitigation: {
@@ -341,7 +345,8 @@ const services = {
             source: { uri: 'https://thelawportal.co.il/wp-content/uploads/2021/07/%D7%A2%D7%99%D7%A6%D7%95%D7%91-%D7%9C%D7%9C%D7%90-%D7%A9%D7%9D-17.jpg' },
             style: { width: 500, height: 400, }
         },
-        contactUsTitle: `לקביעת פגישה עם עורך דין אור פרים`
+        contactUsTitle: `לקביעת פגישה עם עורך דין אור פרים`,
+        icon: 'office-building',
     },
     defamation: {
         navigation: { route: 'office', params: { value: 'defamation' } },
@@ -368,7 +373,8 @@ const services = {
             source: { uri: 'https://www.shlomiweinberg.co.il/wp-content/uploads/2019/06/diba1-1030x625.jpg' },
             style: { width: 500, height: 400, }
         },
-        contactUsTitle: `לקביעת פגישה עם עורך דין אור פרים`
+        contactUsTitle: `לקביעת פגישה עם עורך דין אור פרים`,
+        icon: 'account-group-outline',
     },
     victimsCrime: {
         navigation: { route: 'office', params: { value: 'victimsCrime' } },
@@ -411,7 +417,8 @@ const services = {
             source: { uri: 'https://veredshai.co.il/wp-content/uploads/2021/07/%D7%A4%D7%A9%D7%A2-1024x654.jpg' },
             style: { width: 500, height: 400, }
         },
-        contactUsTitle: `לקביעת פגישה עם עורך דין אור פרים`
+        contactUsTitle: `לקביעת פגישה עם עורך דין אור פרים`,
+        icon: 'scale-balance',
     },
     realEstate: {
         navigation: { route: 'office', params: { value: 'realEstate' } },
@@ -434,7 +441,9 @@ const services = {
             source: { uri: 'https://farbman-law.com/wp-content/uploads/2020/09/2-1.jpg' },
             style: { width: 500, height: 400, }
         },
-        contactUsTitle: `לקביעת פגישה עם עורך דין אור פרים`
+        contactUsTitle: `לקביעת פגישה עם עורך דין אור פרים`,
+        icon: 'home-city',
+
     },
 }
 
@@ -458,8 +467,8 @@ const about = {
                 text: `עורך הדין אור פרים`
             },
             {
-                type: 'backgroundimage',
-                image: { source: { uri: IMAGE_2_URI }, style: { height: '100%', width: '100%', paddingHorizontal: 25, } },
+                type: 'imagecaption',
+                image: { source: { uri: IMAGE_2_URI }, style: { paddingHorizontal: 25, } },
                 content: [
                     `עורך דין אור פרים בעל ניסיון של מעל עשור בניהול תיקים פליליים, מסחריים ואזרחיים סבוכים ומורכבים בפני ערכאות שיפוטיות מגוונות.`,
                     `לעורך דין פרים תואר ראשון ותואר שני במשפטים מאוניברסיטת חיפה, עם התמחות בתורת השפיטה וניהול ההליך הפלילי. בנוסף, השלים עו"ד פרים לימודי תואר שני נוסף במנהל עסקים בטכניון.`,

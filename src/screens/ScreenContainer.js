@@ -39,36 +39,36 @@ const ScreenContainer = ({ children, containerStyle }) => {
 
   return (
     <>
-      <View style={{ height: heightSize, width: widthSize, backgroundColor: primary }} >
-        <Header
-          style={{
-            height: header_H,
-            backgroundColor: c2,
-            transform: [
-              { translateY: translation },
-            ],
-          }}
-        />
-        <ScrollView
-          onScroll={onScroll}
-          scrollEventThrottle={1}
-          // style={{ flex: 1 }}
-          showsVerticalScrollIndicator={false}
-          contentContainerStyle={[containerStyle, { width: widthSize, marginTop: header_H, backgroundColor: primary }]}
-        >
-          {children}
-          <View style={{ backgroundColor: primary }}>
-            <Text style={[styles.title, { color: secondary }]}>{`מאמרים נוספים`}</Text>
-            <ArticlesSwipper direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'} numArticles={3} />
-            <ContactUs direction={isViewSmallerThan(1100) ? 'column' : 'row-reverse'} />
-            <MapSite direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'} />
-
-          </View>
-        </ScrollView>
-      </View>
-
       <FloatingSocial />
+
+      <Header
+        style={{
+          height: header_H,
+          backgroundColor: c2,
+          transform: [
+            { translateY: translation },
+          ],
+        }}
+      />
+      <ScrollView
+        // style={[containerStyle, { paddingTop: header_H }]}
+        onScroll={onScroll}
+        scrollEventThrottle={1}
+        // style={{ flex: 1 }}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={[containerStyle, { paddingTop: header_H, backgroundColor: primary }]}
+      >
+        {children}
+        <View style={{ backgroundColor: primary }}>
+          <Text style={[styles.title, { color: secondary }]}>{`מאמרים נוספים`}</Text>
+          <ArticlesSwipper direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'} numArticles={isViewSmallerThan(900) ? 1 : 3} />
+          <ContactUs direction={isViewSmallerThan(1100) ? 'column' : 'row-reverse'} />
+          <MapSite direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'} />
+
+        </View>
+      </ScrollView>
     </>
+
   );
 };
 

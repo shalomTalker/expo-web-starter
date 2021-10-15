@@ -9,13 +9,15 @@ import useViewSize from "../../hooks/useViewSize";
 import ScreenContainer from "../ScreenContainer";
 
 const About = ({ navigation }) => {
-  const [, heightSize, widthSize] = useViewSize()
+  const [widthTag, heightSize, widthSize] = useViewSize()
   const { c3, secondary, primary } = useTheme()
+  const isMobile = ["sm", "xs"].includes(widthTag);
+
 
   return (
     <ScreenContainer>
       <Text style={[styles.mainTitle, { backgroundColor: c3, color: secondary }]}>{`אודות המשרד`}</Text>
-      <View style={{ flex: 1, marginHorizontal: 80 }}>
+      <View style={{ marginHorizontal: isMobile ? 20 : 80 }}>
 
         <Content content={about.about.content} />
 

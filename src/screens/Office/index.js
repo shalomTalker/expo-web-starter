@@ -8,6 +8,8 @@ import { useTheme } from "../../context/StyleContext";
 import { services } from "../../content";
 import Btn from "../../components/Btn";
 import Article from "../../components/Article";
+import Icon from "../../components/Icon";
+
 
 
 const Office = ({ navigation, route }) => {
@@ -28,7 +30,7 @@ const Office = ({ navigation, route }) => {
           <View style={[styles.mainWrapper, { flexDirection: isMobile ? "column" : 'row' }]}>
             {
               Object.entries(services).map(([key, object], i) => {
-                const { title, content, image, contactUsTitle } = object;
+                const { title, content, image, contactUsTitle, icon } = object;
                 return (
                   <View style={{
                     width: isMobile ? 'auto' : '33%',
@@ -37,7 +39,10 @@ const Office = ({ navigation, route }) => {
                     marginHorizontal: isMobile ? 20 : 0,
                     marginBottom: 8
                   }}>
-                    <Text style={[styles.title, { color: primary }]}>{title}</Text>
+                    <Text style={[styles.title, { color: primary }]}>
+                      <Icon name={icon} color={primary} size={25} />
+                      <Text style={{ paddingHorizontal: 4 }}>{title}</Text>
+                      <Icon name={icon} color={primary} size={25} /></Text>
                     <Text
                       numberOfLines={2}
                       style={[styles.gistContent, { color: primary }]}>{content[0].text}</Text>
@@ -73,8 +78,8 @@ export default Office;
 const styles = StyleSheet.create({
   mainTitle: { textAlign: 'center', padding: 30, fontSize: 30 },
   mainWrapper: { paddingHorizontal: 30, justifyContent: 'space-between', flexWrap: 'wrap' },
-  title: { fontSize: 25, textAlign: 'center', textDecorationLine: 'underline' },
+  title: { fontSize: 25, textAlign: 'center', textDecorationLine: 'none' },
   gistContent: { margin: 16, textAlign: 'right', fontSize: 18 },
   button: { backgroundColor: 'transparent' },
-  buttonWrapper: { alignSelf: 'center', borderWidth: 1 }
+  buttonWrapper: { alignSelf: 'center', borderWidth: 1, borderRadius: 8 }
 });

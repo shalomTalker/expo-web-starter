@@ -6,7 +6,7 @@ import ContactForm from './ContactForm'
 const ContactUs = ({ backgroundColor, direction = 'row-reverse', title, titleStyle = {} }) => {
     const { gray, secondary } = useTheme()
     return (
-        <View style={[styles.container]}>
+        <View style={[styles.container, { backgroundColor }]}>
             <Text style={[styles.title, { fontSize: 22, color: secondary }]}>{title}</Text>
             <Text style={[styles.title, { fontSize: 18, color: secondary }, titleStyle,]}>{`השאירו פרטים ונחזור אליכם בהקדם`}</Text>
             <View style={[styles.formContainer, { flexDirection: direction }]}>

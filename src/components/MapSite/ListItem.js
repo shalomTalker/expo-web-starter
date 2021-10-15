@@ -17,7 +17,7 @@ const ListItem = ({ name, title, icon, type, value, href }) => {
                 <Btn
                     onPress={() => navigation.navigate(name)}
                     iconPosition="right"
-                    iconProps={{ ...icon, size: 18, color: primary, style: { marginLeft: 20 } }}
+                    iconProps={{ ...icon, size: 18, color: primary, style: { marginLeft: 10 } }}
 
                     title={title}
                     titleStyle={{ color: primary, fontSize: 15 }}
@@ -29,7 +29,7 @@ const ListItem = ({ name, title, icon, type, value, href }) => {
                 <Btn
                     onPress={() => navigation.navigate(name, { value })}
                     iconPosition="right"
-                    iconProps={{ ...icon, size: 18, color: primary, style: { marginLeft: 20 } }}
+                    iconProps={{ ...icon, size: 18, color: primary, style: { marginLeft: 10 } }}
 
                     title={title}
                     titleStyle={{ color: primary, fontSize: 15 }}
@@ -39,8 +39,8 @@ const ListItem = ({ name, title, icon, type, value, href }) => {
         case 'link':
             return (
                 <Anchor href={href} style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={{ color: primary, padding: 10 }}>{title}</Text>
-                    <Icon {...icon} size={20} color={primary} style={[styles.icon, { borderColor: primary }]} />
+                    <Text style={{ color: primary, marginVertical: 8 }}>{title}</Text>
+                    <Icon {...icon} size={20} color={primary} style={[styles.icon, { borderColor: primary, marginLeft: 10 }]} />
                 </Anchor>
             )
         default:

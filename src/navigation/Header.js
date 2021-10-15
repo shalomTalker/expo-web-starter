@@ -3,14 +3,14 @@ import React from "react";
 import { StyleSheet, Text, View, useWindowDimensions, Animated, Pressable, TouchableOpacity, Image } from "react-native";
 import { Header as BaseHeader } from "react-native-elements";
 import Icon from "../components/Icon";
-import { LOGO_HEADER_URI } from "../constants";
+import { LOGO_HEADER_URI, LOGO_URI } from "../constants";
 import { useTheme } from "../context/StyleContext";
 import Anchor from "../hoc/Anchor";
 import useViewSize from "../hooks/useViewSize";
 import NavBar from "./NavBar";
 
 const Header = (props) => {
-  const { green, white, primary, secondary } = useTheme()
+  const { green, white, primary, secondary, isDark } = useTheme()
   const [widthTag, , widthSize] = useViewSize();
 
   const isMobile = ["sm", "xs", "md", 'lg'].includes(widthTag);
@@ -28,10 +28,11 @@ const Header = (props) => {
           flexDirection: 'row',
         }}
         placement="left"
-        leftComponent={!isSmallMobile &&
+        leftComponent={!isSmallMobile ?
           <Anchor href="tel:0508347079">
             <Text style={{ color: primary, fontSize: 20, fontWeight: "400" }}>זמינות 24/7 במקרים דחופים – 050-8347079</Text>
-          </Anchor>
+          </Anchor> : <Image source={{ uri: isDark ? LOGO_URI : LOGO_HEADER_URI }} style={styles.image} />
+
         }
         leftContainerStyle={{ justifyContent: 'center' }}
         rightContainerStyle={{ justifyContent: 'center' }}
@@ -60,5 +61,7 @@ const styles = StyleSheet.create({
     right: 0,
     zIndex: 100,
 
-  }
+  },
+  image: { width: 70, height: 70, marginLeft: 16 },
+
 });

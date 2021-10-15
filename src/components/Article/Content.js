@@ -34,23 +34,18 @@ const Content = ({ content }) => {
                     {items.map((t, f) => <Text key={f.toString()} style={[contentTextStyle, { paddingVertical: 8, paddingRight: 8 }]}>{`- ${t}`}</Text>
                     )}
                 </>
-            case 'backgroundimage':
-                const renderText = () => cnt.map((c, g) => <Text key={g.toString()} style={[contentTextStyle, {
-                    color: isMobile ? secondary : primary,
-                    fontWeight: '600',
-                    textShadowColor: '#585858',
-                    textShadowOffset: { width: 5, height: 5 },
-                    textShadowRadius: 10,
-                }]}>{c}</Text>);
-                return isMobile ?
-                    <View key={i.toString()}>
-                        <Image source={image.source} style={[image.style], { height: '40%' }} />
-                        <View>{renderText()}</View>
+            case 'imagecaption':
+                const renderText = () => cnt.map((c, g) =>
+                    <Text key={g.toString()} style={[contentTextStyle]}>{c}</Text>);
+
+                return (
+                    <View key={i.toString()} style={{ flexDirection: isMobile ? 'column' : 'row', justifyContent: isMobile ? 'cebter' : 'space-between' }}>
+                        <Image source={image.source} resizeMode='cover' style={[image.style, { flex: 0.3, height: 300 }]} />
+
+                        <View style={{ flex: 0.6, }}>{renderText()}</View>
                     </View>
-                    :
-                    <ImageBackground key={i.toString()} {...image} >
-                        {renderText()}
-                    </ImageBackground>
+                )
+
             default:
                 return <Text key={i.toString()} style={contentTextStyle}>{text}</Text>
         }
@@ -60,5 +55,5 @@ const Content = ({ content }) => {
 
 export default Content
 
-const styles = StyleSheet.create({ text: { fontSize: 20, padding: 16, fontWeight: 500, lineHeight: 35 } })
+const styles = StyleSheet.create({ text: { fontSize: 18, padding: 16, fontWeight: 500, lineHeight: 30 } })
 

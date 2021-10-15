@@ -87,6 +87,7 @@ const ContactForm = () => {
                         buttonStyle={{ width: 200, backgroundColor: c2 }}
                         loading={isSubmitting}
                     />
+
                 </>
             }}
         </Formik>

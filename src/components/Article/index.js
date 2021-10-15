@@ -20,7 +20,7 @@ const Article = ({ article }) => {
             <View style={[styles.mainWrapper, { flexDirection: isMobile ? "column-reverse" : 'row' }]}>
                 <View style={[responsiveStyle, { alignItems: 'center', }]}>
                     <Image resizeMode="contain" {...image} />
-                    <ContactUs direction="column" title={contactUsTitle} />
+                    <ContactUs direction="column" title={contactUsTitle} backgroundColor={c3} />
                 </View>
                 <View style={responsiveStyle}>
                     <Content content={content} />

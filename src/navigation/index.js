@@ -53,11 +53,9 @@ const Index = () => {
                 drawerContent={drawerContent}
                 initialRouteName="home"
                 screenOptions={{
-                    // header,
                     title: `עורך דין אור פרים`,
                     headerShown: false,
                     drawerStyle: { width: widthSize / 2 },
-                    sceneContainerStyle: { backgroundColor: "transparent" }
                 }}>
                 <Drawer.Screen name="home" component={HomeScreen} />
                 <Drawer.Screen name="about" component={AboutScreen} />

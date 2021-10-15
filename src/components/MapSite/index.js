@@ -160,12 +160,11 @@ const styles = StyleSheet.create({
         // flex: 0.8,
         justifyContent: 'space-between',
         textAlign: 'right',
-        margin: 75,
+        margin: 50,
         borderRadius: 8
     },
     sectionConatiner: {
-        // flex: 1,
-        padding: 8,
+        padding: 4,
         marginHorizontal: 16
     },
     flatlistContainer: {
