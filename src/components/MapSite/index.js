@@ -138,14 +138,13 @@ const MapSite = ({ direction }) => {
                     <View key={i.toString()} style={styles.sectionConatiner}>
                         <Text style={{ fontSize: 25, color: primary }}>{title}</Text>
                         <Space height={1} backgroundColor={primary} />
-                        <FlatList
-                            contentContainerStyle={styles.flatlistContainer}
-                            scrollEnabled={false}
-                            showsVerticalScrollIndicator={false}
-                            data={items}
-                            keyExtractor={keyExtractor}
-                            renderItem={({ item }) => <ListItem {...item} />}
-                        />
+                        <View style={[styles.flatlistContainer]}>
+                            {items.map((item, id) => {
+                                return (
+                                    <ListItem key={id.toString()} {...item} />
+                                )
+                            })}
+                        </View>
                     </View>
                 )
             }
@@ -161,7 +160,7 @@ const styles = StyleSheet.create({
         // flex: 0.8,
         justifyContent: 'space-between',
         textAlign: 'right',
-        margin: 25,
+        margin: 75,
         borderRadius: 8
     },
     sectionConatiner: {
@@ -170,10 +169,10 @@ const styles = StyleSheet.create({
         marginHorizontal: 16
     },
     flatlistContainer: {
-        // flex: 1,
+        marginTop: 16,
         flexDirection: 'column',
         alignItems: 'flex-end',
-        justifyContent: 'flex-start'
+        justifyContent: 'flex-end'
     }
 
 })

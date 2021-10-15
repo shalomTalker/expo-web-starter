@@ -37,7 +37,6 @@ const socialButtons = [
 
 const FloatingSocial = () => {
 
-  const { primary } = useTheme()
   return (
     <FloatingView dividePosition={12} style={{ left: 20 }}>
       {socialButtons.map(({ href, backgroundColor, ...iconProps }, i) => {
@@ -53,7 +52,7 @@ const FloatingSocial = () => {
                 borderRadius: "50%",
                 marginVertical: 4,
               }}>
-              <Icon {...iconProps} color={primary} size={30} />
+              <Icon {...iconProps} color={'white'} size={30} />
             </View>
           </Anchor>
         );

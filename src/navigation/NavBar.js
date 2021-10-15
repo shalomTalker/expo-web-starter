@@ -31,15 +31,13 @@ const tabs = [
 const NavBar = ({
   style,
   type = "column",
-  defaultColor,
   insideScreen = false,
-  selectedColor }) => {
+}) => {
 
   const { gray, primary, c3, secondary } = useTheme()
   const navigation = useNavigation();
   let route = insideScreen ? useRoute() : {};
 
-  // const isSelected = 
   const renderButtons = () => {
     return tabs.map(({ title, name, tooltips }, i) => {
       const isSelected = route ? route.name === name : {}
@@ -50,21 +48,23 @@ const NavBar = ({
           isHover => {
             return (!tooltips) ? <Btn
               containerStyle={{
-                backgroundColor: isHover ? c3 : 'transparent',
+                backgroundColor: isHover || isSelected ? c3 : 'transparent',
                 height: insideScreen ? '100%' : 'auto',
+                width: !insideScreen ? '100%' : 120,
                 justifyContent: 'center',
-                width: !insideScreen ? '100%' : 120
+                marginHorizontal: 4
 
               }}
               title={title}
               type="clear"
-              titleStyle={{ color: isSelected ? selectedColor : defaultColor || primary, fontSize: 15 }}
+              titleStyle={{ color: isSelected ? secondary : primary, fontSize: 15, fontWeight: '500' }}
               onPress={() => navigation.navigate(name)} /> : (
               <NavPicker
+                isSelected={isSelected}
                 insideScreen={insideScreen}
                 title={title}
                 tooltips={tooltips}
-                defaultColor={defaultColor} />
+              />
             )
           }
         }
@@ -73,32 +73,33 @@ const NavBar = ({
     });
 
   };
+
+
   return <View style={{ ...style, flexDirection: type === "top" ? "row-reverse" : "column", alignItems: 'center' }}>
-    <Image source={{ uri: LOGO_HEADER_URI }} style={{ width: 70, height: 70, marginLeft: 16 }} />{renderButtons()}</View>;
+    <Image source={{ uri: LOGO_HEADER_URI }} style={styles.image} />{renderButtons()}</View>;
 };
 
 export default NavBar;
 
 
-export const NavPicker = ({ insideScreen = false, title, tooltips, selectedColor, defaultColor }) => {
+export const NavPicker = ({ insideScreen = false, title, tooltips, isSelected }) => {
   const ref = useRef(null)
   const { gray, primary, c3, secondary } = useTheme()
+  console.log(isSelected);
   const navigation = useNavigation();
-  let route = insideScreen ? useRoute() : {};
-  const isSelected = route ? route.name === name : {};
   return <Hoverable>
     {isHover => {
       return (<Picker
-
         style={{
           textAlign: 'center',
+          paddingVertical: 8,
           borderWidth: 0,
           borderRadius: 4,
-          backgroundColor: isHover ? c3 : 'transparent',
+          backgroundColor: isHover || isSelected ? c3 : 'transparent',
           fontSize: 17,
-          paddingVertical: 8,
+          fontWeight: '500',
+          color: isSelected ? secondary : primary,
           height: insideScreen ? '100%' : 'auto',
-          color: isSelected ? selectedColor : defaultColor,
           width: !insideScreen ? '100%' : 'auto'
         }}
         mode="dropdown"
@@ -130,3 +131,6 @@ export const NavPicker = ({ insideScreen = false, title, tooltips, selectedColor
     }}
   </Hoverable>
 }
+
+
+const styles = StyleSheet.create({ iamge: { width: 70, height: 70, marginLeft: 16 } })

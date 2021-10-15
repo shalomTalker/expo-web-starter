@@ -10,10 +10,11 @@ import useViewSize from "../hooks/useViewSize";
 import NavBar from "./NavBar";
 
 const Header = (props) => {
-  const { green, white, primary } = useTheme()
+  const { green, white, primary, secondary } = useTheme()
   const [widthTag, , widthSize] = useViewSize();
 
   const isMobile = ["sm", "xs", "md", 'lg'].includes(widthTag);
+  const isSmallMobile = ["xs"].includes(widthTag);
   const navigation = useNavigation();
   return (
     <Animated.View style={[props.style, styles.container]}>
@@ -27,9 +28,9 @@ const Header = (props) => {
           flexDirection: 'row',
         }}
         placement="left"
-        leftComponent={
+        leftComponent={!isSmallMobile &&
           <Anchor href="tel:0508347079">
-            <Text style={{ color: primary, fontSize: 20, fontWeight: "500" }}>זמינות 24/7 במקרים דחופים – 050-8347079</Text>
+            <Text style={{ color: primary, fontSize: 20, fontWeight: "400" }}>זמינות 24/7 במקרים דחופים – 050-8347079</Text>
           </Anchor>
         }
         leftContainerStyle={{ justifyContent: 'center' }}
@@ -41,7 +42,7 @@ const Header = (props) => {
           : <NavBar
             type="top"
             insideScreen
-            selectedColor={green}
+            selectedColor={secondary}
             defaultColor={primary}
           />}
       />

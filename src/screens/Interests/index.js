@@ -39,7 +39,7 @@ const Interests = ({ navigation, route }) => {
                 Object.entries(interests).map(([key, object], i) => {
                   const { title, content, image, contactUsTitle } = object;
                   return (
-                    <View style={{
+                    <View key={title} style={{
                       backgroundColor: i % 2 === 0 ? c2 : c3,
                       padding: 8,
                       marginBottom: 8
@@ -68,15 +68,7 @@ const Interests = ({ navigation, route }) => {
   }
   return (
     <ScreenContainer>
-      <View
-        style={{ width: widthSize, marginTop: header_H }}
-      >
-        {
-          renderContent()
-
-        }
-
-      </View>
+      {renderContent()}
     </ScreenContainer>
   );
 };

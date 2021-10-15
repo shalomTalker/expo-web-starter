@@ -13,7 +13,7 @@ const RANGE_SCROLL = 200;
 const START_POS = -120;
 
 const ScreenContainer = ({ children, containerStyle }) => {
-  const { primary, c2, c3 } = useTheme()
+  const { primary, c2, c3, secondary } = useTheme()
   const [headerShown, setHeaderShown] = useState(true);
   const translation = useRef(new Animated.Value(0)).current;
   const [, heightSize, widthSize] = useViewSize()
@@ -39,7 +39,7 @@ const ScreenContainer = ({ children, containerStyle }) => {
 
   return (
     <>
-      <View style={{ height: heightSize, width: widthSize }} >
+      <View style={{ height: heightSize, width: widthSize, backgroundColor: primary }} >
         <Header
           style={{
             height: header_H,
@@ -54,11 +54,11 @@ const ScreenContainer = ({ children, containerStyle }) => {
           scrollEventThrottle={1}
           // style={{ flex: 1 }}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={containerStyle}
+          contentContainerStyle={[containerStyle, { width: widthSize, marginTop: header_H, backgroundColor: primary }]}
         >
           {children}
           <View style={{ backgroundColor: primary }}>
-            <Text style={[styles.title, { color: c3 }]}>{`מאמרים נוספים`}</Text>
+            <Text style={[styles.title, { color: secondary }]}>{`מאמרים נוספים`}</Text>
             <ArticlesSwipper direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'} numArticles={3} />
             <ContactUs direction={isViewSmallerThan(1100) ? 'column' : 'row-reverse'} />
             <MapSite direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'} />

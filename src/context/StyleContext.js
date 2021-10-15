@@ -22,8 +22,8 @@ const lineSpacing_22 = 22;
 const lineSpacing_28 = 28;
 
 const lightColors = {
-  primary: '#EFEFEF',
-  secondary: '#000000',
+  secondary: '#303030',
+  primary: '#EAEAEA',
   lightGray: '#EFEFEF',
   lightBlack: '#808080',
   green: '#31B44B',
@@ -41,8 +41,8 @@ const lightColors = {
 
 // Dark theme colors
 const darkColors = {
-  primary: '#000000',
-  secondary: '#EFEFEF',
+  primary: '#303030',
+  secondary: '#EAEAEA',
   lightGray: '#EFEFEF',
   lightBlack: '#808080',
   green: '#5AB86D',

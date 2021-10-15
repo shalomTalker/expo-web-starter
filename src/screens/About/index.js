@@ -10,21 +10,17 @@ import ScreenContainer from "../ScreenContainer";
 
 const About = ({ navigation }) => {
   const [, heightSize, widthSize] = useViewSize()
-  const { c3 } = useTheme()
+  const { c3, secondary, primary } = useTheme()
 
   return (
     <ScreenContainer>
-      <View
-        style={{ width: widthSize, marginTop: header_H }}
-      >
-        <Text style={[styles.mainTitle, { backgroundColor: c3 }]}>{`אודות`}</Text>
-        <View style={{ flex: 1 }}>
+      <Text style={[styles.mainTitle, { backgroundColor: c3, color: secondary }]}>{`אודות המשרד`}</Text>
+      <View style={{ flex: 1, marginHorizontal: 80 }}>
 
-          <Content content={about.about.content} />
-
-        </View>
+        <Content content={about.about.content} />
 
       </View>
+
     </ScreenContainer>
   );
 };
@@ -32,6 +28,6 @@ const About = ({ navigation }) => {
 export default About;
 
 const styles = StyleSheet.create({
-  mainTitle: { textAlign: 'right', padding: 30, fontSize: 30 },
+  mainTitle: { textAlign: 'right', padding: 30, fontSize: 30, fontWeight: 500 },
 
 });

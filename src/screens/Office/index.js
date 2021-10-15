@@ -23,7 +23,7 @@ const Office = ({ navigation, route }) => {
     } else {
       return (
 
-        <>
+        <View style={{ backgroundColor: primary }}>
           <Text style={[styles.mainTitle, { color: c2 }]}>{`שירותי המשרד`}</Text>
           <View style={[styles.mainWrapper, { flexDirection: isMobile ? "column" : 'row' }]}>
             {
@@ -52,7 +52,7 @@ const Office = ({ navigation, route }) => {
               })
             }
           </View>
-        </>
+        </View>
       )
     }
 
@@ -63,11 +63,7 @@ const Office = ({ navigation, route }) => {
 
   return (
     <ScreenContainer>
-      <View
-        style={{ width: widthSize, marginTop: header_H }}
-      >
-        {renderContent()}
-      </View>
+      {renderContent()}
     </ScreenContainer>
   );
 };
