@@ -28,9 +28,7 @@ const Index = () => {
     const [, , widthSize] = useViewSize();
     const drawerContent = (props) => {
         return (
-            <View style={{ flex: 1, backgroundColor: primary }}>
-                <NavBar type="column" defaultColor={secondary} style={{ backgroundColor: c2, height: '100%' }} />
-            </View>
+            <NavBar type="column" defaultColor={secondary} style={{ backgroundColor: c2, height: '100%' }} />
         );
     };
 
@@ -52,10 +50,16 @@ const Index = () => {
             <Drawer.Navigator
                 drawerContent={drawerContent}
                 initialRouteName="home"
+                backBehavior={"order"}
                 screenOptions={{
+                    drawerPosition: 'right',
+                    sceneContainerStyle: { flex: 1 },
                     title: `עורך דין אור פרים`,
                     headerShown: false,
-                    drawerStyle: { width: widthSize / 2 },
+                    drawerStyle: {
+                        width: widthSize / 2
+                    },
+
                 }}>
                 <Drawer.Screen name="home" component={HomeScreen} />
                 <Drawer.Screen name="about" component={AboutScreen} />
