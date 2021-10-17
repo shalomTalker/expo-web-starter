@@ -1,3 +1,4 @@
+import { useScrollToTop } from "@react-navigation/native";
 import React, { useEffect, useRef, useState } from "react";
 import { View, ImageBackground, Text, StyleSheet, Button, ScrollView, Animated } from "react-native";
 import ArticlesSwipper from "../components/ArticlesSwipper";
@@ -13,12 +14,14 @@ const RANGE_SCROLL = 200;
 const START_POS = -120;
 
 const ScreenContainer = ({ children, containerStyle }) => {
+  const ref = React.useRef(null);
+
+  useScrollToTop(ref);
   const { primary, c2, c3, secondary } = useTheme()
   const [headerShown, setHeaderShown] = useState(true);
   const translation = useRef(new Animated.Value(0)).current;
   const [, heightSize, widthSize] = useViewSize()
   const isViewSmallerThan = (range) => widthSize < range;
-
   useEffect(() => {
     Animated.timing(translation, {
       toValue: headerShown ? 0 : START_POS,
@@ -51,10 +54,14 @@ const ScreenContainer = ({ children, containerStyle }) => {
         }}
       />
       <ScrollView
-        // style={[containerStyle, { paddingTop: header_H }]}
+        ref={ref}
+        // dont forget usethis
+        onContentSizeChange={(e) => {
+          console.log(e)
+          ref.current?.scrollTo({ y: 0 })
+        }}
         onScroll={onScroll}
         scrollEventThrottle={1}
-        // style={{ flex: 1 }}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={[containerStyle, { paddingTop: header_H, backgroundColor: primary }]}
       >

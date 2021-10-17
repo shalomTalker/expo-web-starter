@@ -10,6 +10,7 @@ import { LOGO_HEADER_URI, LOGO_URI } from "../constants";
 import Hoverable from "../hoc/Hoverable";
 import { Switch } from 'react-native-elements';
 import { Space } from '../components/Spacing'
+import Logo from "../components/Logo";
 
 
 
@@ -80,14 +81,19 @@ const NavBar = ({
     ...style,
     flexDirection: type === "top" ? "row-reverse" : "column", alignItems: 'center'
   }}>
-    <Image source={{ uri: isDark ? LOGO_URI : LOGO_HEADER_URI }} style={styles.image} />
+    <Logo isDark={isDark} />
     <View style={{ flexDirection: type === "top" ? "row-reverse" : "column" }}>{renderButtons()} </View>
     {
-      type !== 'top' && <View style={[styles.footer, { borderTopColor: primary }]}>
+      Boolean(type !== 'top') &&
+      <View style={[styles.footer, { borderTopColor: primary }]}>
         <Text style={[styles.dark, { color: primary }]}>{`מצב לילה`}</Text>
         <Space width={16} />
 
-        <Switch color={isDark ? secondary : primary} tintColor={isDark ? primary : secondary} value={isDark} onValueChange={() => setScheme(isDark ? 'light' : 'dark')} />
+        <Switch
+          color={isDark ? secondary : primary}
+          tintColor={isDark ? primary : secondary}
+          value={isDark}
+          onValueChange={() => setScheme(isDark ? 'light' : 'dark')} />
       </View>
     }
   </View>;

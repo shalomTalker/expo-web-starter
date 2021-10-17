@@ -17,7 +17,7 @@ const About = ({ navigation }) => {
   return (
     <ScreenContainer>
       <Text style={[styles.mainTitle, { backgroundColor: c3, color: secondary }]}>{`אודות המשרד`}</Text>
-      <View style={{ marginHorizontal: isMobile ? 20 : 80 }}>
+      <View style={{ marginHorizontal: isMobile ? 20 : 80, flex: 1 }}>
 
         <Content content={about.about.content} />
 

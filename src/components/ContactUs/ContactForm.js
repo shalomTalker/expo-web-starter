@@ -49,7 +49,7 @@ const ContactForm = () => {
                 formikActions.setSubmitting(false);
 
             } catch (error) {
-                console.log(error);
+                throw error
             }
         }, 500);
     }

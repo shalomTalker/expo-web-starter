@@ -10,17 +10,14 @@ const ListItem = ({ name, title, icon, type, value, href }) => {
     const { primary, secondary, c5 } = useTheme()
     const navigation = useNavigation();
     switch (type) {
-
-
         case 'navigate':
             return (
                 <Btn
                     onPress={() => navigation.navigate(name)}
                     iconPosition="right"
                     iconProps={{ ...icon, size: 18, color: primary, style: { marginLeft: 10 } }}
-
                     title={title}
-                    titleStyle={{ color: primary, fontSize: 15 }}
+                    titleStyle={{ color: primary, fontSize: 18 }}
                     type="clear"
                 />
             )
@@ -30,16 +27,15 @@ const ListItem = ({ name, title, icon, type, value, href }) => {
                     onPress={() => navigation.navigate(name, { value })}
                     iconPosition="right"
                     iconProps={{ ...icon, size: 18, color: primary, style: { marginLeft: 10 } }}
-
                     title={title}
-                    titleStyle={{ color: primary, fontSize: 15 }}
+                    titleStyle={{ color: primary, fontSize: 18 }}
                     type="clear"
                 />
             )
         case 'link':
             return (
                 <Anchor href={href} style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={{ color: primary, marginVertical: 8 }}>{title}</Text>
+                    <Text style={{ color: primary, fontSize: 18, marginVertical: 18 }}>{title}</Text>
                     <Icon {...icon} size={20} color={primary} style={[styles.icon, { borderColor: primary, marginLeft: 10 }]} />
                 </Anchor>
             )

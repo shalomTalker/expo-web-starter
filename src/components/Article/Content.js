@@ -9,22 +9,19 @@ const Content = ({ content }) => {
     const [widthTag] = useViewSize()
     const isMobile = ["sm", "xs"].includes(widthTag);
 
-
     const contentTextStyle = [styles.text, { color: secondary }]
-
-
 
     return content.map(({ text, type, items, image, content: cnt }, i) => {
         switch (type) {
             case 'underline':
-                return <Text key={i.toString()} style={{ padding: 16 }}>
+                return <Text key={i.toString()} style={{ padding: 8 }}>
                     <Text style={[contentTextStyle, { textDecorationLine: 'underline', padding: 0 }]}>{text.split('–')[0]}</Text>
                     <Text style={[contentTextStyle, { padding: 0 }]}>:{text.split('–')[1]}</Text>
                 </Text>
             case 'bold':
                 return <Text key={i.toString()} style={[contentTextStyle, { fontWeight: 'bold' }]}>{text}</Text>
             case 'boldBySign':
-                return <Text key={i.toString()} style={{ padding: 16 }}>
+                return <Text key={i.toString()} style={{ padding: 8 }}>
                     <Text style={[contentTextStyle, { fontWeight: 'bold', padding: 0 }]}>{text.split('&')[1]}</Text>
                     <Text style={[contentTextStyle, { padding: 0 }]}>{text.split('&')[2]}</Text>
                 </Text>
@@ -39,10 +36,13 @@ const Content = ({ content }) => {
                     <Text key={g.toString()} style={[contentTextStyle]}>{c}</Text>);
 
                 return (
-                    <View key={i.toString()} style={{ flexDirection: isMobile ? 'column' : 'row', justifyContent: isMobile ? 'cebter' : 'space-between' }}>
-                        <Image source={image.source} resizeMode='cover' style={[image.style, { flex: 0.3, height: 300 }]} />
+                    <View key={i.toString()} style={{
+                        flexDirection: isMobile ? 'column' : 'row-reverse',
+                        justifyContent: isMobile ? 'center' : 'space-between'
+                    }}>
+                        <View style={{ flex: 1, width: isMobile ? '100%' : '60%' }}>{renderText()}</View>
+                        <Image source={image.source} style={[image.style, { width: isMobile ? '100%' : 350, height: 300 }]} />
 
-                        <View style={{ flex: 0.6, }}>{renderText()}</View>
                     </View>
                 )
 
@@ -55,5 +55,5 @@ const Content = ({ content }) => {
 
 export default Content
 
-const styles = StyleSheet.create({ text: { fontSize: 18, padding: 16, fontWeight: 500, lineHeight: 30 } })
+const styles = StyleSheet.create({ text: { fontSize: 18, padding: 4, fontWeight: 500, lineHeight: 30 } })
 

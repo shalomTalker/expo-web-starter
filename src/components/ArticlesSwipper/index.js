@@ -5,7 +5,7 @@ import { services, interests } from '../../content'
 import { useTheme } from '../../context/StyleContext'
 import useViewSize from '../../hooks/useViewSize'
 
-const ArticlesSwipper = ({ direction, numArticles = 2 }) => {
+const ArticlesSwipper = ({ direction, numArticles = 2, enableSwitch = true }) => {
     const { gray, primary, c2, G_Styles } = useTheme()
     const [startPos, setStartPos] = useState(0);
     const opacity = new Animated.Value(0);
@@ -20,19 +20,21 @@ const ArticlesSwipper = ({ direction, numArticles = 2 }) => {
             toValue: 1,
             duration: 1000
         }).start();
+        if (enableSwitch) {
 
-        setTimeout(() => {
-            if (startPos + numArticles >= [...Object.values(interests), ...Object.values(services)].length) {
-                setStartPos(0)
-            } else {
-                setStartPos(startPos + numArticles)
-            }
-        }, 5000)
+            setTimeout(() => {
+                if (startPos + numArticles >= [...Object.values(interests), ...Object.values(services)].length) {
+                    setStartPos(0)
+                } else {
+                    setStartPos(startPos + numArticles)
+                }
+            }, 5000)
+        }
     }, [startPos])
 
 
-    return (
-        <Animated.View style={[styles.container, {
+    if (enableSwitch) {
+        return <Animated.View style={[styles.container, {
             flexDirection: direction,
             opacity,
             marginHorizontal: numArticles === 1 && !isMobile ? 50 : 16
@@ -59,7 +61,33 @@ const ArticlesSwipper = ({ direction, numArticles = 2 }) => {
                     })
             }
         </Animated.View>
-    )
+    } else {
+        const { image, content, title, navigation: { route, params } } = interests.criminal
+        return (
+            <View style={[styles.container, {
+                flexDirection: direction,
+                opacity,
+                marginHorizontal: !isMobile ? 50 : 16
+            }]}>
+                <Pressable style={[
+                    styles.articleContainer,
+                    { backgroundColor: c2 }]} onPress={() => navigation.navigate(route, params)}>
+                    <ImageBackground style={styles.background} source={image.source} >
+                        <View style={[styles.description]}>
+                            <Text style={{
+                                fontSize: 24, color: primary,
+                            }}>{title}</Text>
+                            <Text numberOfLines={2} style={{
+                                fontSize: 18, color: primary,
+                            }}>{content[0].text}</Text>
+                        </View>
+                    </ImageBackground>
+                </Pressable>
+            </View>
+        )
+    }
+
+
 }
 
 export default ArticlesSwipper

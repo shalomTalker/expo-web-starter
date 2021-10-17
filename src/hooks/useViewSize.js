@@ -22,7 +22,7 @@ const mapSize = (size) => {
   } else if (size <= 1200) {
     /*Desktops, large screens lg */
     return "lg";
-  } else return "";
+  } else return "xl";
 };
 const useViewSize = () => {
   const { width, height } = useWindowDimensions();
