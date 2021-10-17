@@ -50,7 +50,7 @@ const Index = () => {
             <Drawer.Navigator
                 drawerContent={drawerContent}
                 initialRouteName="home"
-                backBehavior={"order"}
+                backBehavior={"history"}
                 screenOptions={{
                     drawerPosition: 'right',
                     sceneContainerStyle: { flex: 1 },
