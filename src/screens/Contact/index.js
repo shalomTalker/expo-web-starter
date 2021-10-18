@@ -42,7 +42,7 @@ const Contact = ({ navigation }) => {
           }
         </View>
       </View>
-      <ContactUs direction={isViewSmallerThan(1100) ? 'column' : 'row-reverse'} backgroundColor={c3} />
+      {/* <ContactUs direction={isViewSmallerThan(1100) ? 'column' : 'row-reverse'} backgroundColor={c3} /> */}
     </ScreenContainer>
   );
 };
@@ -51,11 +51,11 @@ export default Contact;
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
     alignItems: 'center'
   },
   anchor: { flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' },
   text: { fontSize: 18, fontWeight: 500 },
-  image: { width: 500, height: 500, margin: 16, borderRadius: 8 },
-  icon: { width: 65, height: 65, margin: 16 }
+  image: { width: 280, height: 280, margin: 16, borderRadius: 8 },
+  icon: { width: 65, height: 65, margin: 8 }
 });

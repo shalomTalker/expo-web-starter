@@ -39,24 +39,27 @@ const Home = () => {
         }}>
           <View style={{
             backgroundColor: secondary,
-            width: isSmallMobile ? '100%' : '40%',
+            width: isSmallMobile ? '100%' : 350,
             height: isSmallMobile ? 'auto' : '100%',
             flex: 1,
-            opacity: 0.9,
+            opacity: 0.5,
             alignItems: 'center',
             justifyContent: 'space-evenly',
             maxHeight: heightSize - header_H,
+            marginVertical: !isSmallMobile ? 18 : 0,
+            marginLeft: !isSmallMobile ? 36 : 0
           }}>
             <Logo isDark={isDark} width={isMobile ? 150 : 200} height={isMobile ? 150 : 200} />
             <Text style={{
               textAlign: 'center',
               // fontStyle: 'italic',
+              opacity: 1,
               paddingHorizontal: isSmallMobile ? 60 : '10%',
               fontSize: 20,
               fontWeight: 500,
               color: primary,
 
-            }}>{`"משרדנו נותן ייעוץ משפטי וייצוג בכל סוגי העבירות הפליליות, החל משלב הייעוץ לפני חקירה, ייצוג בהליכי מעצר שחרור וניהול התיק הפלילי."`}</Text>
+            }}>{`משרדנו נותן ייעוץ משפטי וייצוג בכל סוגי העבירות הפליליות, החל משלב הייעוץ לפני חקירה, ייצוג בהליכי מעצר שחרור וניהול התיק הפלילי.`}</Text>
           </View>
         </ImageBackground>
       </View>
@@ -82,12 +85,20 @@ const Home = () => {
             </View>
           </View>
         ) : (
-          <View style={{ flex: 1, flexDirection: 'row', }}>
-            <Image source={{ uri: IMAGE_1_URI }} style={{ width: isMobile ? '50%' : 400, height: 450, paddingRight: 50 }} />
+          <View style={{ flex: 1, flexDirection: 'row-reverse', }}>
+            <Image source={{ uri: IMAGE_1_URI }} style={{
+              width: isMobile ? '50%' : 400,
+              height: 450,
+              paddingLeft: 50,
+              borderRadius: 16,
+              borderWidth: 2,
+              borderColor: 'gray',
+              marginRight: 40
+            }} />
             <View style={{ flex: 2, marginTop: 36 }}>
               <Text style={{
                 opacity: 1,
-                paddingHorizontal: widthTag == 'xl' ? 150 : widthTag == 'lg' ? 100 : 50,
+                paddingHorizontal: widthTag == 'xl' ? 250 : widthTag == 'lg' ? 100 : 50,
                 fontSize: 20,
                 fontWeight: 500,
                 textAlign: 'center',

@@ -80,7 +80,7 @@ const Interests = ({ navigation, route }) => {
 export default Interests;
 
 const styles = StyleSheet.create({
-  mainTitle: { textAlign: 'center', padding: 30, fontSize: 30 },
+  mainTitle: { textAlign: 'center', padding: 30, fontSize: 30, paddingRight: 55 },
   mainWrapper: { paddingHorizontal: 30, justifyContent: 'flex-end', flexWrap: 'wrap' },
   title: { fontSize: 25, textAlign: 'center', textDecorationLine: 'underline' },
   gistContent: { margin: 16, textAlign: 'right', fontSize: 18 },

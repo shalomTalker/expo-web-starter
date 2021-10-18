@@ -27,7 +27,7 @@ const Office = ({ navigation, route }) => {
       return (
 
         <View style={{ backgroundColor: primary }}>
-          <Text style={[styles.mainTitle, { color: c2 }]}>{`שירותי המשרד`}</Text>
+          <Text style={[styles.mainTitle, { color: c2, paddingRight: 60 }]}>{`שירותי המשרד`}</Text>
           <View style={[styles.mainWrapper, { flexDirection: isMobile ? "column" : 'row' }]}>
             {
               Object.entries(services).map(([key, object], i) => {
@@ -78,7 +78,7 @@ const Office = ({ navigation, route }) => {
 export default Office;
 
 const styles = StyleSheet.create({
-  mainTitle: { textAlign: 'center', padding: 30, fontSize: 30 },
+  mainTitle: { textAlign: 'center', padding: 30, fontSize: 30, paddingRight: 60 },
   mainWrapper: { paddingHorizontal: 30, justifyContent: 'space-between', flexWrap: 'wrap' },
   title: { fontSize: 25, textAlign: 'center', textDecorationLine: 'none' },
   gistContent: { margin: 16, textAlign: 'right', fontSize: 18 },

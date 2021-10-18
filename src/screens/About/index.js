@@ -31,6 +31,6 @@ const About = ({ navigation }) => {
 export default About;
 
 const styles = StyleSheet.create({
-  mainTitle: { textAlign: 'right', padding: 30, fontSize: 30, fontWeight: 500 },
+  mainTitle: { textAlign: 'right', padding: 30, fontSize: 30, fontWeight: 500, paddingRight: 55 },
 
 });

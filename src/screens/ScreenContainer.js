@@ -80,11 +80,11 @@ const ScreenContainer = ({ children, containerStyle }) => {
         contentContainerStyle={[containerStyle]}
         keyExtractor={keyExtractor}
         ListFooterComponent={() => <View style={{ backgroundColor: primary, flex: 1 }}>
+          <ContactUs direction={isViewSmallerThan(1100) ? 'column' : 'row-reverse'} />
           <Text style={[styles.title, { color: secondary }]}>{`מאמרים נוספים`}</Text>
           <View style={{ marginHorizontal: 25 }}>
             <ArticlesSwipper direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'} numArticles={isViewSmallerThan(900) ? 1 : 3} />
           </View>
-          <ContactUs direction={isViewSmallerThan(1100) ? 'column' : 'row-reverse'} />
           <MapSite direction={isViewSmallerThan(1100) ? 'column' : 'row-reverse'} />
 
         </View>}

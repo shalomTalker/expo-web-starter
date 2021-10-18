@@ -137,6 +137,7 @@ const MapSite = ({ direction }) => {
         <View style={[styles.container, {
             flexDirection: direction,
             backgroundColor: c2,
+            marginHorizontal: 40
         }]}>
             {
                 mapList.map(({ title, items }, i) =>

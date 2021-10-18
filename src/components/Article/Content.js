@@ -17,21 +17,21 @@ const Content = ({ content }) => {
         return content.map(({ text, type, items, image, content: cnt }, i) => {
             switch (type) {
                 case 'underline':
-                    return <Text key={i.toString()} style={{ padding: 8 }}>
-                        <Text style={[contentTextStyle, { textDecorationLine: 'underline', padding: 0 }]}>{text.split('–')[0]}</Text>
-                        <Text style={[contentTextStyle, { padding: 0 }]}>:{text.split('–')[1]}</Text>
+                    return <Text key={i.toString()} style={{ padding: 8, textAlign: 'justify' }}>
+                        <Text style={[contentTextStyle, { textDecorationLine: 'underline', padding: 0 }]}>{`${text.split('–')[0]}:\n`}</Text>
+                        <Text style={[contentTextStyle, { padding: 0 }]}>{text.split('–')[1]}</Text>
                     </Text>
                 case 'bold':
                     return <Text key={i.toString()} style={[contentTextStyle, { fontWeight: 'bold' }]}>{text}</Text>
                 case 'boldBySign':
-                    return <Text key={i.toString()} style={{ padding: 8 }}>
+                    return <Text key={i.toString()} style={{ padding: 8, textAlign: 'justify' }}>
                         <Text style={[contentTextStyle, { fontWeight: 'bold', padding: 0 }]}>{text.split('&')[1]}</Text>
                         <Text style={[contentTextStyle, { padding: 0 }]}>{text.split('&')[2]}</Text>
                     </Text>
                 case 'list':
                     return <>
                         <Text key={i.toString()} style={contentTextStyle}>{text}</Text>
-                        {items.map((t, f) => <Text key={f.toString()} style={[contentTextStyle, { paddingVertical: 8, paddingRight: 8 }]}>{`- ${t}`}</Text>
+                        {items.map((t, f) => <Text key={f.toString()} style={[contentTextStyle, { paddingVertical: 4, paddingRight: 8 }]}>{`• ${t}`}</Text>
                         )}
                     </>
                 case 'imagecaption':
@@ -40,6 +40,7 @@ const Content = ({ content }) => {
 
                     return (
                         <View key={i.toString()} style={{
+
                             flexDirection: isMobile ? 'column' : 'row-reverse',
                             justifyContent: isMobile ? 'center' : 'space-between'
                         }}>
@@ -62,5 +63,5 @@ const Content = ({ content }) => {
 
 export default Content
 
-const styles = StyleSheet.create({ text: { fontSize: 18, padding: 4, fontWeight: 500, lineHeight: 30 } })
+const styles = StyleSheet.create({ text: { fontSize: 18, padding: 4, fontWeight: 500, lineHeight: 30, textAlign: 'justify' } })
 
