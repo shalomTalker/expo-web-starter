@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import { Button } from "react-native-elements";
 import ScreenContainer from "../ScreenContainer";
 import useViewSize from "../../hooks/useViewSize";
@@ -9,6 +9,7 @@ import { services } from "../../content";
 import Btn from "../../components/Btn";
 import Article from "../../components/Article";
 import Icon from "../../components/Icon";
+import Text from "../../components/Txt";
 
 
 
@@ -47,6 +48,7 @@ const Office = ({ navigation, route }) => {
                       numberOfLines={2}
                       style={[styles.gistContent, { color: primary }]}>{content[0].text}</Text>
                     <Btn
+                      titleStyle={{ fontFamily: 'VarelaRound_400Regular' }}
                       buttonStyle={styles.button}
                       style={[styles.buttonWrapper, { borderColor: primary, color: primary }]}
                       title={`להמשך קריאה`}

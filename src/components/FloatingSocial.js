@@ -38,7 +38,7 @@ const socialButtons = [
 const FloatingSocial = () => {
 
   return (
-    <FloatingView dividePosition={12} style={{ right: 20 }}>
+    <FloatingView dividePosition={12} style={{ right: 10 }}>
       {socialButtons.map(({ href, backgroundColor, ...iconProps }, i) => {
         return (
           <Anchor key={i.toString()} href={href}>

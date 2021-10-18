@@ -1,19 +1,33 @@
 import { useScrollToTop } from "@react-navigation/native";
 import React, { useEffect, useRef, useState } from "react";
-import { View, ImageBackground, Text, StyleSheet, Button, ScrollView, Animated } from "react-native";
+import { View, ImageBackground, StyleSheet, Button, ScrollView, Animated, FlatList } from "react-native";
 import ArticlesSwipper from "../components/ArticlesSwipper";
 import ContactUs from "../components/ContactUs/index";
 import FloatingSocial from "../components/FloatingSocial";
 import MapSite from "../components/MapSite";
-import { header_H } from "../constants";
+import { header_H, keyExtractor } from "../constants";
 import { useTheme } from "../context/StyleContext";
 import useViewSize from "../hooks/useViewSize";
 import { Footer, Header } from "../navigation";
+
+import {
+  useFonts,
+  VarelaRound_400Regular
+} from '@expo-google-fonts/varela-round'
+import Text from "../components/Txt";
+
+
+
+
 
 const RANGE_SCROLL = 200;
 const START_POS = -120;
 
 const ScreenContainer = ({ children, containerStyle }) => {
+
+  let [fontsLoaded] = useFonts({
+    VarelaRound_400Regular,
+  });
   const ref = React.useRef(null);
 
   useScrollToTop(ref);
@@ -40,8 +54,9 @@ const ScreenContainer = ({ children, containerStyle }) => {
     }
   }
 
-  return (
-    <>
+
+  return fontsLoaded && (
+    <View style={{ flex: 1, backgroundColor: primary }}>
       <FloatingSocial />
 
       <Header
@@ -53,28 +68,33 @@ const ScreenContainer = ({ children, containerStyle }) => {
           ],
         }}
       />
-      <ScrollView
+      <FlatList
         ref={ref}
-        // dont forget usethis
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
         onContentSizeChange={(e) => {
-          console.log(e)
-          ref.current?.scrollTo({ y: 0 })
+          ref.current?.scrollToOffset({ offest: 0 })
         }}
         onScroll={onScroll}
-        scrollEventThrottle={1}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={[containerStyle, { paddingTop: header_H, backgroundColor: primary }]}
-      >
-        {children}
-        <View style={{ backgroundColor: primary }}>
+        data={[{}]}
+        contentContainerStyle={[containerStyle]}
+        keyExtractor={keyExtractor}
+        ListFooterComponent={() => <View style={{ backgroundColor: primary, flex: 1 }}>
           <Text style={[styles.title, { color: secondary }]}>{`מאמרים נוספים`}</Text>
-          <ArticlesSwipper direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'} numArticles={isViewSmallerThan(900) ? 1 : 3} />
+          <View style={{ marginHorizontal: 25 }}>
+            <ArticlesSwipper direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'} numArticles={isViewSmallerThan(900) ? 1 : 3} />
+          </View>
           <ContactUs direction={isViewSmallerThan(1100) ? 'column' : 'row-reverse'} />
-          <MapSite direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'} />
+          <MapSite direction={isViewSmallerThan(1100) ? 'column' : 'row-reverse'} />
 
-        </View>
-      </ScrollView>
-    </>
+        </View>}
+        renderItem={
+          ({ item }) => (<View style={{ paddingTop: header_H }}>
+            {children}
+          </View>)
+        }
+      />
+    </View>
 
   );
 };
@@ -90,3 +110,25 @@ const styles = StyleSheet.create({
 });
 
 export default ScreenContainer;
+      // {/* <ScrollView
+      //   ref={ref}
+      //   // dont forget usethis
+      //   onContentSizeChange={(e) => {
+      //     console.log(e)
+      //     ref.current?.scrollTo({ y: 0 })
+      //   }}
+      //   onScroll={onScroll}
+      //   scrollEventThrottle={1}
+      //   showsVerticalScrollIndicator={false}
+      //   showsHorizontalScrollIndicator={false}
+      //   contentContainerStyle={[containerStyle, { paddingTop: header_H, }]}
+      // >
+      //   {children}
+      //   {/* <View style={{ backgroundColor: primary, flex: 1 }}>
+      //     <Text style={[styles.title, { color: secondary }]}>{`מאמרים נוספים`}</Text>
+      //     <ArticlesSwipper direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'} numArticles={isViewSmallerThan(900) ? 1 : 3} />
+      //     <ContactUs direction={isViewSmallerThan(1100) ? 'column' : 'row-reverse'} />
+      //     <MapSite direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'} />
+
+      //   </View> */}
+      //   </ScrollView> * /}

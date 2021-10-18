@@ -47,11 +47,11 @@ export default class Hoverable extends Component {
             onMouseEnter: this._handleMouseEnter,
             onMouseLeave: this._handleMouseLeave,
             // prevent hover showing while responder
-            onResponderGrant: this._handleGrant,
-            onResponderRelease: this._handleRelease,
+            // onResponderGrant: this._handleGrant,
+            // onResponderRelease: this._handleRelease,
             // if child is Touchable
-            onPressIn: this._handleGrant,
-            onPressOut: this._handleRelease
+            // onPressIn: this._handleGrant,
+            // onPressOut: this._handleRelease
         });
     }
 }

@@ -1,7 +1,8 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { Button } from "react-native-elements";
 import Content from "../../components/Article/Content";
+import Text from "../../components/Txt";
 import { header_H } from "../../constants";
 import { about } from "../../content";
 import { useTheme } from "../../context/StyleContext";
@@ -17,7 +18,7 @@ const About = ({ navigation }) => {
   return (
     <ScreenContainer>
       <Text style={[styles.mainTitle, { backgroundColor: c3, color: secondary }]}>{`אודות המשרד`}</Text>
-      <View style={{ marginHorizontal: isMobile ? 20 : 80, flex: 1 }}>
+      <View style={{ marginHorizontal: isMobile ? 20 : 50, flex: 1 }}>
 
         <Content content={about.about.content} />
 

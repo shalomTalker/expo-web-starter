@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { StyleSheet, Text, View, Image, ImageBackground } from "react-native";
+import { StyleSheet, View, Image, ImageBackground } from "react-native";
 import { Button, FAB } from "react-native-elements";
 import { header_H, IMAGE_1_URI, LOGO_URI, HOME_BACKGROUND_URI } from "../../constants";
 import useViewSize from "../../hooks/useViewSize";
@@ -12,17 +12,24 @@ import ContactUs from "../../components/ContactUs";
 import ArticlesSwipper from '../../components/ArticlesSwipper'
 import Logo from "../../components/Logo";
 import { Space } from "../../components/Spacing";
-
+import {
+  useFonts,
+  VarelaRound_400Regular
+} from '@expo-google-fonts/varela-round'
+import Text from "../../components/Txt";
 
 
 const Home = () => {
+  let [fontsLoaded] = useFonts({
+    VarelaRound_400Regular,
+  });
   const { primary, c5, secondary, isDark } = useTheme()
   const navigation = useNavigation();
   const [widthTag, heightSize, widthSize] = useViewSize()
   const isMobile = ["sm", "xs", "md"].includes(widthTag);
   const isSmallMobile = ["xs"].includes(widthTag);
 
-  return (
+  return fontsLoaded && (
     <ScreenContainer>
       <View style={{ width: widthSize, height: heightSize }} >
         <ImageBackground source={{ uri: HOME_BACKGROUND_URI }} resizeMethod="scale" style={{
@@ -43,12 +50,11 @@ const Home = () => {
             <Logo isDark={isDark} width={isMobile ? 150 : 200} height={isMobile ? 150 : 200} />
             <Text style={{
               textAlign: 'center',
-              fontStyle: 'italic',
+              // fontStyle: 'italic',
               paddingHorizontal: isSmallMobile ? 60 : '10%',
               fontSize: 20,
               fontWeight: 500,
               color: primary,
-              fontWeight: '500',
 
             }}>{`"משרדנו נותן ייעוץ משפטי וייצוג בכל סוגי העבירות הפליליות, החל משלב הייעוץ לפני חקירה, ייצוג בהליכי מעצר שחרור וניהול התיק הפלילי."`}</Text>
           </View>
@@ -66,6 +72,8 @@ const Home = () => {
                 fontWeight: 500,
                 textAlign: 'center',
                 color: secondary,
+                // fontFamily: 'serif'
+
               }}>{` עו"ד אור פרים בעל ניסיון של מעל עשור בניהול הליכים פליליים ואזרחיים מורכבים, ומייצג את לקוחותיו במסירות ומקצועיות בלתי מתפשרת.`}</Text>
 
               <View style={{ paddingHorizontal: widthTag == 'sm' ? 80 : 0 }}>
@@ -74,7 +82,7 @@ const Home = () => {
             </View>
           </View>
         ) : (
-          <View style={{ flex: 1, alignItems: 'center', flexDirection: 'row', }}>
+          <View style={{ flex: 1, flexDirection: 'row', }}>
             <Image source={{ uri: IMAGE_1_URI }} style={{ width: isMobile ? '50%' : 400, height: 450, paddingRight: 50 }} />
             <View style={{ flex: 2, marginTop: 36 }}>
               <Text style={{
@@ -84,6 +92,7 @@ const Home = () => {
                 fontWeight: 500,
                 textAlign: 'center',
                 color: secondary,
+
               }}>{` עו"ד אור פרים בעל ניסיון של מעל עשור בניהול הליכים פליליים ואזרחיים מורכבים, ומייצג את לקוחותיו במסירות ומקצועיות בלתי מתפשרת.`}</Text>
               <View style={{ paddingHorizontal: widthTag == 'xl' ? 150 : widthTag == 'lg' ? 100 : 0 }}>
                 <ArticlesSwipper enableSwitch={false} direction="column" numArticles={1} />

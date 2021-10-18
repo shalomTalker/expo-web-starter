@@ -1,9 +1,10 @@
 import { useNavigation } from '@react-navigation/core'
 import React, { useEffect, useRef, useState } from 'react'
-import { Animated, Image, ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native'
+import { Animated, Image, ImageBackground, Pressable, StyleSheet, View } from 'react-native'
 import { services, interests } from '../../content'
 import { useTheme } from '../../context/StyleContext'
 import useViewSize from '../../hooks/useViewSize'
+import Text from '../Txt'
 
 const ArticlesSwipper = ({ direction, numArticles = 2, enableSwitch = true }) => {
     const { gray, primary, c2, G_Styles } = useTheme()

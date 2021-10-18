@@ -1,8 +1,10 @@
 import React from "react";
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, View } from "react-native";
 import { useTheme } from "../context/StyleContext";
 import Icon from "./Icon";
 import Anchor from '../hoc/Anchor'
+import Text from "./Txt";
+
 
 const DetailsSection = ({ textColor, ...props }) => {
   const { primary } = useTheme()

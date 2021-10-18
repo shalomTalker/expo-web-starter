@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, ImageBackground, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Image, ImageBackground, ScrollView, StyleSheet, View } from "react-native";
 import { Button } from "react-native-elements";
 import ScreenContainer from "../ScreenContainer";
 import useViewSize from "../../hooks/useViewSize";
@@ -10,12 +10,14 @@ import { interests } from "../../content";
 import Content from "../../components/Article/Content";
 import Article from "../../components/Article";
 import Btn from "../../components/Btn";
+import Center from "../../navigation/Center";
+import Text from "../../components/Txt";
 
 
 const Interests = ({ navigation, route }) => {
   const { params = null } = route;
   const [widthTag, , widthSize] = useViewSize()
-  const { c2, c3, primary, c4, c5 } = useTheme()
+  const { c2, c3, primary, c4, c5, secondary } = useTheme()
 
   const isMobile = ["sm", "xs"].includes(widthTag);
   const renderContent = () => {
@@ -28,7 +30,7 @@ const Interests = ({ navigation, route }) => {
 
         <>
           <Text style={[styles.mainTitle, { color: c2 }]}>{`תחומי עיסוק`}</Text>
-          <View style={{ flexDirection: 'row' }}>
+          <View style={{ flexDirection: 'row', flex: 1 }}>
             {Boolean(!isMobile) &&
               <ImageBackground source={{ uri: IMAGE_1_URI }} style={{ height: '100%', paddingTop: '33%', flex: 1 }}>
                 <ContactUs direction='column' titleStyle={styles.contactTitle} />
@@ -51,6 +53,7 @@ const Interests = ({ navigation, route }) => {
                       <Btn
                         buttonStyle={styles.button}
                         style={[styles.buttonWrapper, { borderColor: primary, color: primary }]}
+                        titleStyle={{ fontFamily: 'VarelaRound_400Regular' }}
                         title={`להמשך קריאה`}
                         onPress={() => navigation.navigate('interests', { value: key })}
                       />
@@ -70,6 +73,7 @@ const Interests = ({ navigation, route }) => {
     <ScreenContainer>
       {renderContent()}
     </ScreenContainer>
+
   );
 };
 

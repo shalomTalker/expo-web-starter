@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { StyleSheet, Text, View, Alert } from 'react-native'
+import { StyleSheet, View, Alert } from 'react-native'
 
 import TextInput from '../TextInput';
 import Btn from '../Btn';
@@ -37,7 +37,7 @@ const inputs = [
         keyboardType: "default"
     },
 ]
-const ContactForm = () => {
+const ContactForm = ({ direction }) => {
     const { primary, secondary, c2 } = useTheme()
 
     const onSubmit = (values, formikActions) => {
@@ -63,7 +63,7 @@ const ContactForm = () => {
             {(props) => {
                 const { handleChange, values, errors, touched, handleSubmit, isSubmitting } = props;
 
-                return <>
+                return <View style={[styles.container, { flexDirection: direction }]}>
                     {inputs.map(({ name, ...other }, i) => {
                         return <TextInput
                             key={i.toString()}
@@ -82,13 +82,14 @@ const ContactForm = () => {
                     })}
                     <Btn
                         disabled={isSubmitting}
+                        titleStyle={{ fontFamily: 'VarelaRound_400Regular' }}
                         title={`מעוניין בפרטים נוספים`}
                         onPress={handleSubmit}
                         buttonStyle={{ width: 200, backgroundColor: c2 }}
                         loading={isSubmitting}
                     />
 
-                </>
+                </View>
             }}
         </Formik>
     )

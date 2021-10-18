@@ -1,6 +1,6 @@
 
 import React, { Component, useEffect, useRef, useState } from 'react'
-import { Image, ActivityIndicator, StyleSheet, Text, ImageBackground, View, Animated } from 'react-native'
+import { Image, ActivityIndicator, StyleSheet, ImageBackground, View, Animated } from 'react-native'
 import useViewSize from "../hooks/useViewSize";
 import { LinearGradient } from 'expo-linear-gradient';
 

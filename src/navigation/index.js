@@ -2,7 +2,7 @@
 
 
 import React from "react";
-import { View, Text, StyleSheet, ImageBackground } from "react-native";
+import { View, StyleSheet, ImageBackground } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Button } from "react-native-elements";
@@ -19,6 +19,7 @@ import Header from "./Header";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import { useTheme } from "../context/StyleContext";
+import { header_H } from "../constants";
 
 
 
@@ -28,7 +29,9 @@ const Index = () => {
     const [, , widthSize] = useViewSize();
     const drawerContent = (props) => {
         return (
-            <NavBar type="column" defaultColor={secondary} style={{ backgroundColor: c2, height: '100%' }} />
+            <View style={{ flex: 1, backgroundColor: primary }} {...props}>
+                <NavBar type="column" defaultColor={secondary} style={{ backgroundColor: c2, height: '100%' }} />
+            </View>
         );
     };
 
@@ -45,22 +48,45 @@ const Index = () => {
         prefixes: [],
         config,
     };
+    /* 
+    tabBarOnPress: (scene, jumpToIndex) => {
+                            const { route, index, focused } = scene;
+                            if (route.index === 0) {
+                                const navigationInRoute = route.routes[0];
+                                if (!!navigationInRoute && !!navigationInRoute.params && !!navigationInRoute.params.scrollToTop) {
+                                    navigationInRoute.params.scrollToTop();
+                                }
+                            }
+                            jumpToIndex(1);
+                        },
+    
+    
+    */
+
+
     return (
-        <NavigationContainer linking={linking} fallback={<Text>Loading...</Text>}>
+        <NavigationContainer onStateChange={console.log} linking={linking} fallback={<Text>Loading...</Text>}>
             <Drawer.Navigator
+
                 drawerContent={drawerContent}
                 initialRouteName="home"
-                backBehavior={"history"}
-                screenOptions={{
-                    drawerPosition: 'right',
-                    sceneContainerStyle: { flex: 1 },
-                    title: `עורך דין אור פרים`,
-                    headerShown: false,
-                    drawerStyle: {
-                        width: widthSize / 2
-                    },
+                backBehavior={"order"}
 
-                }}>
+                screenOptions={() => {
+                    return {
+
+                        headerLeft: null,
+                        drawerPosition: 'left',
+                        sceneContainerStyle: { flex: 1 },
+                        title: `עורך דין אור פרים`,
+                        headerShown: false,
+                        drawerStyle: {
+                            width: widthSize / 2
+                        },
+
+                    }
+                }
+                }>
                 <Drawer.Screen name="home" component={HomeScreen} />
                 <Drawer.Screen name="about" component={AboutScreen} />
                 <Drawer.Screen name="interests" component={InterestsScreen} />

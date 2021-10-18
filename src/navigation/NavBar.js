@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useRef } from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
 import { useRoute } from '@react-navigation/native';
 
 import Btn from "../components/Btn";
@@ -11,6 +11,7 @@ import Hoverable from "../hoc/Hoverable";
 import { Switch } from 'react-native-elements';
 import { Space } from '../components/Spacing'
 import Logo from "../components/Logo";
+import Text from "../components/Txt";
 
 
 
@@ -59,7 +60,7 @@ const NavBar = ({
               }}
               title={title}
               type="clear"
-              titleStyle={{ color: isSelected ? secondary : primary, fontSize: 15, fontWeight: '500' }}
+              titleStyle={{ color: isSelected ? secondary : primary, fontSize: 15, fontWeight: '500', fontFamily: 'VarelaRound_400Regular' }}
               onPress={() => navigation.navigate(name)} /> : (
               <NavPicker
                 isSelected={isSelected}
@@ -85,7 +86,7 @@ const NavBar = ({
     <View style={{ flexDirection: type === "top" ? "row-reverse" : "column" }}>{renderButtons()} </View>
     {
       Boolean(type !== 'top') &&
-      <View style={[styles.footer, { borderTopColor: primary }]}>
+      (<View style={[styles.footer, { borderTopColor: primary }]}>
         <Text style={[styles.dark, { color: primary }]}>{`מצב לילה`}</Text>
         <Space width={16} />
 
@@ -94,9 +95,9 @@ const NavBar = ({
           tintColor={isDark ? primary : secondary}
           value={isDark}
           onValueChange={() => setScheme(isDark ? 'light' : 'dark')} />
-      </View>
+      </View>)
     }
-  </View>;
+  </View>
 };
 
 export default NavBar;
@@ -113,7 +114,8 @@ export const NavPicker = ({ insideScreen = false, title, tooltips, isSelected })
           backgroundColor: isHover || isSelected ? c3 : 'transparent',
           color: isSelected ? secondary : primary,
           height: insideScreen ? '100%' : 'auto',
-          width: !insideScreen ? '100%' : 'auto'
+          width: !insideScreen ? '100%' : 'auto',
+          fontFamily: 'VarelaRound_400Regular'
         }]}
         mode="dropdown"
         selectedValue={0}
@@ -127,7 +129,7 @@ export const NavPicker = ({ insideScreen = false, title, tooltips, isSelected })
             value={0}
             index={0}
             color={secondary}
-            style={{ backfaceVisibility: "hidden" }}
+            style={{ backfaceVisibility: "hidden", fontFamily: 'VarelaRound_400Regular' }}
           />
           {tooltips.map(
             ({ label, value }, f) =>
@@ -137,6 +139,7 @@ export const NavPicker = ({ insideScreen = false, title, tooltips, isSelected })
                 color={secondary}
                 value={value}
                 index={1 + f}
+                style={{ fontFamily: 'VarelaRound_400Regular' }}
               />
           )}
         </>

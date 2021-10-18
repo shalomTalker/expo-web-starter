@@ -1,8 +1,9 @@
 import React from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, View } from 'react-native'
 import { useTheme } from '../../context/StyleContext'
 import useViewSize from '../../hooks/useViewSize'
 import ContactUs from '../ContactUs'
+import Text from '../Txt'
 import Content from './Content'
 
 const Article = ({ article }) => {
@@ -12,18 +13,18 @@ const Article = ({ article }) => {
 
     const isMobile = ["sm", "xs", "md"].includes(widthTag);
 
-    const responsiveStyle = { flex: isMobile ? 1 : 0.5, paddingHorizontal: 16 }
+    const responsiveStyle = { paddingHorizontal: 16, width: isMobile ? '100%' : '50%' }
 
     return (
         <View style={{ backgroundColor: primary, flex: 1 }}>
             <Text style={[styles.mainTitle, { backgroundColor: c3, color: secondary }]}>{title}</Text>
-            <View style={[styles.mainWrapper, { flexDirection: isMobile ? "column-reverse" : 'row' }]}>
-                <View style={[responsiveStyle, { alignItems: 'center', }]}>
-                    <Image {...image} />
-                    <ContactUs direction="column" title={contactUsTitle} backgroundColor={c3} />
-                </View>
-                <View style={responsiveStyle}>
+            <View style={[styles.mainWrapper, { flexDirection: isMobile ? "column" : 'row-reverse' }]}>
+                <View style={[responsiveStyle, { paddingRight: 50 }]}>
                     <Content content={content} />
+                </View>
+                <View style={[responsiveStyle, { flex: 1, alignItems: 'center' }]}>
+                    <Image {...image} style={[image.style, { marginTop: 36 }]} />
+                    <ContactUs direction="column" title={contactUsTitle} />
                 </View>
             </View>
         </View>
@@ -34,5 +35,5 @@ export default Article
 
 const styles = StyleSheet.create({
     mainTitle: { textAlign: 'right', padding: 30, fontSize: 30, fontWeight: 500 },
-    mainWrapper: { paddingHorizontal: 30, flex: 1 },
+    mainWrapper: { paddingHorizontal: 15, },
 })

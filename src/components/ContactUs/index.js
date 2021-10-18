@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, Text, View, Alert } from 'react-native'
+import { StyleSheet, View, Alert } from 'react-native'
 import { useTheme } from '../../context/StyleContext'
+import Text from '../Txt'
 import ContactForm from './ContactForm'
 
 const ContactUs = ({ backgroundColor, direction = 'row-reverse', title, titleStyle = {} }) => {
@@ -8,9 +9,9 @@ const ContactUs = ({ backgroundColor, direction = 'row-reverse', title, titleSty
     return (
         <View style={[styles.container, { backgroundColor }]}>
             <Text style={[styles.title, { fontSize: 22, color: secondary }]}>{title}</Text>
-            <Text style={[styles.title, { fontSize: 18, color: secondary }, titleStyle,]}>{`השאירו פרטים ונחזור אליכם בהקדם`}</Text>
-            <View style={[styles.formContainer, { flexDirection: direction }]}>
-                <ContactForm />
+            <Text style={[styles.title, { fontSize: 18, color: secondary }, titleStyle]}>{`השאירו פרטים ונחזור אליכם בהקדם`}</Text>
+            <View style={[styles.formContainer]}>
+                <ContactForm direction={direction} />
             </View>
         </View>
     )
@@ -21,15 +22,16 @@ export default ContactUs
 const styles = StyleSheet.create({
     container: {
         alignItems: "center",
-        justifyContent: 'center',
+        flex: 1
     },
     formContainer: {
         paddingBottom: 50,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        // flex: 1,
     },
     title: {
-        flex: 1,
+
         margin: 16,
         fontWeight: 500
     }

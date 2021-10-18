@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, Platform, View } from 'react-native';
+import { StyleSheet, Platform, View } from 'react-native';
 import { Input } from 'react-native-elements';
 import { useTheme } from '../context/StyleContext';
 import DismissKeyboardView from '../hoc/DismissKeyboardView';

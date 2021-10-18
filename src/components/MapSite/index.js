@@ -1,9 +1,10 @@
 import React from 'react'
-import { FlatList, StyleSheet, Text, View } from 'react-native'
+import { FlatList, StyleSheet, View } from 'react-native'
 import { keyExtractor } from '../../constants'
 import { useTheme } from '../../context/StyleContext';
 import useViewSize from '../../hooks/useViewSize';
 import { Space } from '../Spacing';
+import Text from '../Txt';
 import ListItem from './ListItem';
 
 const mapList = [
@@ -134,7 +135,8 @@ const MapSite = ({ direction }) => {
     const [, , widthSize] = useViewSize()
     return (
         <View style={[styles.container, {
-            flexDirection: direction, backgroundColor: c2,
+            flexDirection: direction,
+            backgroundColor: c2,
         }]}>
             {
                 mapList.map(({ title, items }, i) =>
@@ -151,7 +153,7 @@ const MapSite = ({ direction }) => {
                     </View>
                 )
             }
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 16 }}>
+            <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: 16, paddingHorizontal: 40 }}>
                 <Text style={{ fontSize: 20, color: primary }} >
                     אור פרים, משרד עורכי דין מעניק שירות משפטי מלא בתחום המשפט הפלילי, משפט צבאי, תעבורה, הליכים אזרחיים וקניית ומכירת דירות. המשרד חרת על דגלו להעניק שירות אישי, יסודי, מקצועי ובלתי מתפשר לכל לקוחותיו.
                     כל הזכויות שמורות לעורך הדין אור פרים. אין להעתיק או לעשות שימוש בכל תוכן מהאתר. תוכן האתר אינו מהווה המלצה ו/או ייעוץ משפטי.
@@ -170,14 +172,13 @@ export default MapSite
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         justifyContent: 'space-between',
         textAlign: 'right',
-        margin: 50,
+        margin: 20,
         borderRadius: 8
     },
     sectionConatiner: {
-        flex: 1,
+        // flex: 1,
         padding: 4,
         marginHorizontal: 16,
     },
@@ -187,7 +188,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'flex-end',
         justifyContent: 'flex-start',
-        flexWrap: 'wrap'
+        // flexWrap: 'wrap'
     }
 
 })
