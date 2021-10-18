@@ -133,6 +133,7 @@ const MapSite = ({ direction }) => {
 
     const { gray, primary, c2 } = useTheme()
     const [, , widthSize] = useViewSize()
+
     return (
         <View style={[styles.container, {
             flexDirection: direction,
@@ -141,7 +142,7 @@ const MapSite = ({ direction }) => {
         }]}>
             {
                 mapList.map(({ title, items }, i) =>
-                    <View key={i.toString()} style={styles.sectionConatiner}>
+                    <View key={i.toString()} style={[styles.sectionConatiner, direction == 'row' && { flex: 1 }]}>
                         <Text style={{ fontSize: 25, color: primary }}>{title}</Text>
                         <Space height={1} backgroundColor={primary} />
                         <View style={[styles.flatlistContainer]}>
@@ -154,12 +155,18 @@ const MapSite = ({ direction }) => {
                     </View>
                 )
             }
-            <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: 16, paddingHorizontal: 40 }}>
-                <Text style={{ fontSize: 20, color: primary }} >
-                    אור פרים, משרד עורכי דין מעניק שירות משפטי מלא בתחום המשפט הפלילי, משפט צבאי, תעבורה, הליכים אזרחיים וקניית ומכירת דירות. המשרד חרת על דגלו להעניק שירות אישי, יסודי, מקצועי ובלתי מתפשר לכל לקוחותיו.
-                    כל הזכויות שמורות לעורך הדין אור פרים. אין להעתיק או לעשות שימוש בכל תוכן מהאתר. תוכן האתר אינו מהווה המלצה ו/או ייעוץ משפטי.
+            <View style={{ flex: 1, padding: 4, paddingHorizontal: 16 }}>
+                <Text style={{ fontSize: 25, color: primary }}>{`אור פרים, משרד עורכי דין`}</Text>
+                <Space height={1} backgroundColor={primary} />
 
-                </Text>
+                <View style={[styles.flatlistContainer]}>
+                    <Text style={{ fontSize: 16, color: primary }}>{
+                        `אור פרים, משרד עורכי דין מעניק שירות משפטי מלא בתחום המשפט הפלילי, משפט צבאי, תעבורה, הליכים אזרחיים וקניית ומכירת דירות. המשרד חרט על דגלו להעניק שירות אישי, יסודי, מקצועי ובלתי מתפשר לכל לקוחותיו`}</Text>
+                    <Space height={20} />
+                    <Text style={{ fontSize: 16, color: primary }} >
+                        {`כל הזכויות שמורות לעורך הדין אור פרים. אין להעתיק או לעשות שימוש בכל תוכן מהאתר. תוכן האתר אינו מהווה המלצה ו/או ייעוץ משפטי.`}
+                    </Text>
+                </View>
             </View>
 
 
@@ -173,6 +180,7 @@ export default MapSite
 
 const styles = StyleSheet.create({
     container: {
+        height: 'auto',
         justifyContent: 'space-between',
         textAlign: 'right',
         margin: 20,
@@ -184,11 +192,11 @@ const styles = StyleSheet.create({
         marginHorizontal: 16,
     },
     flatlistContainer: {
-        flex: 1,
-        marginTop: 16,
+        // flex: 1,
+        marginTop: 8,
         flexDirection: 'column',
         alignItems: 'flex-end',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
         // flexWrap: 'wrap'
     }
 

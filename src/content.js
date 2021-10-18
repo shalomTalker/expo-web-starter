@@ -1,4 +1,4 @@
-import { IMAGE_2_URI } from "./constants"
+import { IMAGE_2_URI, ABOUT_PHOTO_URI } from "./constants"
 
 const interests = {
     criminal: {
@@ -466,7 +466,7 @@ const about = {
             {
                 type: 'imagecaption',
                 image: {
-                    source: { uri: IMAGE_2_URI }, style: { paddingHorizontal: 25, marginTop: 25, marginRight: 45, alignSelf: 'center' }
+                    source: { uri: ABOUT_PHOTO_URI }, style: { paddingHorizontal: 25, marginTop: 25, alignSelf: 'center' }
                 },
                 content: [
                     `אור פרים, משרד עורכי דין מתמחה בתחום המשפט הפלילי על כל רבדיו, וחרט על דגלו להעניק שירות אישי, יסודי, מקצועי ובלתי מתפשר לכל לקוחותיו.`,
@@ -480,7 +480,7 @@ const about = {
             },
             {
                 type: 'imagecaption',
-                image: { source: { uri: IMAGE_2_URI }, style: { paddingHorizontal: 25, alignSelf: 'center', marginRight: 45, } },
+                image: { source: { uri: IMAGE_2_URI }, style: { paddingHorizontal: 25, alignSelf: 'center', } },
                 content: [
                     `עורך דין אור פרים בעל ניסיון של מעל עשור בניהול תיקים פליליים, מסחריים ואזרחיים סבוכים ומורכבים בפני ערכאות שיפוטיות מגוונות.`,
                     `לעורך דין פרים תואר ראשון ותואר שני במשפטים מאוניברסיטת חיפה, עם התמחות בתורת השפיטה וניהול ההליך הפלילי. בנוסף, השלים עו"ד פרים לימודי תואר שני נוסף במנהל עסקים בטכניון.`,

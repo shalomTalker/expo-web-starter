@@ -59,6 +59,7 @@ const NavBar = ({
 
               }}
               title={title}
+              titleStyle={{ fontFamily: 'VarelaRound_400Regular' }}
               type="clear"
               titleStyle={{ color: isSelected ? secondary : primary, fontSize: 15, fontWeight: '500', fontFamily: 'VarelaRound_400Regular' }}
               onPress={() => navigation.navigate(name)} /> : (

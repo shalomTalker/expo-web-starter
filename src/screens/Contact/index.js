@@ -25,10 +25,9 @@ const Contact = ({ navigation }) => {
   const { primary, secondary, c3 } = useTheme()
   return (
     <ScreenContainer>
+      <Text style={[styles.mainTitle, { backgroundColor: c3, color: secondary, }]}>{`צור קשר`}</Text>
       <View style={[styles.container, { flexDirection: isMobile ? 'column-reverse' : 'row' }]}>
-
         <Image source={{ uri: MAP_URI }} style={[styles.image]} />
-
         <View>
           {
             ICONS.map(({ icon, label, uri, href }, i) =>
@@ -54,6 +53,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
+  mainTitle: { textAlign: 'right', padding: 30, fontSize: 30, fontWeight: 500, paddingRight: 60 },
   anchor: { flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' },
   text: { fontSize: 18, fontWeight: 500 },
   image: { width: 280, height: 280, margin: 16, borderRadius: 8 },

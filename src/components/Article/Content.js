@@ -42,10 +42,12 @@ const Content = ({ content }) => {
                         <View key={i.toString()} style={{
 
                             flexDirection: isMobile ? 'column' : 'row-reverse',
-                            justifyContent: isMobile ? 'center' : 'space-between'
+                            justifyContent: isMobile ? 'center' : 'space-between',
+                            alignItems: 'center'
+
                         }}>
                             <View style={{ flex: 1, width: isMobile ? '100%' : '60%' }}>{renderText()}</View>
-                            <Image source={image.source} style={[image.style, { width: isMobile ? '100%' : 350, height: 300 }]} />
+                            <Image source={image.source} style={[image.style, { width: isMobile ? '100%' : 350, height: 300, marginRight: isMobile ? 0 : 45 }]} />
 
                         </View>
                     )

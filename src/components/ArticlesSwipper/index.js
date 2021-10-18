@@ -7,7 +7,7 @@ import useViewSize from '../../hooks/useViewSize'
 import Text from '../Txt'
 
 const ArticlesSwipper = ({ direction, numArticles = 2, enableSwitch = true }) => {
-    const { gray, primary, c2, G_Styles } = useTheme()
+    const { gray, primary, c2, G_Styles, secondary } = useTheme()
     const [startPos, setStartPos] = useState(0);
     const opacity = new Animated.Value(0);
     const navigation = useNavigation()
@@ -48,7 +48,7 @@ const ArticlesSwipper = ({ direction, numArticles = 2, enableSwitch = true }) =>
                                 styles.articleContainer,
                                 { backgroundColor: c2 }]} onPress={() => navigation.navigate(route, params)}>
                                 <ImageBackground style={styles.background} source={image.source} >
-                                    <View style={[styles.description]}>
+                                    <View style={[styles.description, { backgroundColor: `${secondary}99` }]}>
                                         <Text style={{
                                             fontSize: 24, color: primary,
                                         }}>{title}</Text>
@@ -74,7 +74,7 @@ const ArticlesSwipper = ({ direction, numArticles = 2, enableSwitch = true }) =>
                     styles.articleContainer,
                     { backgroundColor: c2 }]} onPress={() => navigation.navigate(route, params)}>
                     <ImageBackground style={styles.background} source={image.source} >
-                        <View style={[styles.description]}>
+                        <View style={[styles.description, { backgroundColor: `${secondary}99` }]}>
                             <Text style={{
                                 fontSize: 24, color: primary,
                             }}>{title}</Text>
@@ -129,8 +129,6 @@ const styles = StyleSheet.create({
         padding: 8,
         alignItems: 'center',
         backgroundColor: 'gray',
-        opacity: 0.8
-
     } /* {
         
         flex: 1,

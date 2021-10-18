@@ -85,8 +85,7 @@ const ScreenContainer = ({ children, containerStyle }) => {
           <View style={{ marginHorizontal: 25 }}>
             <ArticlesSwipper direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'} numArticles={isViewSmallerThan(900) ? 1 : 3} />
           </View>
-          <MapSite direction={isViewSmallerThan(1100) ? 'column' : 'row-reverse'} />
-
+          <MapSite direction={isViewSmallerThan(1100) ? 'column' : 'row'} />
         </View>}
         renderItem={
           ({ item }) => (<View style={{ paddingTop: header_H }}>

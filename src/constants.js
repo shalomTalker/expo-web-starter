@@ -299,7 +299,7 @@ export const IMAGE_1_URI = 'https://images-frimor.s3.eu-west-1.amazonaws.com/%D7
 
 export const HOME_BACKGROUND_URI = 'https://images-frimor.s3.eu-west-1.amazonaws.com/WhatsApp+Image+2021-10-12+at+19.33.32+(1).jpeg'
 
-
+export const ABOUT_PHOTO_URI = 'https://images-frimor.s3.eu-west-1.amazonaws.com/WhatsApp+Image+2021-10-12+at+19.33.32.jpeg'
 
 export const LOGO_HEADER_URI = 'https://i.ibb.co/vsJZ3Px/logo-header.png'
 
