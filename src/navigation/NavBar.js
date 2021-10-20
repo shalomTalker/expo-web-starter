@@ -59,7 +59,6 @@ const NavBar = ({
 
               }}
               title={title}
-              titleStyle={{ fontFamily: 'VarelaRound_400Regular' }}
               type="clear"
               titleStyle={{ color: isSelected ? secondary : primary, fontSize: 15, fontWeight: '500', fontFamily: 'VarelaRound_400Regular' }}
               onPress={() => navigation.navigate(name)} /> : (
@@ -116,7 +115,7 @@ export const NavPicker = ({ insideScreen = false, title, tooltips, isSelected })
           color: isSelected ? secondary : primary,
           height: insideScreen ? '100%' : 'auto',
           width: !insideScreen ? '100%' : 'auto',
-          fontFamily: 'VarelaRound_400Regular'
+          fontFamily: 'VarelaRound_400Regular', fontWeight: '500', fontSize: 15
         }]}
         mode="dropdown"
         selectedValue={0}
@@ -130,7 +129,7 @@ export const NavPicker = ({ insideScreen = false, title, tooltips, isSelected })
             value={0}
             index={0}
             color={secondary}
-            style={{ backfaceVisibility: "hidden", fontFamily: 'VarelaRound_400Regular' }}
+            style={{ backfaceVisibility: "hidden", fontFamily: 'VarelaRound_400Regular', fontWeight: '500', fontSize: 15 }}
           />
           {tooltips.map(
             ({ label, value }, f) =>
@@ -140,7 +139,7 @@ export const NavPicker = ({ insideScreen = false, title, tooltips, isSelected })
                 color={secondary}
                 value={value}
                 index={1 + f}
-                style={{ fontFamily: 'VarelaRound_400Regular' }}
+                style={{ fontFamily: 'VarelaRound_400Regular', fontWeight: '500', fontSize: 15 }}
               />
           )}
         </>

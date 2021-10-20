@@ -23,11 +23,16 @@ const Content = ({ content }) => {
                     </Text>
                 case 'bold':
                     return <Text key={i.toString()} style={[contentTextStyle, { fontWeight: 'bold' }]}>{text}</Text>
-                case 'boldBySign':
+                case 'boldBySignStart':
                     return <Text key={i.toString()} style={{ padding: 8, textAlign: 'justify' }}>
                         <Text style={[contentTextStyle, { fontWeight: 'bold', padding: 0 }]}>{text.split('&')[1]}</Text>
                         <Text style={[contentTextStyle, { padding: 0 }]}>{text.split('&')[2]}</Text>
                     </Text>
+                case 'boldBySignEnd':
+                    return <Text key={i.toString()} style={{ padding: 8, textAlign: 'justify' }}>
+                        <Text style={[contentTextStyle, { padding: 0 }]}>{text.split('&')[0]}</Text>
+                        <Text style={[contentTextStyle, { fontWeight: 'bold', padding: 0 }]}>{text.split('&')[1]}</Text>
+                    </Text >
                 case 'list':
                     return <>
                         <Text key={i.toString()} style={contentTextStyle}>{text}</Text>

@@ -35,7 +35,7 @@ const Header = (props) => {
           <TouchableOpacity onPress={navigation.toggleDrawer} >
             <Icon name="menu" size={35} color={primary} />
           </TouchableOpacity> :
-          <Anchor href="tel:0508347079" style={{ flexDirection: 'row' }}>
+          <Anchor href="tel:0508347079" style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Icon name="phone" size={30} color={primary} style={{ marginRight: 8 }} />
             <Text style={{ color: primary, fontSize: 20, fontWeight: "400" }}>זמינות 24/7 במקרים דחופים – 050-8347079</Text>
           </Anchor>
@@ -51,7 +51,7 @@ const Header = (props) => {
             defaultColor={primary}
           /> : <Anchor href="tel:0508347079" style={{ flexDirection: 'row' }}>
             <Icon name="phone" size={30} color={primary} style={{ marginRight: 8 }} />
-            <Text style={{ color: primary, fontSize: 20, fontWeight: "400" }}>{`${widthTag == 'xs' ? '' : 'זמינות'} 24/7 במקרים דחופים${(widthTag == 'sm') ? ' – 050-8347079' : ''}`}</Text>
+            <Text style={{ color: primary, fontSize: 20, fontWeight: "400" }}>{`${widthTag == 'xs' ? '' : 'זמינות'} 24/7 במקרים דחופים${(['sm', 'md'].includes(widthTag)) ? ' – 050-8347079' : ''}`}</Text>
           </Anchor>}
       />
     </Animated.View>

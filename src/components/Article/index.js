@@ -17,7 +17,7 @@ const Article = ({ article }) => {
 
     return (
         <View style={{ backgroundColor: primary, flex: 1 }}>
-            <Text style={[styles.mainTitle, { backgroundColor: c3, color: secondary, }]}>{title}</Text>
+            <Text style={[styles.mainTitle, { color: secondary, }]}>{title}</Text>
             <View style={[styles.mainWrapper, { flexDirection: isMobile ? "column" : 'row-reverse' }]}>
                 <View style={[responsiveStyle, { paddingRight: 40 }]}>
                     <Content content={content} />

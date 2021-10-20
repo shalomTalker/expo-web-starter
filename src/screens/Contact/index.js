@@ -25,7 +25,7 @@ const Contact = ({ navigation }) => {
   const { primary, secondary, c3 } = useTheme()
   return (
     <ScreenContainer>
-      <Text style={[styles.mainTitle, { backgroundColor: c3, color: secondary, }]}>{`צור קשר`}</Text>
+      <Text style={[styles.mainTitle, { color: secondary, }]}>{`צור קשר`}</Text>
       <View style={[styles.container, { flexDirection: isMobile ? 'column-reverse' : 'row' }]}>
         <Image source={{ uri: MAP_URI }} style={[styles.image]} />
         <View>

@@ -66,15 +66,26 @@ const Home = () => {
             <Image source={{ uri: IMAGE_1_URI }} style={{ width: 400, height: 300 }} />
             <View style={{ flex: 5, marginTop: 36 }}>
               <Text style={{
-                opacity: 1,
+                fontSize: 23,
+                fontWeight: 500,
+                textAlign: 'center',
+                color: secondary
+              }}>{`עו"ד אור פרים`}</Text>
+              <Text style={{
                 paddingHorizontal: ["sm"].includes(widthTag) ? 100 : 75,
                 fontSize: 20,
                 fontWeight: 500,
                 textAlign: 'center',
                 color: secondary,
-                // fontFamily: 'serif'
-
-              }}>{` עו"ד אור פרים בעל ניסיון של מעל עשור בניהול הליכים פליליים ואזרחיים מורכבים, ומייצג את לקוחותיו במסירות ומקצועיות בלתי מתפשרת.`}</Text>
+              }}>{`עו"ד אור פרים בעל ניסיון של מעל עשור בניהול הליכים פליליים ואזרחיים מורכבים, ומייצג את לקוחותיו במסירות ומקצועיות בלתי מתפשרת.`}</Text>
+              <Space height={16} />
+              <Text style={{
+                paddingHorizontal: ["sm"].includes(widthTag) ? 100 : 75,
+                fontSize: 20,
+                fontWeight: 500,
+                textAlign: 'center',
+                color: secondary,
+              }}>{`הניסיון העשיר והידע הרחב שצבר עו"ד פרים לאורך השנים מאפשרים לו לבחון כל תיק מנקודות מבט ייחודיות ולהשיג את התוצאות הטובות ביותר עבור לקוחותיו.`}</Text>
 
               <View style={{ paddingHorizontal: widthTag == 'sm' ? 80 : 0 }}>
                 <ArticlesSwipper enableSwitch={false} direction="column" numArticles={1} />
@@ -85,15 +96,32 @@ const Home = () => {
           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
 
             {/* <View style={{ flex: 2, marginTop: 36 }}> */}
-            <Text style={{
-              flex: 0.5,
-              paddingHorizontal: ['xl', 'lg'].includes(widthTag) ? 90 : 50,
-              fontSize: 20,
-              fontWeight: 500,
-              textAlign: 'center',
-              color: secondary,
+            <View style={{ flex: 1 }}>
+              <Text style={{
+                fontSize: 23,
+                fontWeight: 500,
+                textAlign: 'center',
+                color: secondary
+              }}>{`עו"ד אור פרים`}</Text>
 
-            }}>{` עו"ד אור פרים בעל ניסיון של מעל עשור בניהול הליכים פליליים ואזרחיים מורכבים, ומייצג את לקוחותיו במסירות ומקצועיות בלתי מתפשרת.`}</Text>
+              <Text style={{
+                flex: 0.5,
+                paddingHorizontal: ['xl', 'lg'].includes(widthTag) ? 90 : 50,
+                fontSize: 20,
+                fontWeight: 500,
+                textAlign: 'center',
+                color: secondary,
+              }}>{`עו"ד אור פרים בעל ניסיון של מעל עשור בניהול הליכים פליליים ואזרחיים מורכבים, ומייצג את לקוחותיו במסירות ומקצועיות בלתי מתפשרת.`}</Text>
+              <Space height={16} />
+              <Text style={{
+                flex: 0.5,
+                paddingHorizontal: ['xl', 'lg'].includes(widthTag) ? 90 : 50,
+                fontSize: 20,
+                fontWeight: 500,
+                textAlign: 'center',
+                color: secondary,
+              }}>{`הניסיון העשיר והידע הרחב שצבר עו"ד פרים לאורך השנים מאפשרים לו לבחון כל תיק מנקודות מבט ייחודיות ולהשיג את התוצאות הטובות ביותר עבור לקוחותיו.`}</Text>
+            </View>
             <Image source={{ uri: IMAGE_1_URI }} style={{
               width: 200,
               height: 300,
