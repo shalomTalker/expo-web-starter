@@ -104,10 +104,10 @@ const mapList = [
             },
             {
                 type: 'link',
-                title: `or@firmlaw.com`,
+                title: `or@frimlaw.com`,
                 name: "email",
                 icon: { name: "email" },
-                href: 'mailto:or@firmlaw.com'
+                href: 'mailto:or@frimlaw.com'
             },
             {
                 type: 'link',
