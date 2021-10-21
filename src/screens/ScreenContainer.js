@@ -72,9 +72,9 @@ const ScreenContainer = ({ children, containerStyle }) => {
         ref={ref}
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
-        onContentSizeChange={(e) => {
-          ref.current?.scrollToOffset({ offest: 0 })
-        }}
+        // onContentSizeChange={(e) => {
+        //   ref.current?.scrollToOffset({ offest: 0 })
+        // }}
         onScroll={onScroll}
         data={[{}]}
         contentContainerStyle={[containerStyle]}

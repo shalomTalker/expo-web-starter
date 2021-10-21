@@ -307,6 +307,14 @@ export const LOGO_HEADER_URI = 'https://i.ibb.co/vsJZ3Px/logo-header.png'
 export const MAP_URI = 'https://i.ibb.co/S7HTX1T/map.png'
 
 
+export const ACCIDENT_URI = 'https://images-frimor.s3.eu-west-1.amazonaws.com/accident.png'
+export const ARMY_URI = 'https://images-frimor.s3.eu-west-1.amazonaws.com/army-dog-tag.png'
+export const BALANCE_URI = 'https://images-frimor.s3.eu-west-1.amazonaws.com/balance.png'
+export const HANDCUFFS_URI = 'https://images-frimor.s3.eu-west-1.amazonaws.com/handcuffs.png'
+export const HOME_URI = 'https://images-frimor.s3.eu-west-1.amazonaws.com/home.png'
+export const LAW_URI = 'https://images-frimor.s3.eu-west-1.amazonaws.com/law.png'
+
+
 
 
 export const ADDRESS_URI = 'https://i.ibb.co/FX7JfCT/address.png'

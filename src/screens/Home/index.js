@@ -17,6 +17,7 @@ import {
   VarelaRound_400Regular
 } from '@expo-google-fonts/varela-round'
 import Text from "../../components/Txt";
+import LinksBox from "./LinksBox";
 
 
 const Home = () => {
@@ -60,10 +61,14 @@ const Home = () => {
           </View>
         </ImageBackground>
       </View>
-      {["xs", "sm"].includes(widthTag) ?
+      {["xs", "sm", 'md', 'lg'].includes(widthTag) ?
         (
-          <View style={{ flex: 1, alignItems: 'center', flexDirection: isMobile ? 'column' : 'row' }}>
-            <Image source={{ uri: IMAGE_1_URI }} style={{ width: 400, height: 300 }} />
+          <View style={{ flex: 1, alignItems: 'center', flexDirection: 'column' }}>
+            <Image source={{ uri: IMAGE_1_URI }} style={{
+              width: 400, height: 300, borderRadius: 16,
+              borderWidth: 2,
+              borderColor: 'gray',
+            }} />
             <View style={{ flex: 5, marginTop: 36 }}>
               <Text style={{
                 fontSize: 23,
@@ -72,7 +77,7 @@ const Home = () => {
                 color: secondary
               }}>{`עו"ד אור פרים`}</Text>
               <Text style={{
-                paddingHorizontal: ["sm"].includes(widthTag) ? 100 : 75,
+                paddingHorizontal: ["sm", 'xs'].includes(widthTag) ? 50 : 150,
                 fontSize: 20,
                 fontWeight: 500,
                 textAlign: 'center',
@@ -80,16 +85,16 @@ const Home = () => {
               }}>{`עו"ד אור פרים בעל ניסיון של מעל עשור בניהול הליכים פליליים ואזרחיים מורכבים, ומייצג את לקוחותיו במסירות ומקצועיות בלתי מתפשרת.`}</Text>
               <Space height={16} />
               <Text style={{
-                paddingHorizontal: ["sm"].includes(widthTag) ? 100 : 75,
+                paddingHorizontal: ["sm", 'xs'].includes(widthTag) ? 50 : 150,
                 fontSize: 20,
                 fontWeight: 500,
                 textAlign: 'center',
                 color: secondary,
               }}>{`הניסיון העשיר והידע הרחב שצבר עו"ד פרים לאורך השנים מאפשרים לו לבחון כל תיק מנקודות מבט ייחודיות ולהשיג את התוצאות הטובות ביותר עבור לקוחותיו.`}</Text>
 
-              <View style={{ paddingHorizontal: widthTag == 'sm' ? 80 : 0 }}>
-                <ArticlesSwipper enableSwitch={false} direction="column" numArticles={1} />
-              </View>
+              {/* <View style={{ paddingHorizontal: widthTag == 'sm' ? 80 : 0 }}> */}
+              <LinksBox />
+              {/* </View> */}
             </View>
           </View>
         ) : (
@@ -123,14 +128,14 @@ const Home = () => {
               }}>{`הניסיון העשיר והידע הרחב שצבר עו"ד פרים לאורך השנים מאפשרים לו לבחון כל תיק מנקודות מבט ייחודיות ולהשיג את התוצאות הטובות ביותר עבור לקוחותיו.`}</Text>
             </View>
             <Image source={{ uri: IMAGE_1_URI }} style={{
-              width: 200,
-              height: 300,
+              width: 220,
+              height: 320,
               borderRadius: 16,
               borderWidth: 2,
               borderColor: 'gray',
             }} />
-            <View style={{ flex: 1 }}>
-              <ArticlesSwipper enableSwitch={false} numArticles={1} direction='column' />
+            <View style={{ flex: 1, alignItems: 'center', marginRight: 8 }}>
+              <LinksBox />
             </View>
 
             {/* </View> */}

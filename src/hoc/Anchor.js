@@ -6,9 +6,9 @@ const Anchor = (props) => {
   const { href, onPress, children, blank = false } = props;
   const _handlePress = () => {
     if (Platform.OS === "web") {
-      window.open(href);
+      window.open(href, null);
     } else {
-      Linking.openURL(href);
+      Linking.openURL(href, false);
     }
     onPress && onPress();
   };

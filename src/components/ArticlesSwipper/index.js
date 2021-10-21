@@ -46,7 +46,7 @@ const ArticlesSwipper = ({ direction, numArticles = 2, enableSwitch = true }) =>
                         return (
                             <Pressable key={i.toString()} style={[
                                 styles.articleContainer,
-                                { backgroundColor: c2 }]} onPress={() => navigation.navigate(route, params)}>
+                                { backgroundColor: c2, cursor: 'pointer' }]} onPress={() => navigation.navigate(route, params)}>
                                 <ImageBackground style={styles.background} source={image.source} >
                                     <View style={[styles.description, { backgroundColor: `${secondary}99` }]}>
                                         <Text style={{
@@ -72,7 +72,7 @@ const ArticlesSwipper = ({ direction, numArticles = 2, enableSwitch = true }) =>
             }]}>
                 <Pressable style={[
                     styles.articleContainer,
-                    { backgroundColor: c2 }]} onPress={() => navigation.navigate(route, params)}>
+                    { backgroundColor: c2, cursor: 'pointer' }]} onPress={() => navigation.navigate(route, params)}>
                     <ImageBackground style={styles.background} source={image.source} >
                         <View style={[styles.description, { backgroundColor: `${secondary}99` }]}>
                             <Text style={{
