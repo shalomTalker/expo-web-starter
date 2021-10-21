@@ -415,7 +415,7 @@ const services = {
             },
         ],
         image: {
-            source: { uri: 'https://veredshai.co.il/wp-content/uploads/2021/07/%D7%A4%D7%A9%D7%A2-1024x654.jpg' },
+            source: { uri: 'https://images-frimor.s3.eu-west-1.amazonaws.com/WhatsApp+Image+2021-10-19+at+12.51.12.jpeg' },
             style: { width: 500, height: 400, }
         },
         contactUsTitle: `לקביעת פגישה עם עורך דין אור פרים`,
