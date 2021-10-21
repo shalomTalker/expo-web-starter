@@ -76,6 +76,7 @@ const Home = () => {
                 textAlign: 'center',
                 color: secondary
               }}>{`עו"ד אור פרים`}</Text>
+              <Space height={16} />
               <Text style={{
                 paddingHorizontal: ["sm", 'xs'].includes(widthTag) ? 50 : 150,
                 fontSize: 20,
@@ -108,7 +109,7 @@ const Home = () => {
                 textAlign: 'center',
                 color: secondary
               }}>{`עו"ד אור פרים`}</Text>
-
+              <Space height={16} />
               <Text style={{
                 flex: 0.5,
                 paddingHorizontal: ['xl', 'lg'].includes(widthTag) ? 90 : 50,
