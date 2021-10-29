@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
+import ArticlesHorizontal from '../components/ArticlesHorizontal';
 import ArticlesSwipper from '../components/ArticlesSwipper';
 import ContactUs from '../components/ContactUs';
 import MapSite from '../components/MapSite';
@@ -19,7 +20,7 @@ const Center = () => {
     return (
         <View style={{ backgroundColor: primary, flex: 1 }}>
             <Text style={[styles.title, { color: secondary }]}>{`מאמרים נוספים`}</Text>
-            <ArticlesSwipper direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'}
+            <ArticlesHorizontal direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'}
                 numArticles={isViewSmallerThan(900) ? 1 : 3} />
             <ContactUs direction={isViewSmallerThan(1100) ? 'column' : 'row-reverse'} />
             <MapSite direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'} />
