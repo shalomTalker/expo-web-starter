@@ -32,20 +32,24 @@ const Home = () => {
 
   return fontsLoaded && (
     <ScreenContainer>
-      <View style={{ width: widthSize, height: heightSize }} >
-        <ImageBackground source={{ uri: HOME_BACKGROUND_URI }} resizeMethod="scale" style={{
-          width: widthSize,
-          height: heightSize - header_H,
-          justifyContent: 'flex-end',
-        }}>
+      <View style={{ width: widthSize }} >
+        <ImageBackground
+          source={{ uri: HOME_BACKGROUND_URI }} resizeMethod="scale" style={{
+            width: widthSize,
+
+            // paddingTop: header_H,
+            justifyContent: 'flex-end',
+          }}>
           <View style={{
             backgroundColor: `${secondary}70`,
+            // backgroundColor: `${secondary}70`,
             width: isSmallMobile ? '100%' : 350,
             height: isSmallMobile ? 'auto' : '100%',
             flex: 1,
             alignItems: 'center',
             justifyContent: 'space-evenly',
             maxHeight: heightSize - header_H,
+            paddingTop: header_H,
             marginVertical: !isSmallMobile ? 18 : 0,
             marginLeft: !isSmallMobile ? 36 : 0,
           }}>
