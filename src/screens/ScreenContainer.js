@@ -82,7 +82,7 @@ const ScreenContainer = ({ children, containerStyle }) => {
         ListFooterComponent={() => <View style={{ backgroundColor: primary, flex: 1 }}>
           <ContactUs direction={isViewSmallerThan(1100) ? 'column' : 'row-reverse'} />
           <Text style={[styles.title, { color: secondary }]}>{`מאמרים נוספים`}</Text>
-          <View style={{ marginHorizontal: 25 }}>
+          <View style={{ marginHorizontal: 25, zIndex: 100 }}>
             <ArticlesSwipper direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'} numArticles={isViewSmallerThan(900) ? 1 : 3} />
           </View>
           <MapSite direction={isViewSmallerThan(1100) ? 'column' : 'row'} />
