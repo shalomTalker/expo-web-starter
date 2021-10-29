@@ -63,9 +63,9 @@ const ScreenContainer = ({ children, containerStyle }) => {
         style={{
           height: header_H,
           backgroundColor: c2,
-          transform: [
-            { translateY: translation },
-          ],
+          // transform: [
+          //   { translateY: translation },
+          // ],
         }}
       />
       <FlatList
