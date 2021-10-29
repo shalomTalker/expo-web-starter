@@ -20,7 +20,7 @@ const Header = (props) => {
   const isSmallMobile = ["xs"].includes(widthTag);
   const navigation = useNavigation();
   return (
-    <Animated.View style={[props.style, styles.container]}>
+    <View style={[props.style, styles.container]}>
 
       <BaseHeader
         containerStyle={{
@@ -54,7 +54,7 @@ const Header = (props) => {
             <Text style={{ color: primary, fontSize: 20, fontWeight: "400" }}>{`${widthTag == 'xs' ? '' : 'זמינות'} 24/7 במקרים דחופים${(['sm', 'md'].includes(widthTag)) ? ' – 050-8347079' : ''}`}</Text>
           </Anchor>}
       />
-    </Animated.View>
+    </View>
   );
 };
 
