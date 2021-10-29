@@ -44,15 +44,15 @@ const ScreenContainer = ({ children, containerStyle }) => {
     }).start();
   }, [headerShown]);
 
-  const onScroll = (event) => {
-    const scrolling = event.nativeEvent.contentOffset.y;
+  // const onScroll = (event) => {
+  //   const scrolling = event.nativeEvent.contentOffset.y;
 
-    if (scrolling > RANGE_SCROLL) {
-      setHeaderShown(false);
-    } else {
-      setHeaderShown(true);
-    }
-  }
+  //   if (scrolling > RANGE_SCROLL) {
+  //     setHeaderShown(false);
+  //   } else {
+  //     setHeaderShown(true);
+  //   }
+  // }
 
 
   return fontsLoaded && (
@@ -75,7 +75,7 @@ const ScreenContainer = ({ children, containerStyle }) => {
         onContentSizeChange={(e) => {
           ref.current?.scrollToOffset({ offest: 0 })
         }}
-        onScroll={onScroll}
+        // onScroll={onScroll}
         data={[{}]}
         contentContainerStyle={[containerStyle]}
         keyExtractor={keyExtractor}
