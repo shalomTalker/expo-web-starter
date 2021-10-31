@@ -48,8 +48,8 @@ const Home = () => {
             flex: 1,
             alignItems: 'center',
             justifyContent: 'space-evenly',
-            maxHeight: heightSize - header_H,
-            paddingTop: header_H,
+            minHeight: heightSize - header_H,
+            // paddingTop: header_H * 2,
             marginVertical: !isSmallMobile ? 18 : 0,
             marginLeft: !isSmallMobile ? 36 : 0,
           }}>
