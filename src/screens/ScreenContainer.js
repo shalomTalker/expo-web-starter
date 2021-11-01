@@ -36,7 +36,6 @@ const ScreenContainer = ({ children, containerStyle }) => {
   const [, heightSize, widthSize] = useViewSize()
   const isViewSmallerThan = (range) => widthSize < range;
   const route = useRoute()
-  console.log(route);
 
 
   return fontsLoaded && (
@@ -56,7 +55,6 @@ const ScreenContainer = ({ children, containerStyle }) => {
         onContentSizeChange={(e) => {
           if (route.name !== 'home') {
             ref.current?.scrollToOffset({ offest: 0 })
-
           }
         }}
         // onScroll={onScroll}
