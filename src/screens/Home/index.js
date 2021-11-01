@@ -69,9 +69,12 @@ const Home = () => {
         (
           <View style={{ flex: 1, alignItems: 'center', flexDirection: 'column' }}>
             <Image source={{ uri: IMAGE_1_URI }} style={{
-              width: 400, height: 300, borderRadius: 16,
+              width: 400,
+              height: 300,
+              borderRadius: 16,
               borderWidth: 2,
               borderColor: 'gray',
+              marginTop: 8
             }} />
             <View style={{ flex: 5, marginTop: 36 }}>
               <Text style={{

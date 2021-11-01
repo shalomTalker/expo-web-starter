@@ -75,7 +75,7 @@ const LinksBox = () => {
                                 color: secondary,
                                 ...imageStyle
                             }]} />
-                        <Text style={{ color: secondary, ...textStyle }}>{label}</Text>
+                        <Text style={[textStyle, { color: secondary }]}>{label}</Text>
                     </Pressable>
                 ))
             }
