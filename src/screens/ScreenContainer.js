@@ -1,4 +1,4 @@
-import { useScrollToTop } from "@react-navigation/native";
+import { useScrollToTop, useRoute } from "@react-navigation/native";
 import React, { useEffect, useRef, useState } from "react";
 import { View, ImageBackground, StyleSheet, Button, ScrollView, Animated, FlatList } from "react-native";
 import ArticlesSwipper from "../components/ArticlesSwipper";
@@ -33,27 +33,10 @@ const ScreenContainer = ({ children, containerStyle }) => {
 
   useScrollToTop(ref);
   const { primary, c2, c3, secondary } = useTheme()
-  const [headerShown, setHeaderShown] = useState(true);
-  const translation = useRef(new Animated.Value(0)).current;
   const [, heightSize, widthSize] = useViewSize()
   const isViewSmallerThan = (range) => widthSize < range;
-  useEffect(() => {
-    Animated.timing(translation, {
-      toValue: headerShown ? 0 : START_POS,
-      duration: 500,
-      useNativeDriver: true,
-    }).start();
-  }, [headerShown]);
-
-  // const onScroll = (event) => {
-  //   const scrolling = event.nativeEvent.contentOffset.y;
-
-  //   if (scrolling > RANGE_SCROLL) {
-  //     setHeaderShown(false);
-  //   } else {
-  //     setHeaderShown(true);
-  //   }
-  // }
+  const route = useRoute()
+  console.log(route);
 
 
   return fontsLoaded && (
@@ -64,9 +47,6 @@ const ScreenContainer = ({ children, containerStyle }) => {
         style={{
           height: header_H,
           backgroundColor: c2,
-          // transform: [
-          //   { translateY: translation },
-          // ],
         }}
       />
       <FlatList
@@ -74,7 +54,10 @@ const ScreenContainer = ({ children, containerStyle }) => {
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
         onContentSizeChange={(e) => {
-          ref.current?.scrollToOffset({ offest: 0 })
+          if (route.name !== 'home') {
+            ref.current?.scrollToOffset({ offest: 0 })
+
+          }
         }}
         // onScroll={onScroll}
         data={[{}]}
@@ -84,8 +67,6 @@ const ScreenContainer = ({ children, containerStyle }) => {
           <ContactUs direction={isViewSmallerThan(1100) ? 'column' : 'row-reverse'} />
           <Text style={[styles.title, { color: secondary }]}>{`מאמרים נוספים`}</Text>
           <ArticlesHorizontal direction={isViewSmallerThan(900) ? 'column' : 'row-reverse'} numArticles={isViewSmallerThan(900) ? 1 : 3} />
-          {/* <View style={{ marginHorizontal: 25, zIndex: 100 }}>
-          </View> */}
           <MapSite direction={isViewSmallerThan(1100) ? 'column' : 'row'} />
         </View>}
         renderItem={
