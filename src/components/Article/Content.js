@@ -32,7 +32,7 @@ const Content = ({ content }) => {
                     return <Text key={i.toString()} style={{ padding: 8, textAlign: 'justify' }}>
                         <Text style={[contentTextStyle, { padding: 0 }]}>{text.split('&')[0]}</Text>
                         <Text style={[contentTextStyle, { fontWeight: 'bold', padding: 0 }]}>{text.split('&')[1]}</Text>
-                    </Text >
+                    </Text>
                 case 'list':
                     return <>
                         <Text key={i.toString()} style={contentTextStyle}>{text}</Text>
@@ -52,7 +52,8 @@ const Content = ({ content }) => {
 
                         }}>
                             <View style={{ flex: 1, width: isMobile ? '100%' : '60%' }}>{renderText()}</View>
-                            <Image source={image.source} style={[image.style, { width: isMobile ? '100%' : 350, height: 300, marginRight: isMobile ? 0 : 45 }]} />
+                            {/* <Image source={image.source} style={[image.style, { width: isMobile ? '100%' : 350, height: 300, marginRight: isMobile ? 0 : 45 }]} /> */}
+                            <Image source={image.source} style={[ { width: isMobile ? '100%' : 350, height: 500, marginRight: isMobile ? 0 : 45 },image.style]} />
 
                         </View>
                     )

@@ -111,10 +111,10 @@ const mapList = [
             },
             {
                 type: 'link',
-                title: `שדרות הפלי"ם 2 בניין ברוש, חיפה`,
+                title: `בניין עזריאלי (רח' החרושת 2), עכו`,
                 name: "address",
                 icon: { name: "map-marker-radius" },
-                href: 'https://www.waze.com/ul?q=%D7%A9%D7%93%27+%D7%A4%D7%9C%D7%99%22%D7%9D+2'
+                href: 'https://waze.com/ul/hsvbgq33yf'
             },
             {
                 type: 'link',

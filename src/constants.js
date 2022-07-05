@@ -294,8 +294,10 @@ export const G_Styles = {
 
 export const LOGO_URI = 'https://i.ibb.co/PYFmPMr/logo.png'
 
-export const IMAGE_2_URI = 'https://images-frimor.s3.eu-west-1.amazonaws.com/%D7%AA%D7%9E%D7%95%D7%A0%D7%94+2.jpg'
-export const IMAGE_1_URI = 'https://images-frimor.s3.eu-west-1.amazonaws.com/%D7%AA%D7%9E%D7%95%D7%A0%D7%94+1.jpg'
+// export const IMAGE_2_URI = 'https://images-frimor.s3.eu-west-1.amazonaws.com/%D7%AA%D7%9E%D7%95%D7%A0%D7%94+2.jpg'
+// export const IMAGE_1_URI = 'https://images-frimor.s3.eu-west-1.amazonaws.com/%D7%AA%D7%9E%D7%95%D7%A0%D7%94+1.jpg'
+export const IMAGE_2_URI = 'https://images-frimor.s3.eu-west-1.amazonaws.com/or-photo-2.jpg'
+export const IMAGE_1_URI = 'https://images-frimor.s3.eu-west-1.amazonaws.com/or-photo-1.jpg'
 
 export const HOME_BACKGROUND_URI = 'https://images-frimor.s3.eu-west-1.amazonaws.com/WhatsApp+Image+2021-10-12+at+19.33.32+(1).jpeg'
 
