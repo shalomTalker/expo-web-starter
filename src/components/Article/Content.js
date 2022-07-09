@@ -34,11 +34,11 @@ const Content = ({ content }) => {
                         <Text style={[contentTextStyle, { fontWeight: 'bold', padding: 0 }]}>{text.split('&')[1]}</Text>
                     </Text>
                 case 'list':
-                    return <>
-                        <Text key={i.toString()} style={contentTextStyle}>{text}</Text>
+                    return <View key={i.toString()}>
+                        <Text style={contentTextStyle}>{text}</Text>
                         {items.map((t, f) => <Text key={f.toString()} style={[contentTextStyle, { paddingVertical: 4, paddingRight: 8 }]}>{`• ${t}`}</Text>
                         )}
-                    </>
+                    </View>
                 case 'imagecaption':
                     const renderText = () => cnt.map((c, g) =>
                         <Text key={g.toString()} style={[contentTextStyle]}>{c}</Text>);
